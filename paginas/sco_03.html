@@ -1,0 +1,2608 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Informática Básica - Aula 03</title>
+  </head>
+  <body>
+    <!doctype html>
+    <html lang="pt-BR">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Encontro 3 - Internet e Pesquisa</title>
+      </head>
+      <body style="margin: 0; padding: 0">
+        <div
+          style="
+            font-family:
+              &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Arial,
+              sans-serif;
+            background: #f5f7fa;
+            padding: 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+            color: #2c3e50;
+            font-size: 19px;
+          "
+        >
+          <!-- ===== SLIDE 1 — CAPA ===== -->
+          <div
+            style="
+              width: 100%;
+              aspect-ratio: 16/9;
+              background: #ffffff;
+              border-radius: 12px;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              padding: 4%;
+              box-sizing: border-box;
+              position: relative;
+              overflow: hidden;
+              margin-bottom: 20px;
+              box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            "
+          >
+            <div
+              style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 6px;
+                background: linear-gradient(90deg, #003f7f 0%, #ff6600 100%);
+              "
+            ></div>
+
+            <div style="text-align: center; max-width: 85%">
+              <div
+                style="
+                  display: inline-block;
+                  background: #e8f0fe;
+                  border-radius: 24px;
+                  padding: 8px 24px;
+                  margin-bottom: 24px;
+                "
+              >
+                <span
+                  style="
+                    color: #003f7f;
+                    font-size: clamp(15px, 1.8vw, 19px);
+                    font-weight: 600;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                  "
+                  >Informática Básica · SENAI São José/SC</span
+                >
+              </div>
+              <div
+                style="
+                  color: #1a202c;
+                  font-size: clamp(35px, 4.4vw, 52px);
+                  font-weight: 700;
+                  line-height: 1.2;
+                  margin-bottom: 14px;
+                "
+              >
+                Encontro 3<br />
+                <span style="color: #003f7f">Internet</span><br />
+                <span style="color: #ff6600">e Pesquisa</span>
+              </div>
+              <div
+                style="
+                  color: #5a6a7a;
+                  font-size: clamp(16px, 1.9vw, 20px);
+                  margin-bottom: 28px;
+                  line-height: 1.5;
+                "
+              >
+                Carga horária: 4 horas · Nível: Iniciante
+              </div>
+              <div
+                style="
+                  display: flex;
+                  gap: 12px;
+                  justify-content: center;
+                  flex-wrap: wrap;
+                "
+              >
+                <span
+                  style="
+                    background: #f0f4f8;
+                    color: #003f7f;
+                    border: 1px solid #d0dbe8;
+                    padding: 8px 20px;
+                    border-radius: 24px;
+                    font-size: clamp(14px, 1.5vw, 16px);
+                    font-weight: 600;
+                  "
+                  >Navegadores</span
+                >
+                <span
+                  style="
+                    background: #f0f4f8;
+                    color: #003f7f;
+                    border: 1px solid #d0dbe8;
+                    padding: 8px 20px;
+                    border-radius: 24px;
+                    font-size: clamp(14px, 1.5vw, 16px);
+                    font-weight: 600;
+                  "
+                  >Google</span
+                >
+                <span
+                  style="
+                    background: #f0f4f8;
+                    color: #003f7f;
+                    border: 1px solid #d0dbe8;
+                    padding: 8px 20px;
+                    border-radius: 24px;
+                    font-size: clamp(14px, 1.5vw, 16px);
+                    font-weight: 600;
+                  "
+                  >Pesquisa</span
+                >
+                <span
+                  style="
+                    background: #f0f4f8;
+                    color: #003f7f;
+                    border: 1px solid #d0dbe8;
+                    padding: 8px 20px;
+                    border-radius: 24px;
+                    font-size: clamp(14px, 1.5vw, 16px);
+                    font-weight: 600;
+                  "
+                  >Segurança</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== SLIDE 2 — OBJETIVOS DE APRENDIZAGEM ===== -->
+          <div
+            style="
+              width: 100%;
+              aspect-ratio: 16/9;
+              background: #ffffff;
+              border-radius: 12px;
+              overflow: hidden;
+              display: flex;
+              flex-direction: column;
+              margin-bottom: 20px;
+              box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            "
+          >
+            <div
+              style="
+                background: #003f7f;
+                padding: 14px 28px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                flex-shrink: 0;
+                box-sizing: border-box;
+              "
+            >
+              <span
+                style="
+                  background: rgba(255, 255, 255, 0.15);
+                  border-radius: 4px;
+                  padding: 5px 12px;
+                  color: #ffffff;
+                  font-weight: 700;
+                  font-size: clamp(15px, 1.8vw, 19px);
+                "
+                >01</span
+              >
+              <span
+                style="
+                  color: #ffffff;
+                  font-size: clamp(18px, 2.1vw, 22px);
+                  font-weight: 600;
+                "
+              >
+                OBJETIVOS DE APRENDIZAGEM
+              </span>
+            </div>
+
+            <div
+              style="
+                flex: 1;
+                min-height: 0;
+                padding: 3% 4%;
+                display: flex;
+                flex-direction: column;
+                gap: 2%;
+                overflow-y: auto;
+                box-sizing: border-box;
+              "
+            >
+              <div
+                style="
+                  background: #f8fafc;
+                  border: 1px solid #e2e8f0;
+                  border-left: 4px solid #003f7f;
+                  border-radius: 6px;
+                  padding: 2.5% 3.5%;
+                  box-sizing: border-box;
+                "
+              >
+                <div
+                  style="
+                    color: #003f7f;
+                    font-size: clamp(14px, 1.5vw, 16px);
+                    font-weight: 700;
+                    margin-bottom: 4px;
+                  "
+                >
+                  🎯 Ao final deste encontro, você será capaz de:
+                </div>
+              </div>
+
+              <div
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 2%"
+              >
+                <div
+                  style="
+                    background: #ffffff;
+                    border: 1px solid #e2e8f0;
+                    border-radius: 6px;
+                    padding: 2.5% 3%;
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 10px;
+                    box-sizing: border-box;
+                  "
+                >
+                  <span
+                    style="
+                      background: #003f7f;
+                      color: #ffffff;
+                      border-radius: 50%;
+                      width: 28px;
+                      height: 28px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      font-size: clamp(12px, 1.3vw, 14px);
+                      font-weight: 700;
+                      flex-shrink: 0;
+                    "
+                    >1</span
+                  >
+                  <div
+                    style="
+                      font-size: clamp(13px, 1.4vw, 15px);
+                      color: #334155;
+                      line-height: 1.5;
+                    "
+                  >
+                    <strong>Compreender</strong> o que é a internet e sua
+                    importância no cotidiano
+                  </div>
+                </div>
+                <div
+                  style="
+                    background: #ffffff;
+                    border: 1px solid #e2e8f0;
+                    border-radius: 6px;
+                    padding: 2.5% 3%;
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 10px;
+                    box-sizing: border-box;
+                  "
+                >
+                  <span
+                    style="
+                      background: #003f7f;
+                      color: #ffffff;
+                      border-radius: 50%;
+                      width: 28px;
+                      height: 28px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      font-size: clamp(12px, 1.3vw, 14px);
+                      font-weight: 700;
+                      flex-shrink: 0;
+                    "
+                    >2</span
+                  >
+                  <div
+                    style="
+                      font-size: clamp(13px, 1.4vw, 15px);
+                      color: #334155;
+                      line-height: 1.5;
+                    "
+                  >
+                    <strong>Identificar</strong> os principais navegadores e
+                    suas funções básicas
+                  </div>
+                </div>
+                <div
+                  style="
+                    background: #ffffff;
+                    border: 1px solid #e2e8f0;
+                    border-radius: 6px;
+                    padding: 2.5% 3%;
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 10px;
+                    box-sizing: border-box;
+                  "
+                >
+                  <span
+                    style="
+                      background: #003f7f;
+                      color: #ffffff;
+                      border-radius: 50%;
+                      width: 28px;
+                      height: 28px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      font-size: clamp(12px, 1.3vw, 14px);
+                      font-weight: 700;
+                      flex-shrink: 0;
+                    "
+                    >3</span
+                  >
+                  <div
+                    style="
+                      font-size: clamp(13px, 1.4vw, 15px);
+                      color: #334155;
+                      line-height: 1.5;
+                    "
+                  >
+                    <strong>Utilizar</strong> a barra de endereços para acessar
+                    sites digitando URLs
+                  </div>
+                </div>
+                <div
+                  style="
+                    background: #ffffff;
+                    border: 1px solid #e2e8f0;
+                    border-radius: 6px;
+                    padding: 2.5% 3%;
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 10px;
+                    box-sizing: border-box;
+                  "
+                >
+                  <span
+                    style="
+                      background: #003f7f;
+                      color: #ffffff;
+                      border-radius: 50%;
+                      width: 28px;
+                      height: 28px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      font-size: clamp(12px, 1.3vw, 14px);
+                      font-weight: 700;
+                      flex-shrink: 0;
+                    "
+                    >4</span
+                  >
+                  <div
+                    style="
+                      font-size: clamp(13px, 1.4vw, 15px);
+                      color: #334155;
+                      line-height: 1.5;
+                    "
+                  >
+                    <strong>Realizar</strong> pesquisas simples em sites de
+                    busca como Google e Bing
+                  </div>
+                </div>
+                <div
+                  style="
+                    background: #ffffff;
+                    border: 1px solid #e2e8f0;
+                    border-radius: 6px;
+                    padding: 2.5% 3%;
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 10px;
+                    box-sizing: border-box;
+                  "
+                >
+                  <span
+                    style="
+                      background: #003f7f;
+                      color: #ffffff;
+                      border-radius: 50%;
+                      width: 28px;
+                      height: 28px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      font-size: clamp(12px, 1.3vw, 14px);
+                      font-weight: 700;
+                      flex-shrink: 0;
+                    "
+                    >5</span
+                  >
+                  <div
+                    style="
+                      font-size: clamp(13px, 1.4vw, 15px);
+                      color: #334155;
+                      line-height: 1.5;
+                    "
+                  >
+                    <strong>Reconhecer</strong> cuidados básicos de segurança ao
+                    navegar (evitar links suspeitos)
+                  </div>
+                </div>
+                <div
+                  style="
+                    background: #ffffff;
+                    border: 1px solid #e2e8f0;
+                    border-radius: 6px;
+                    padding: 2.5% 3%;
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 10px;
+                    box-sizing: border-box;
+                  "
+                >
+                  <span
+                    style="
+                      background: #ff6600;
+                      color: #ffffff;
+                      border-radius: 50%;
+                      width: 28px;
+                      height: 28px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      font-size: clamp(12px, 1.3vw, 14px);
+                      font-weight: 700;
+                      flex-shrink: 0;
+                    "
+                    >6</span
+                  >
+                  <div
+                    style="
+                      font-size: clamp(13px, 1.4vw, 15px);
+                      color: #334155;
+                      line-height: 1.5;
+                    "
+                  >
+                    <strong>Aplicar na prática:</strong> navegar, pesquisar e
+                    salvar páginas nos favoritos
+                  </div>
+                </div>
+              </div>
+
+              <div
+                style="
+                  background: #fff8f0;
+                  border: 1px solid #ffd9b3;
+                  border-radius: 6px;
+                  padding: 2% 3%;
+                  font-size: clamp(13px, 1.4vw, 15px);
+                  color: #664422;
+                  box-sizing: border-box;
+                  flex-shrink: 0;
+                "
+              >
+                <strong>📌 Metodologia:</strong> Aula expositiva dialogada (1h)
+                + demonstração prática no laboratório (1h) + atividades guiadas
+                (2h)
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== SLIDE 3 — O QUE É INTERNET ===== -->
+          <div
+            style="
+              width: 100%;
+              aspect-ratio: 16/9;
+              background: #ffffff;
+              border-radius: 12px;
+              overflow: hidden;
+              display: flex;
+              flex-direction: column;
+              margin-bottom: 20px;
+              box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            "
+          >
+            <div
+              style="
+                background: #003f7f;
+                padding: 14px 28px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                flex-shrink: 0;
+                box-sizing: border-box;
+              "
+            >
+              <span
+                style="
+                  background: rgba(255, 255, 255, 0.15);
+                  border-radius: 4px;
+                  padding: 5px 12px;
+                  color: #ffffff;
+                  font-weight: 700;
+                  font-size: clamp(15px, 1.8vw, 19px);
+                "
+                >02</span
+              >
+              <span
+                style="
+                  color: #ffffff;
+                  font-size: clamp(18px, 2.1vw, 22px);
+                  font-weight: 600;
+                "
+              >
+                O QUE É INTERNET?
+              </span>
+            </div>
+
+            <div
+              style="
+                flex: 1;
+                min-height: 0;
+                padding: 3% 4%;
+                display: flex;
+                flex-direction: column;
+                gap: 2.5%;
+                overflow-y: auto;
+                box-sizing: border-box;
+              "
+            >
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: 1.2fr 0.8fr;
+                  gap: 2.5%;
+                "
+              >
+                <div style="display: flex; flex-direction: column; gap: 2.5%">
+                  <div
+                    style="
+                      background: #f0f6ff;
+                      border: 1px solid #c8ddf5;
+                      border-radius: 8px;
+                      padding: 3.5% 4%;
+                      box-sizing: border-box;
+                    "
+                  >
+                    <div
+                      style="
+                        color: #003f7f;
+                        font-size: clamp(18px, 2.2vw, 24px);
+                        font-weight: 700;
+                        margin-bottom: 12px;
+                      "
+                    >
+                      Uma rede mundial de computadores
+                    </div>
+                    <div
+                      style="
+                        color: #334155;
+                        font-size: clamp(15px, 1.8vw, 19px);
+                        line-height: 1.7;
+                      "
+                    >
+                      A <strong>internet</strong> é uma
+                      <strong>rede global</strong> que conecta bilhões de
+                      computadores, celulares e dispositivos ao redor do mundo.
+                      Ela permite a <strong>troca de informações</strong> em
+                      segundos: textos, imagens, vídeos, áudios e dados.
+                    </div>
+                  </div>
+
+                  <div
+                    style="
+                      background: #fff8f0;
+                      border: 1px solid #ffd9b3;
+                      border-radius: 8px;
+                      padding: 3.5% 4%;
+                      box-sizing: border-box;
+                    "
+                  >
+                    <div
+                      style="
+                        color: #ff6600;
+                        font-size: clamp(18px, 2.2vw, 24px);
+                        font-weight: 700;
+                        margin-bottom: 12px;
+                      "
+                    >
+                      💡 Para que serve?
+                    </div>
+                    <div
+                      style="
+                        color: #334155;
+                        font-size: clamp(15px, 1.8vw, 19px);
+                        line-height: 1.7;
+                      "
+                    >
+                      • <strong>Comunicação</strong>: e-mail, WhatsApp, redes
+                      sociais<br />
+                      • <strong>Informação</strong>: pesquisa, notícias,
+                      tutoriais<br />
+                      • <strong>Serviços</strong>: bancos, compras, governo<br />
+                      • <strong>Entretenimento</strong>: vídeos, música,
+                      jogos<br />
+                      • <strong>Educação</strong>: cursos online, EAD
+                    </div>
+                  </div>
+
+                  <div
+                    style="
+                      background: #f8fafc;
+                      border: 1px solid #e2e8f0;
+                      border-radius: 8px;
+                      padding: 3% 3.5%;
+                      box-sizing: border-box;
+                    "
+                  >
+                    <div
+                      style="
+                        color: #334155;
+                        font-size: clamp(15px, 1.8vw, 19px);
+                        line-height: 1.7;
+                      "
+                    >
+                      <strong style="color: #003f7f">📝 Analogia:</strong> A
+                      internet é como uma <strong>rede de estradas</strong> que
+                      conecta cidades (computadores). Os dados viajam por essas
+                      estradas para chegar ao destino.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ESPAÇO PARA IMAGEM -->
+                <div
+                  style="
+                    background: #fafbfc;
+                    border: 2px dashed #d0dbe8;
+                    border-radius: 8px;
+                    padding: 4%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    box-sizing: border-box;
+                  "
+                >
+                  <img
+                    src="../assets/sco_03_img_01.png"
+                    style="width: 100%"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== SLIDE 4 — NAVEGADORES ===== -->
+          <div
+            style="
+              width: 100%;
+              aspect-ratio: 16/9;
+              background: #ffffff;
+              border-radius: 12px;
+              overflow: hidden;
+              display: flex;
+              flex-direction: column;
+              margin-bottom: 20px;
+              box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            "
+          >
+            <div
+              style="
+                background: #003f7f;
+                padding: 14px 28px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                flex-shrink: 0;
+                box-sizing: border-box;
+              "
+            >
+              <span
+                style="
+                  background: rgba(255, 255, 255, 0.15);
+                  border-radius: 4px;
+                  padding: 5px 12px;
+                  color: #ffffff;
+                  font-weight: 700;
+                  font-size: clamp(15px, 1.8vw, 19px);
+                "
+                >03</span
+              >
+              <span
+                style="
+                  color: #ffffff;
+                  font-size: clamp(18px, 2.1vw, 22px);
+                  font-weight: 600;
+                "
+              >
+                NAVEGADORES: O QUE SÃO?
+              </span>
+            </div>
+
+            <div
+              style="
+                flex: 1;
+                min-height: 0;
+                padding: 3% 4%;
+                display: flex;
+                flex-direction: column;
+                gap: 2.5%;
+                overflow-y: auto;
+                box-sizing: border-box;
+              "
+            >
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: repeat(3, 1fr);
+                  gap: 2%;
+                "
+              >
+                <div
+                  style="
+                    background: #f0f6ff;
+                    border: 1px solid #c8ddf5;
+                    border-radius: 8px;
+                    padding: 4% 5%;
+                    box-sizing: border-box;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                  "
+                >
+                  <div
+                    style="
+                      font-size: clamp(26px, 2.8vw, 32px);
+                      margin-bottom: 8px;
+                    "
+                  >
+                    🌐
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(15px, 1.7vw, 18px);
+                      font-weight: 700;
+                      color: #003f7f;
+                      margin-bottom: 6px;
+                    "
+                  >
+                    Google Chrome
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(12px, 1.3vw, 14px);
+                      color: #5a6a7a;
+                      line-height: 1.6;
+                    "
+                  >
+                    O navegador <strong>mais usado do mundo</strong>. Rápido,
+                    seguro e integrado com os serviços do Google
+                  </div>
+                </div>
+                <div
+                  style="
+                    background: #f0f6ff;
+                    border: 1px solid #c8ddf5;
+                    border-radius: 8px;
+                    padding: 4% 5%;
+                    box-sizing: border-box;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                  "
+                >
+                  <div
+                    style="
+                      font-size: clamp(26px, 2.8vw, 32px);
+                      margin-bottom: 8px;
+                    "
+                  >
+                    🟦
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(15px, 1.7vw, 18px);
+                      font-weight: 700;
+                      color: #003f7f;
+                      margin-bottom: 6px;
+                    "
+                  >
+                    Microsoft Edge
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(12px, 1.3vw, 14px);
+                      color: #5a6a7a;
+                      line-height: 1.6;
+                    "
+                  >
+                    Vem instalado com o <strong>Windows</strong>. Baseado no
+                    Chrome, com recursos de produtividade
+                  </div>
+                </div>
+                <div
+                  style="
+                    background: #fff8f0;
+                    border: 1px solid #ffd9b3;
+                    border-radius: 8px;
+                    padding: 4% 5%;
+                    box-sizing: border-box;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                  "
+                >
+                  <div
+                    style="
+                      font-size: clamp(26px, 2.8vw, 32px);
+                      margin-bottom: 8px;
+                    "
+                  >
+                    🦊
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(15px, 1.7vw, 18px);
+                      font-weight: 700;
+                      color: #ff6600;
+                      margin-bottom: 6px;
+                    "
+                  >
+                    Firefox e Outros
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(12px, 1.3vw, 14px);
+                      color: #5a6a7a;
+                      line-height: 1.6;
+                    "
+                  >
+                    Firefox (Mozilla), Opera, Safari (Apple), Brave —
+                    alternativas com foco em privacidade
+                  </div>
+                </div>
+              </div>
+
+              <div
+                style="
+                  background: #f8fafc;
+                  border: 1px solid #e2e8f0;
+                  border-radius: 8px;
+                  padding: 3% 3.5%;
+                  box-sizing: border-box;
+                "
+              >
+                <div
+                  style="
+                    color: #5a6a7a;
+                    font-size: clamp(14px, 1.6vw, 17px);
+                    margin-bottom: 8px;
+                    text-align: center;
+                  "
+                >
+                  <strong>O que o navegador faz?</strong> Ele interpreta o
+                  código dos sites e exibe na tela como
+                  <strong>páginas visuais</strong>
+                  com textos, imagens e vídeos
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    gap: 8px;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                  "
+                >
+                  <span
+                    style="
+                      background: #f0f6ff;
+                      color: #003f7f;
+                      border: 1px solid #c8ddf5;
+                      border-radius: 20px;
+                      padding: 5px 14px;
+                      font-size: clamp(11px, 1.2vw, 13px);
+                      font-weight: 600;
+                    "
+                  >
+                    📄 Exibe páginas
+                  </span>
+                  <span
+                    style="
+                      background: #f0f6ff;
+                      color: #003f7f;
+                      border: 1px solid #c8ddf5;
+                      border-radius: 20px;
+                      padding: 5px 14px;
+                      font-size: clamp(11px, 1.2vw, 13px);
+                      font-weight: 600;
+                    "
+                  >
+                    🔗 Acessa links
+                  </span>
+                  <span
+                    style="
+                      background: #f0f6ff;
+                      color: #003f7f;
+                      border: 1px solid #c8ddf5;
+                      border-radius: 20px;
+                      padding: 5px 14px;
+                      font-size: clamp(11px, 1.2vw, 13px);
+                      font-weight: 600;
+                    "
+                  >
+                    ⭐ Salva favoritos
+                  </span>
+                  <span
+                    style="
+                      background: #fff8f0;
+                      color: #ff6600;
+                      border: 1px solid #ffd9b3;
+                      border-radius: 20px;
+                      padding: 5px 14px;
+                      font-size: clamp(11px, 1.2vw, 13px);
+                      font-weight: 600;
+                    "
+                  >
+                    🔒 Protege sua navegação
+                  </span>
+                </div>
+              </div>
+
+              <!-- ESPAÇO PARA IMAGEM -->
+              <div
+                style="
+                  background: #fafbfc;
+                  border: 2px dashed #d0dbe8;
+                  border-radius: 8px;
+                  padding: 2.5%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  gap: 12px;
+                  box-sizing: border-box;
+                  flex-shrink: 0;
+                "
+              >
+                <img
+                  src="../assets/sco_03_img_02.png"
+                  style="width: 100%"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== SLIDE 5 — BARRA DE ENDEREÇOS E SITES ===== -->
+          <div
+            style="
+              width: 100%;
+              aspect-ratio: 16/9;
+              background: #ffffff;
+              border-radius: 12px;
+              overflow: hidden;
+              display: flex;
+              flex-direction: column;
+              margin-bottom: 20px;
+              box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            "
+          >
+            <div
+              style="
+                background: #003f7f;
+                padding: 14px 28px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                flex-shrink: 0;
+                box-sizing: border-box;
+              "
+            >
+              <span
+                style="
+                  background: rgba(255, 255, 255, 0.15);
+                  border-radius: 4px;
+                  padding: 5px 12px;
+                  color: #ffffff;
+                  font-weight: 700;
+                  font-size: clamp(15px, 1.8vw, 19px);
+                "
+                >04</span
+              >
+              <span
+                style="
+                  color: #ffffff;
+                  font-size: clamp(18px, 2.1vw, 22px);
+                  font-weight: 600;
+                "
+              >
+                BARRA DE ENDEREÇOS E SITES
+              </span>
+            </div>
+
+            <div
+              style="
+                flex: 1;
+                min-height: 0;
+                padding: 3% 4%;
+                display: flex;
+                flex-direction: column;
+                gap: 2.5%;
+                overflow-y: auto;
+                box-sizing: border-box;
+              "
+            >
+              <div
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5%"
+              >
+                <!-- Coluna esquerda -->
+                <div style="display: flex; flex-direction: column; gap: 2.5%">
+                  <div
+                    style="
+                      background: #f0f6ff;
+                      border: 1px solid #c8ddf5;
+                      border-radius: 8px;
+                      padding: 4% 5%;
+                      box-sizing: border-box;
+                    "
+                  >
+                    <div
+                      style="
+                        color: #003f7f;
+                        font-size: clamp(17px, 2vw, 22px);
+                        font-weight: 700;
+                        margin-bottom: 10px;
+                      "
+                    >
+                      🔗 O que é a barra de endereços?
+                    </div>
+                    <div
+                      style="
+                        color: #334155;
+                        font-size: clamp(14px, 1.6vw, 17px);
+                        line-height: 1.6;
+                      "
+                    >
+                      É o campo no <strong>topo do navegador</strong> onde você
+                      digita o <strong>endereço do site</strong> (URL). Exemplo:
+                      <span style="color: #003f7f; font-weight: 700"
+                        >www.google.com</span
+                      >
+                    </div>
+                  </div>
+
+                  <div
+                    style="
+                      background: #fff8f0;
+                      border: 1px solid #ffd9b3;
+                      border-radius: 8px;
+                      padding: 4% 5%;
+                      box-sizing: border-box;
+                    "
+                  >
+                    <div
+                      style="
+                        color: #ff6600;
+                        font-size: clamp(17px, 2vw, 22px);
+                        font-weight: 700;
+                        margin-bottom: 10px;
+                      "
+                    >
+                      📄 O que é um site?
+                    </div>
+                    <div
+                      style="
+                        color: #334155;
+                        font-size: clamp(14px, 1.6vw, 17px);
+                        line-height: 1.6;
+                      "
+                    >
+                      Um <strong>site</strong> é um conjunto de
+                      <strong>páginas web</strong> acessíveis por um endereço
+                      único. Cada site tem um <strong>domínio</strong> (ex:
+                      senai.br, google.com, gov.br).
+                    </div>
+                  </div>
+
+                  <div
+                    style="
+                      background: #f8fafc;
+                      border: 1px solid #e2e8f0;
+                      border-radius: 8px;
+                      padding: 3% 3.5%;
+                      box-sizing: border-box;
+                    "
+                  >
+                    <div
+                      style="
+                        color: #5a6a7a;
+                        font-size: clamp(13px, 1.4vw, 15px);
+                        line-height: 1.6;
+                      "
+                    >
+                      <strong style="color: #003f7f"
+                        >💡 Como acessar um site:</strong
+                      >
+                      Digite o endereço na barra (ex:
+                      <strong>www.senai.br</strong>) e pressione
+                      <strong>Enter</strong>. O navegador carrega a página
+                      automaticamente.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Coluna direita: imagem -->
+                <div
+                  style="
+                    background: #fafbfc;
+                    border: 2px dashed #d0dbe8;
+                    border-radius: 8px;
+                    padding: 4%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    box-sizing: border-box;
+                  "
+                >
+                  <img
+                    src="../assets/sco_03_img_03.png"
+                    style="width: 100%"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== SLIDE 6 — SITES DE BUSCA ===== -->
+          <div
+            style="
+              width: 100%;
+              aspect-ratio: 16/9;
+              background: #ffffff;
+              border-radius: 12px;
+              overflow: hidden;
+              display: flex;
+              flex-direction: column;
+              margin-bottom: 20px;
+              box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            "
+          >
+            <div
+              style="
+                background: #003f7f;
+                padding: 14px 28px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                flex-shrink: 0;
+                box-sizing: border-box;
+              "
+            >
+              <span
+                style="
+                  background: rgba(255, 255, 255, 0.15);
+                  border-radius: 4px;
+                  padding: 5px 12px;
+                  color: #ffffff;
+                  font-weight: 700;
+                  font-size: clamp(15px, 1.8vw, 19px);
+                "
+                >05</span
+              >
+              <span
+                style="
+                  color: #ffffff;
+                  font-size: clamp(18px, 2.1vw, 22px);
+                  font-weight: 600;
+                "
+              >
+                SITES DE BUSCA
+              </span>
+            </div>
+
+            <div
+              style="
+                flex: 1;
+                min-height: 0;
+                padding: 3% 4%;
+                display: flex;
+                flex-direction: column;
+                gap: 2.5%;
+                overflow-y: auto;
+                box-sizing: border-box;
+              "
+            >
+              <div
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 2%"
+              >
+                <div
+                  style="
+                    background: #f0f6ff;
+                    border: 1px solid #c8ddf5;
+                    border-radius: 8px;
+                    padding: 4% 5%;
+                    box-sizing: border-box;
+                    display: flex;
+                    flex-direction: column;
+                  "
+                >
+                  <div
+                    style="
+                      font-size: clamp(28px, 3vw, 36px);
+                      margin-bottom: 8px;
+                    "
+                  >
+                    🔍
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(16px, 1.8vw, 20px);
+                      font-weight: 700;
+                      color: #003f7f;
+                      margin-bottom: 6px;
+                    "
+                  >
+                    Google
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(12px, 1.3vw, 14px);
+                      color: #5a6a7a;
+                      line-height: 1.6;
+                    "
+                  >
+                    O <strong>site de busca mais usado do mundo</strong>. Basta
+                    digitar o que procura e clicar em "Pesquisa Google".
+                    Endereço:
+                    <strong>www.google.com</strong>
+                  </div>
+                </div>
+                <div
+                  style="
+                    background: #fff8f0;
+                    border: 1px solid #ffd9b3;
+                    border-radius: 8px;
+                    padding: 4% 5%;
+                    box-sizing: border-box;
+                    display: flex;
+                    flex-direction: column;
+                  "
+                >
+                  <div
+                    style="
+                      font-size: clamp(28px, 3vw, 36px);
+                      margin-bottom: 8px;
+                    "
+                  >
+                    🔎
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(16px, 1.8vw, 20px);
+                      font-weight: 700;
+                      color: #ff6600;
+                      margin-bottom: 6px;
+                    "
+                  >
+                    Bing
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(12px, 1.3vw, 14px);
+                      color: #5a6a7a;
+                      line-height: 1.6;
+                    "
+                  >
+                    Site de busca da <strong>Microsoft</strong>. Funciona de
+                    forma parecida com o Google. Endereço:
+                    <strong>www.bing.com</strong>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                style="
+                  background: #f8fafc;
+                  border: 1px solid #e2e8f0;
+                  border-radius: 8px;
+                  padding: 3% 3.5%;
+                  box-sizing: border-box;
+                "
+              >
+                <div
+                  style="
+                    color: #5a6a7a;
+                    font-size: clamp(14px, 1.6vw, 17px);
+                    margin-bottom: 8px;
+                    text-align: center;
+                  "
+                >
+                  <strong>Como fazer uma pesquisa simples:</strong>
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    gap: 8px;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    align-items: center;
+                  "
+                >
+                  <span
+                    style="
+                      background: #f0f6ff;
+                      color: #003f7f;
+                      border: 1px solid #c8ddf5;
+                      border-radius: 20px;
+                      padding: 6px 14px;
+                      font-size: clamp(11px, 1.2vw, 13px);
+                      font-weight: 600;
+                    "
+                  >
+                    1️⃣ Abra o navegador
+                  </span>
+                  <span
+                    style="color: #5a6a7a; font-size: clamp(14px, 1.6vw, 17px)"
+                    >→</span
+                  >
+                  <span
+                    style="
+                      background: #f0f6ff;
+                      color: #003f7f;
+                      border: 1px solid #c8ddf5;
+                      border-radius: 20px;
+                      padding: 6px 14px;
+                      font-size: clamp(11px, 1.2vw, 13px);
+                      font-weight: 600;
+                    "
+                  >
+                    2️⃣ Acesse google.com
+                  </span>
+                  <span
+                    style="color: #5a6a7a; font-size: clamp(14px, 1.6vw, 17px)"
+                    >→</span
+                  >
+                  <span
+                    style="
+                      background: #f0f6ff;
+                      color: #003f7f;
+                      border: 1px solid #c8ddf5;
+                      border-radius: 20px;
+                      padding: 6px 14px;
+                      font-size: clamp(11px, 1.2vw, 13px);
+                      font-weight: 600;
+                    "
+                  >
+                    3️⃣ Digite o termo
+                  </span>
+                  <span
+                    style="color: #5a6a7a; font-size: clamp(14px, 1.6vw, 17px)"
+                    >→</span
+                  >
+                  <span
+                    style="
+                      background: #fff8f0;
+                      color: #ff6600;
+                      border: 1px solid #ffd9b3;
+                      border-radius: 20px;
+                      padding: 6px 14px;
+                      font-size: clamp(11px, 1.2vw, 13px);
+                      font-weight: 600;
+                    "
+                  >
+                    4️⃣ Pressione Enter
+                  </span>
+                </div>
+              </div>
+
+              <!-- ESPAÇO PARA IMAGEM -->
+              <div
+                style="
+                  background: #fafbfc;
+                  border: 2px dashed #d0dbe8;
+                  border-radius: 8px;
+                  padding: 2.5%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  gap: 12px;
+                  box-sizing: border-box;
+                  flex-shrink: 0;
+                "
+              >
+                <img
+                  src="../assets/sco_03_img_04.png"
+                  style="width: 100%"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== SLIDE 7 — SEGURANÇA NA NAVEGAÇÃO ===== -->
+          <div
+            style="
+              width: 100%;
+              aspect-ratio: 16/9;
+              background: #ffffff;
+              border-radius: 12px;
+              overflow: hidden;
+              display: flex;
+              flex-direction: column;
+              margin-bottom: 20px;
+              box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            "
+          >
+            <div
+              style="
+                background: #003f7f;
+                padding: 14px 28px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                flex-shrink: 0;
+                box-sizing: border-box;
+              "
+            >
+              <span
+                style="
+                  background: rgba(255, 255, 255, 0.15);
+                  border-radius: 4px;
+                  padding: 5px 12px;
+                  color: #ffffff;
+                  font-weight: 700;
+                  font-size: clamp(15px, 1.8vw, 19px);
+                "
+                >06</span
+              >
+              <span
+                style="
+                  color: #ffffff;
+                  font-size: clamp(18px, 2.1vw, 22px);
+                  font-weight: 600;
+                "
+              >
+                CUIDADOS BÁSICOS DE SEGURANÇA
+              </span>
+            </div>
+
+            <div
+              style="
+                flex: 1;
+                min-height: 0;
+                padding: 3% 4%;
+                display: flex;
+                flex-direction: column;
+                gap: 2.5%;
+                overflow-y: auto;
+                box-sizing: border-box;
+              "
+            >
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: repeat(3, 1fr);
+                  gap: 2%;
+                "
+              >
+                <div
+                  style="
+                    background: #fef5f5;
+                    border: 1px solid #f0c8c8;
+                    border-radius: 8px;
+                    padding: 4% 5%;
+                    box-sizing: border-box;
+                    display: flex;
+                    flex-direction: column;
+                  "
+                >
+                  <div
+                    style="
+                      font-size: clamp(26px, 2.8vw, 32px);
+                      margin-bottom: 8px;
+                    "
+                  >
+                    🔗
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(15px, 1.7vw, 18px);
+                      font-weight: 700;
+                      color: #c0392b;
+                      margin-bottom: 6px;
+                    "
+                  >
+                    Não clique em links suspeitos
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(12px, 1.3vw, 14px);
+                      color: #5a6a7a;
+                      line-height: 1.6;
+                    "
+                  >
+                    Links em e-mails desconhecidos, mensagens ou pop-ups podem
+                    conter vírus ou golpes
+                  </div>
+                </div>
+                <div
+                  style="
+                    background: #fef5f5;
+                    border: 1px solid #f0c8c8;
+                    border-radius: 8px;
+                    padding: 4% 5%;
+                    box-sizing: border-box;
+                    display: flex;
+                    flex-direction: column;
+                  "
+                >
+                  <div
+                    style="
+                      font-size: clamp(26px, 2.8vw, 32px);
+                      margin-bottom: 8px;
+                    "
+                  >
+                    🔒
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(15px, 1.7vw, 18px);
+                      font-weight: 700;
+                      color: #c0392b;
+                      margin-bottom: 6px;
+                    "
+                  >
+                    Verifique o cadeado
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(12px, 1.3vw, 14px);
+                      color: #5a6a7a;
+                      line-height: 1.6;
+                    "
+                  >
+                    Sites seguros têm <strong>🔒 cadeado</strong> na barra de
+                    endereços e começam com <strong>https://</strong>
+                  </div>
+                </div>
+                <div
+                  style="
+                    background: #fef5f5;
+                    border: 1px solid #f0c8c8;
+                    border-radius: 8px;
+                    padding: 4% 5%;
+                    box-sizing: border-box;
+                    display: flex;
+                    flex-direction: column;
+                  "
+                >
+                  <div
+                    style="
+                      font-size: clamp(26px, 2.8vw, 32px);
+                      margin-bottom: 8px;
+                    "
+                  >
+                    🔑
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(15px, 1.7vw, 18px);
+                      font-weight: 700;
+                      color: #c0392b;
+                      margin-bottom: 6px;
+                    "
+                  >
+                    Não informe senhas
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(12px, 1.3vw, 14px);
+                      color: #5a6a7a;
+                      line-height: 1.6;
+                    "
+                  >
+                    Sites confiáveis nunca pedem senha por e-mail ou mensagem.
+                    Desconfie de pedidos urgentes
+                  </div>
+                </div>
+              </div>
+
+              <div
+                style="
+                  background: #fff8f0;
+                  border: 1px solid #ffd9b3;
+                  border-radius: 8px;
+                  padding: 3% 3.5%;
+                  box-sizing: border-box;
+                "
+              >
+                <div
+                  style="
+                    color: #664422;
+                    font-size: clamp(14px, 1.6vw, 17px);
+                    line-height: 1.6;
+                    text-align: center;
+                  "
+                >
+                  <strong style="color: #ff6600"
+                    >🧠 Regras de ouro da navegação segura:</strong
+                  >
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    gap: 8px;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    margin-top: 8px;
+                  "
+                >
+                  <span
+                    style="
+                      background: #ffffff;
+                      color: #c0392b;
+                      border: 1px solid #f0c8c8;
+                      border-radius: 20px;
+                      padding: 5px 14px;
+                      font-size: clamp(11px, 1.2vw, 13px);
+                      font-weight: 600;
+                    "
+                  >
+                    ⚠️ Desconfie de promessas milagrosas
+                  </span>
+                  <span
+                    style="
+                      background: #ffffff;
+                      color: #c0392b;
+                      border: 1px solid #f0c8c8;
+                      border-radius: 20px;
+                      padding: 5px 14px;
+                      font-size: clamp(11px, 1.2vw, 13px);
+                      font-weight: 600;
+                    "
+                  >
+                    ⚠️ Não baixe programas desconhecidos
+                  </span>
+                  <span
+                    style="
+                      background: #ffffff;
+                      color: #c0392b;
+                      border: 1px solid #f0c8c8;
+                      border-radius: 20px;
+                      padding: 5px 14px;
+                      font-size: clamp(11px, 1.2vw, 13px);
+                      font-weight: 600;
+                    "
+                  >
+                    ⚠️ Verifique o endereço do site
+                  </span>
+                </div>
+              </div>
+
+              <!-- ESPAÇO PARA IMAGEM -->
+              <div
+                style="
+                  background: #fafbfc;
+                  border: 2px dashed #d0dbe8;
+                  border-radius: 8px;
+                  padding: 2.5%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  gap: 12px;
+                  box-sizing: border-box;
+                  flex-shrink: 0;
+                "
+              >
+                <img
+                  src="../assets/sco_03_img_05.png"
+                  style="width: 100%"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== SLIDE 8 — FAVORITOS ===== -->
+          <div
+            style="
+              width: 100%;
+              aspect-ratio: 16/9;
+              background: #ffffff;
+              border-radius: 12px;
+              overflow: hidden;
+              display: flex;
+              flex-direction: column;
+              margin-bottom: 20px;
+              box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            "
+          >
+            <div
+              style="
+                background: #003f7f;
+                padding: 14px 28px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                flex-shrink: 0;
+                box-sizing: border-box;
+              "
+            >
+              <span
+                style="
+                  background: rgba(255, 255, 255, 0.15);
+                  border-radius: 4px;
+                  padding: 5px 12px;
+                  color: #ffffff;
+                  font-weight: 700;
+                  font-size: clamp(15px, 1.8vw, 19px);
+                "
+                >07</span
+              >
+              <span
+                style="
+                  color: #ffffff;
+                  font-size: clamp(18px, 2.1vw, 22px);
+                  font-weight: 600;
+                "
+              >
+                SALVAR PÁGINAS NOS FAVORITOS
+              </span>
+            </div>
+
+            <div
+              style="
+                flex: 1;
+                min-height: 0;
+                padding: 3% 4%;
+                display: flex;
+                flex-direction: column;
+                gap: 2.5%;
+                overflow-y: auto;
+                box-sizing: border-box;
+              "
+            >
+              <div
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5%"
+              >
+                <div
+                  style="
+                    background: #f0f6ff;
+                    border: 1px solid #c8ddf5;
+                    border-radius: 8px;
+                    padding: 4% 5%;
+                    box-sizing: border-box;
+                  "
+                >
+                  <div
+                    style="
+                      color: #003f7f;
+                      font-size: clamp(17px, 2vw, 22px);
+                      font-weight: 700;
+                      margin-bottom: 10px;
+                    "
+                  >
+                    ⭐ O que são favoritos?
+                  </div>
+                  <div
+                    style="
+                      color: #334155;
+                      font-size: clamp(14px, 1.6vw, 17px);
+                      line-height: 1.6;
+                    "
+                  >
+                    São <strong>atalhos</strong> para sites que você visita com
+                    frequência. Em vez de digitar o endereço toda vez, basta
+                    clicar no favorito para acessar o site
+                    <strong>instantaneamente</strong>.
+                  </div>
+                </div>
+                <div
+                  style="
+                    background: #fff8f0;
+                    border: 1px solid #ffd9b3;
+                    border-radius: 8px;
+                    padding: 4% 5%;
+                    box-sizing: border-box;
+                  "
+                >
+                  <div
+                    style="
+                      color: #ff6600;
+                      font-size: clamp(17px, 2vw, 22px);
+                      font-weight: 700;
+                      margin-bottom: 10px;
+                    "
+                  >
+                    📌 Como salvar um favorito?
+                  </div>
+                  <div
+                    style="
+                      color: #334155;
+                      font-size: clamp(14px, 1.6vw, 17px);
+                      line-height: 1.8;
+                    "
+                  >
+                    <strong>1.</strong> Acesse o site desejado<br />
+                    <strong>2.</strong> Clique na <strong>estrela ⭐</strong> na
+                    barra de endereços<br />
+                    <strong>3.</strong> Escolha o nome do favorito<br />
+                    <strong>4.</strong> Clique em <strong>Concluir</strong>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ESPAÇO PARA IMAGEM -->
+              <div
+                style="
+                  background: #fafbfc;
+                  border: 2px dashed #d0dbe8;
+                  border-radius: 8px;
+                  padding: 2.5%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  gap: 12px;
+                  box-sizing: border-box;
+                  flex-shrink: 0;
+                "
+              >
+                <img
+                  src="../assets/sco_03_img_06.png"
+                  style="width: 100%"
+                  alt=""
+                />
+              </div>
+
+              <div
+                style="
+                  background: #f8fafc;
+                  border: 1px solid #e2e8f0;
+                  border-radius: 8px;
+                  padding: 2.5% 3.5%;
+                  box-sizing: border-box;
+                "
+              >
+                <div
+                  style="
+                    color: #5a6a7a;
+                    font-size: clamp(13px, 1.4vw, 15px);
+                    line-height: 1.6;
+                  "
+                >
+                  <strong style="color: #003f7f">⌨️ Atalho do teclado:</strong>
+                  <strong>Ctrl + D</strong> salva a página atual nos favoritos
+                  instantaneamente.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== SLIDE 9 — ATIVIDADES PRÁTICAS ===== -->
+          <div
+            style="
+              width: 100%;
+              aspect-ratio: 16/9;
+              background: #ffffff;
+              border-radius: 12px;
+              overflow: hidden;
+              display: flex;
+              flex-direction: column;
+              margin-bottom: 20px;
+              box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            "
+          >
+            <div
+              style="
+                background: #003f7f;
+                padding: 14px 28px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                flex-shrink: 0;
+                box-sizing: border-box;
+              "
+            >
+              <span
+                style="
+                  background: rgba(255, 255, 255, 0.15);
+                  border-radius: 4px;
+                  padding: 5px 12px;
+                  color: #ffffff;
+                  font-weight: 700;
+                  font-size: clamp(15px, 1.8vw, 19px);
+                "
+                >08</span
+              >
+              <span
+                style="
+                  color: #ffffff;
+                  font-size: clamp(18px, 2.1vw, 22px);
+                  font-weight: 600;
+                "
+              >
+                ATIVIDADES PRÁTICAS
+              </span>
+            </div>
+
+            <div
+              style="
+                flex: 1;
+                min-height: 0;
+                padding: 3% 4%;
+                display: flex;
+                flex-direction: column;
+                gap: 2.5%;
+                overflow-y: auto;
+                box-sizing: border-box;
+              "
+            >
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: repeat(4, 1fr);
+                  gap: 2%;
+                "
+              >
+                <div
+                  style="
+                    background: #f0f6ff;
+                    border: 1px solid #c8ddf5;
+                    border-radius: 8px;
+                    padding: 5% 6%;
+                    display: flex;
+                    flex-direction: column;
+                    box-sizing: border-box;
+                  "
+                >
+                  <div
+                    style="
+                      background: #003f7f;
+                      color: #ffffff;
+                      border-radius: 50%;
+                      width: 36px;
+                      height: 36px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      font-weight: 700;
+                      font-size: clamp(14px, 1.5vw, 16px);
+                      margin-bottom: 10px;
+                    "
+                  >
+                    1
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(14px, 1.5vw, 16px);
+                      font-weight: 700;
+                      color: #003f7f;
+                      margin-bottom: 6px;
+                    "
+                  >
+                    Abrir Navegador
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(11px, 1.2vw, 13px);
+                      color: #5a6a7a;
+                      line-height: 1.6;
+                    "
+                  >
+                    Abra o Chrome e digite: <strong>www.google.com</strong>.
+                    Observe a página carregar.
+                  </div>
+                  <div
+                    style="
+                      margin-top: auto;
+                      padding-top: 8px;
+                      font-size: clamp(10px, 1.1vw, 12px);
+                      color: #003f7f;
+                      font-weight: 600;
+                    "
+                  >
+                    ⏱️ 20 min
+                  </div>
+                </div>
+                <div
+                  style="
+                    background: #f0f6ff;
+                    border: 1px solid #c8ddf5;
+                    border-radius: 8px;
+                    padding: 5% 6%;
+                    display: flex;
+                    flex-direction: column;
+                    box-sizing: border-box;
+                  "
+                >
+                  <div
+                    style="
+                      background: #003f7f;
+                      color: #ffffff;
+                      border-radius: 50%;
+                      width: 36px;
+                      height: 36px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      font-weight: 700;
+                      font-size: clamp(14px, 1.5vw, 16px);
+                      margin-bottom: 10px;
+                    "
+                  >
+                    2
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(14px, 1.5vw, 16px);
+                      font-weight: 700;
+                      color: #003f7f;
+                      margin-bottom: 6px;
+                    "
+                  >
+                    Pesquisar um Tema
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(11px, 1.2vw, 13px);
+                      color: #5a6a7a;
+                      line-height: 1.6;
+                    "
+                  >
+                    Pesquise: <strong>"previsão do tempo São José SC"</strong>.
+                    Veja os resultados e clique em um site confiável.
+                  </div>
+                  <div
+                    style="
+                      margin-top: auto;
+                      padding-top: 8px;
+                      font-size: clamp(10px, 1.1vw, 12px);
+                      color: #003f7f;
+                      font-weight: 600;
+                    "
+                  >
+                    ⏱️ 30 min
+                  </div>
+                </div>
+                <div
+                  style="
+                    background: #f0f8f0;
+                    border: 1px solid #b8d8b8;
+                    border-radius: 8px;
+                    padding: 5% 6%;
+                    display: flex;
+                    flex-direction: column;
+                    box-sizing: border-box;
+                  "
+                >
+                  <div
+                    style="
+                      background: #27ae60;
+                      color: #ffffff;
+                      border-radius: 50%;
+                      width: 36px;
+                      height: 36px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      font-weight: 700;
+                      font-size: clamp(14px, 1.5vw, 16px);
+                      margin-bottom: 10px;
+                    "
+                  >
+                    3
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(14px, 1.5vw, 16px);
+                      font-weight: 700;
+                      color: #27ae60;
+                      margin-bottom: 6px;
+                    "
+                  >
+                    Acessar Notícias
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(11px, 1.2vw, 13px);
+                      color: #5a6a7a;
+                      line-height: 1.6;
+                    "
+                  >
+                    Digite: <strong>www.g1.com.br</strong> ou
+                    <strong>www.uol.com.br</strong>. Navegue pelas manchetes e
+                    leia uma notícia.
+                  </div>
+                  <div
+                    style="
+                      margin-top: auto;
+                      padding-top: 8px;
+                      font-size: clamp(10px, 1.1vw, 12px);
+                      color: #27ae60;
+                      font-weight: 600;
+                    "
+                  >
+                    ⏱️ 30 min
+                  </div>
+                </div>
+                <div
+                  style="
+                    background: #fff8f0;
+                    border: 1px solid #ffd9b3;
+                    border-radius: 8px;
+                    padding: 5% 6%;
+                    display: flex;
+                    flex-direction: column;
+                    box-sizing: border-box;
+                  "
+                >
+                  <div
+                    style="
+                      background: #ff6600;
+                      color: #ffffff;
+                      border-radius: 50%;
+                      width: 36px;
+                      height: 36px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      font-weight: 700;
+                      font-size: clamp(14px, 1.5vw, 16px);
+                      margin-bottom: 10px;
+                    "
+                  >
+                    4
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(14px, 1.5vw, 16px);
+                      font-weight: 700;
+                      color: #ff6600;
+                      margin-bottom: 6px;
+                    "
+                  >
+                    Salvar Favorito
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(11px, 1.2vw, 13px);
+                      color: #5a6a7a;
+                      line-height: 1.6;
+                    "
+                  >
+                    Clique na <strong>estrela ⭐</strong> para salvar o site de
+                    notícias nos favoritos. Depois, acesse pelo menu de
+                    favoritos.
+                  </div>
+                  <div
+                    style="
+                      margin-top: auto;
+                      padding-top: 8px;
+                      font-size: clamp(10px, 1.1vw, 12px);
+                      color: #ff6600;
+                      font-weight: 600;
+                    "
+                  >
+                    ⏱️ 20 min
+                  </div>
+                </div>
+              </div>
+
+              <!-- ESPAÇO PARA IMAGEM -->
+              <div
+                style="
+                  background: #fafbfc;
+                  border: 2px dashed #d0dbe8;
+                  border-radius: 8px;
+                  padding: 2.5%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  gap: 12px;
+                  box-sizing: border-box;
+                  flex-shrink: 0;
+                "
+              >
+                <img
+                  src="../assets/sco_03_img_07.png"
+                  style="width: 100%"
+                  alt=""
+                />
+              </div>
+
+              <div
+                style="
+                  background: #f8fafc;
+                  border: 1px solid #e2e8f0;
+                  border-radius: 8px;
+                  padding: 2.5% 3.5%;
+                  box-sizing: border-box;
+                  flex-shrink: 0;
+                "
+              >
+                <div
+                  style="
+                    color: #5a6a7a;
+                    font-size: clamp(13px, 1.4vw, 15px);
+                    line-height: 1.7;
+                  "
+                >
+                  <strong style="color: #003f7f"
+                    >📌 Orientação ao professor:</strong
+                  >
+                  Acompanhe cada aluno individualmente. Verifique se todos
+                  conseguiram abrir o navegador, fazer a pesquisa e salvar o
+                  favorito. Reforce a importância de verificar o cadeado de
+                  segurança nos sites visitados.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== SLIDE 10 — RESUMO E ENCERRAMENTO ===== -->
+          <div
+            style="
+              width: 100%;
+              aspect-ratio: 16/9;
+              background: #ffffff;
+              border-radius: 12px;
+              overflow: hidden;
+              display: flex;
+              flex-direction: column;
+              margin-bottom: 20px;
+              box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            "
+          >
+            <div
+              style="
+                background: #003f7f;
+                padding: 14px 28px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                flex-shrink: 0;
+                box-sizing: border-box;
+              "
+            >
+              <span
+                style="
+                  background: rgba(255, 255, 255, 0.15);
+                  border-radius: 4px;
+                  padding: 5px 12px;
+                  color: #ffffff;
+                  font-weight: 700;
+                  font-size: clamp(15px, 1.8vw, 19px);
+                "
+                >09</span
+              >
+              <span
+                style="
+                  color: #ffffff;
+                  font-size: clamp(18px, 2.1vw, 22px);
+                  font-weight: 600;
+                "
+              >
+                RESUMO DO ENCONTRO
+              </span>
+            </div>
+
+            <div
+              style="
+                flex: 1;
+                min-height: 0;
+                padding: 3% 4%;
+                display: flex;
+                flex-direction: column;
+                gap: 2.5%;
+                overflow-y: auto;
+                box-sizing: border-box;
+              "
+            >
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: repeat(3, 1fr);
+                  gap: 2%;
+                "
+              >
+                <div
+                  style="
+                    background: #f0f6ff;
+                    border: 1px solid #c8ddf5;
+                    border-radius: 8px;
+                    padding: 4% 5%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    box-sizing: border-box;
+                  "
+                >
+                  <div
+                    style="
+                      font-size: clamp(22px, 2.5vw, 28px);
+                      margin-bottom: 8px;
+                    "
+                  >
+                    🌐
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(14px, 1.5vw, 16px);
+                      font-weight: 700;
+                      color: #003f7f;
+                      margin-bottom: 6px;
+                    "
+                  >
+                    Internet
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(12px, 1.3vw, 14px);
+                      color: #5a6a7a;
+                      line-height: 1.6;
+                    "
+                  >
+                    Rede mundial de computadores
+                  </div>
+                </div>
+                <div
+                  style="
+                    background: #f0f6ff;
+                    border: 1px solid #c8ddf5;
+                    border-radius: 8px;
+                    padding: 4% 5%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    box-sizing: border-box;
+                  "
+                >
+                  <div
+                    style="
+                      font-size: clamp(22px, 2.5vw, 28px);
+                      margin-bottom: 8px;
+                    "
+                  >
+                    🌐
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(14px, 1.5vw, 16px);
+                      font-weight: 700;
+                      color: #003f7f;
+                      margin-bottom: 6px;
+                    "
+                  >
+                    Navegadores
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(12px, 1.3vw, 14px);
+                      color: #5a6a7a;
+                      line-height: 1.6;
+                    "
+                  >
+                    Chrome, Edge, Firefox
+                  </div>
+                </div>
+                <div
+                  style="
+                    background: #f0f6ff;
+                    border: 1px solid #c8ddf5;
+                    border-radius: 8px;
+                    padding: 4% 5%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    box-sizing: border-box;
+                  "
+                >
+                  <div
+                    style="
+                      font-size: clamp(22px, 2.5vw, 28px);
+                      margin-bottom: 8px;
+                    "
+                  >
+                    🔍
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(14px, 1.5vw, 16px);
+                      font-weight: 700;
+                      color: #003f7f;
+                      margin-bottom: 6px;
+                    "
+                  >
+                    Sites de Busca
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(12px, 1.3vw, 14px);
+                      color: #5a6a7a;
+                      line-height: 1.6;
+                    "
+                  >
+                    Google, Bing
+                  </div>
+                </div>
+                <div
+                  style="
+                    background: #f0f6ff;
+                    border: 1px solid #c8ddf5;
+                    border-radius: 8px;
+                    padding: 4% 5%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    box-sizing: border-box;
+                  "
+                >
+                  <div
+                    style="
+                      font-size: clamp(22px, 2.5vw, 28px);
+                      margin-bottom: 8px;
+                    "
+                  >
+                    🔒
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(14px, 1.5vw, 16px);
+                      font-weight: 700;
+                      color: #003f7f;
+                      margin-bottom: 6px;
+                    "
+                  >
+                    Segurança
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(12px, 1.3vw, 14px);
+                      color: #5a6a7a;
+                      line-height: 1.6;
+                    "
+                  >
+                    Não clicar em links suspeitos
+                  </div>
+                </div>
+                <div
+                  style="
+                    background: #f0f6ff;
+                    border: 1px solid #c8ddf5;
+                    border-radius: 8px;
+                    padding: 4% 5%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    box-sizing: border-box;
+                  "
+                >
+                  <div
+                    style="
+                      font-size: clamp(22px, 2.5vw, 28px);
+                      margin-bottom: 8px;
+                    "
+                  >
+                    ⭐
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(14px, 1.5vw, 16px);
+                      font-weight: 700;
+                      color: #003f7f;
+                      margin-bottom: 6px;
+                    "
+                  >
+                    Favoritos
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(12px, 1.3vw, 14px);
+                      color: #5a6a7a;
+                      line-height: 1.6;
+                    "
+                  >
+                    Salvar sites para acesso rápido
+                  </div>
+                </div>
+                <div
+                  style="
+                    background: #fff8f0;
+                    border: 1px solid #ffd9b3;
+                    border-radius: 8px;
+                    padding: 4% 5%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    box-sizing: border-box;
+                  "
+                >
+                  <div
+                    style="
+                      font-size: clamp(22px, 2.5vw, 28px);
+                      margin-bottom: 8px;
+                    "
+                  >
+                    🔬
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(14px, 1.5vw, 16px);
+                      font-weight: 700;
+                      color: #ff6600;
+                      margin-bottom: 6px;
+                    "
+                  >
+                    Atividades Práticas
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(12px, 1.3vw, 14px);
+                      color: #5a6a7a;
+                      line-height: 1.6;
+                    "
+                  >
+                    Navegar, pesquisar, favoritar
+                  </div>
+                </div>
+              </div>
+
+              <div
+                style="
+                  background: #f8fafc;
+                  border: 1px solid #e2e8f0;
+                  border-radius: 8px;
+                  padding: 3% 3.5%;
+                  text-align: center;
+                  box-sizing: border-box;
+                  flex-shrink: 0;
+                "
+              >
+                <div
+                  style="
+                    font-size: clamp(18px, 2.1vw, 22px);
+                    font-weight: 700;
+                    margin-bottom: 8px;
+                    color: #003f7f;
+                  "
+                >
+                  ✅ Conclusão do Encontro 3
+                </div>
+                <div
+                  style="
+                    color: #5a6a7a;
+                    font-size: clamp(15px, 1.7vw, 18px);
+                    line-height: 1.7;
+                  "
+                >
+                  Neste encontro, você aprendeu a navegar na internet com
+                  segurança, usar sites de busca e salvar páginas nos favoritos.
+                  <strong>No próximo encontro</strong>, vamos explorar o
+                  <strong>Google Docs</strong> e como criar documentos de texto
+                  na nuvem.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </body>
+    </html>
+  </body>
+</html>

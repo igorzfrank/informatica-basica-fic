@@ -1,0 +1,2488 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Informática Básica - Aula 01</title>
+  </head>
+  <body style="margin: 0; padding: 0">
+    <!doctype html>
+    <html lang="pt-BR">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Encontro 1 - Introdução à Informática e ao Computador</title>
+      </head>
+      <body style="margin: 0; padding: 0">
+        <div
+          style="
+            font-family:
+              &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Arial,
+              sans-serif;
+            background: #f5f7fa;
+            padding: 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+            color: #2c3e50;
+            font-size: 19px;
+          "
+        >
+          <!-- ===== SLIDE 1 — CAPA ===== -->
+          <div
+            style="
+              width: 100%;
+              aspect-ratio: 16/9;
+              background: #ffffff;
+              border-radius: 12px;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              padding: 4%;
+              box-sizing: border-box;
+              position: relative;
+              overflow: hidden;
+              margin-bottom: 20px;
+              box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            "
+          >
+            <!-- Faixa superior -->
+            <div
+              style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 6px;
+                background: linear-gradient(90deg, #003f7f 0%, #ff6600 100%);
+              "
+            ></div>
+
+            <div style="text-align: center; max-width: 85%">
+              <div
+                style="
+                  display: inline-block;
+                  background: #e8f0fe;
+                  border-radius: 24px;
+                  padding: 8px 24px;
+                  margin-bottom: 24px;
+                "
+              >
+                <span
+                  style="
+                    color: #003f7f;
+                    font-size: clamp(15px, 1.8vw, 19px);
+                    font-weight: 600;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                  "
+                  >Informática Básica · SENAI São José/SC</span
+                >
+              </div>
+              <div
+                style="
+                  color: #1a202c;
+                  font-size: clamp(35px, 4.4vw, 52px);
+                  font-weight: 700;
+                  line-height: 1.2;
+                  margin-bottom: 14px;
+                "
+              >
+                Encontro 1<br />
+                <span style="color: #003f7f">Introdução à Informática</span
+                ><br />
+                <span style="color: #ff6600">e ao Computador</span>
+              </div>
+              <div
+                style="
+                  color: #5a6a7a;
+                  font-size: clamp(16px, 1.9vw, 20px);
+                  margin-bottom: 28px;
+                  line-height: 1.5;
+                "
+              >
+                Carga horária: 4 horas · Nível: Iniciante
+              </div>
+              <div
+                style="
+                  display: flex;
+                  gap: 12px;
+                  justify-content: center;
+                  flex-wrap: wrap;
+                "
+              >
+                <span
+                  style="
+                    background: #f0f4f8;
+                    color: #003f7f;
+                    border: 1px solid #d0dbe8;
+                    padding: 8px 20px;
+                    border-radius: 24px;
+                    font-size: clamp(14px, 1.5vw, 16px);
+                    font-weight: 600;
+                  "
+                  >Hardware</span
+                >
+                <span
+                  style="
+                    background: #f0f4f8;
+                    color: #003f7f;
+                    border: 1px solid #d0dbe8;
+                    padding: 8px 20px;
+                    border-radius: 24px;
+                    font-size: clamp(14px, 1.5vw, 16px);
+                    font-weight: 600;
+                  "
+                  >Software</span
+                >
+                <span
+                  style="
+                    background: #f0f4f8;
+                    color: #003f7f;
+                    border: 1px solid #d0dbe8;
+                    padding: 8px 20px;
+                    border-radius: 24px;
+                    font-size: clamp(14px, 1.5vw, 16px);
+                    font-weight: 600;
+                  "
+                  >Periféricos</span
+                >
+                <span
+                  style="
+                    background: #f0f4f8;
+                    color: #003f7f;
+                    border: 1px solid #d0dbe8;
+                    padding: 8px 20px;
+                    border-radius: 24px;
+                    font-size: clamp(14px, 1.5vw, 16px);
+                    font-weight: 600;
+                  "
+                  >Prática</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== SLIDE 2 — OBJETIVOS DE APRENDIZAGEM ===== -->
+          <div
+            style="
+              width: 100%;
+              aspect-ratio: 16/9;
+              background: #ffffff;
+              border-radius: 12px;
+              overflow: hidden;
+              display: flex;
+              flex-direction: column;
+              margin-bottom: 20px;
+              box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            "
+          >
+            <div
+              style="
+                background: #003f7f;
+                padding: 14px 28px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                flex-shrink: 0;
+                box-sizing: border-box;
+              "
+            >
+              <span
+                style="
+                  background: rgba(255, 255, 255, 0.15);
+                  border-radius: 4px;
+                  padding: 5px 12px;
+                  color: #ffffff;
+                  font-weight: 700;
+                  font-size: clamp(15px, 1.8vw, 19px);
+                "
+                >01</span
+              >
+              <span
+                style="
+                  color: #ffffff;
+                  font-size: clamp(18px, 2.1vw, 22px);
+                  font-weight: 600;
+                "
+              >
+                OBJETIVOS DE APRENDIZAGEM
+              </span>
+            </div>
+
+            <div
+              style="
+                flex: 1;
+                min-height: 0;
+                padding: 3% 4%;
+                display: flex;
+                flex-direction: column;
+                gap: 2%;
+                overflow-y: auto;
+                box-sizing: border-box;
+              "
+            >
+              <div
+                style="
+                  background: #f8fafc;
+                  border: 1px solid #e2e8f0;
+                  border-left: 4px solid #003f7f;
+                  border-radius: 6px;
+                  padding: 2.5% 3.5%;
+                  box-sizing: border-box;
+                "
+              >
+                <div
+                  style="
+                    color: #003f7f;
+                    font-size: clamp(14px, 1.5vw, 16px);
+                    font-weight: 700;
+                    margin-bottom: 4px;
+                  "
+                >
+                  🎯 Ao final deste encontro, você será capaz de:
+                </div>
+              </div>
+
+              <div
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 2%"
+              >
+                <div
+                  style="
+                    background: #ffffff;
+                    border: 1px solid #e2e8f0;
+                    border-radius: 6px;
+                    padding: 2.5% 3%;
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 10px;
+                    box-sizing: border-box;
+                  "
+                >
+                  <span
+                    style="
+                      background: #003f7f;
+                      color: #ffffff;
+                      border-radius: 50%;
+                      width: 28px;
+                      height: 28px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      font-size: clamp(12px, 1.3vw, 14px);
+                      font-weight: 700;
+                      flex-shrink: 0;
+                    "
+                    >1</span
+                  >
+                  <div
+                    style="
+                      font-size: clamp(13px, 1.4vw, 15px);
+                      color: #334155;
+                      line-height: 1.5;
+                    "
+                  >
+                    <strong>Definir</strong> o conceito de informática e
+                    reconhecer sua presença no cotidiano
+                  </div>
+                </div>
+                <div
+                  style="
+                    background: #ffffff;
+                    border: 1px solid #e2e8f0;
+                    border-radius: 6px;
+                    padding: 2.5% 3%;
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 10px;
+                    box-sizing: border-box;
+                  "
+                >
+                  <span
+                    style="
+                      background: #003f7f;
+                      color: #ffffff;
+                      border-radius: 50%;
+                      width: 28px;
+                      height: 28px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      font-size: clamp(12px, 1.3vw, 14px);
+                      font-weight: 700;
+                      flex-shrink: 0;
+                    "
+                    >2</span
+                  >
+                  <div
+                    style="
+                      font-size: clamp(13px, 1.4vw, 15px);
+                      color: #334155;
+                      line-height: 1.5;
+                    "
+                  >
+                    <strong>Diferenciar</strong> hardware e software com
+                    exemplos concretos do laboratório
+                  </div>
+                </div>
+                <div
+                  style="
+                    background: #ffffff;
+                    border: 1px solid #e2e8f0;
+                    border-radius: 6px;
+                    padding: 2.5% 3%;
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 10px;
+                    box-sizing: border-box;
+                  "
+                >
+                  <span
+                    style="
+                      background: #003f7f;
+                      color: #ffffff;
+                      border-radius: 50%;
+                      width: 28px;
+                      height: 28px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      font-size: clamp(12px, 1.3vw, 14px);
+                      font-weight: 700;
+                      flex-shrink: 0;
+                    "
+                    >3</span
+                  >
+                  <div
+                    style="
+                      font-size: clamp(13px, 1.4vw, 15px);
+                      color: #334155;
+                      line-height: 1.5;
+                    "
+                  >
+                    <strong>Identificar</strong> os componentes físicos do
+                    computador e suas funções
+                  </div>
+                </div>
+                <div
+                  style="
+                    background: #ffffff;
+                    border: 1px solid #e2e8f0;
+                    border-radius: 6px;
+                    padding: 2.5% 3%;
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 10px;
+                    box-sizing: border-box;
+                  "
+                >
+                  <span
+                    style="
+                      background: #003f7f;
+                      color: #ffffff;
+                      border-radius: 50%;
+                      width: 28px;
+                      height: 28px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      font-size: clamp(12px, 1.3vw, 14px);
+                      font-weight: 700;
+                      flex-shrink: 0;
+                    "
+                    >4</span
+                  >
+                  <div
+                    style="
+                      font-size: clamp(13px, 1.4vw, 15px);
+                      color: #334155;
+                      line-height: 1.5;
+                    "
+                  >
+                    <strong>Classificar</strong> periféricos como entrada, saída
+                    ou mistos
+                  </div>
+                </div>
+                <div
+                  style="
+                    background: #ffffff;
+                    border: 1px solid #e2e8f0;
+                    border-radius: 6px;
+                    padding: 2.5% 3%;
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 10px;
+                    box-sizing: border-box;
+                  "
+                >
+                  <span
+                    style="
+                      background: #003f7f;
+                      color: #ffffff;
+                      border-radius: 50%;
+                      width: 28px;
+                      height: 28px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      font-size: clamp(12px, 1.3vw, 14px);
+                      font-weight: 700;
+                      flex-shrink: 0;
+                    "
+                    >5</span
+                  >
+                  <div
+                    style="
+                      font-size: clamp(13px, 1.4vw, 15px);
+                      color: #334155;
+                      line-height: 1.5;
+                    "
+                  >
+                    <strong>Executar</strong> os procedimentos corretos de ligar
+                    e desligar com segurança
+                  </div>
+                </div>
+                <div
+                  style="
+                    background: #ffffff;
+                    border: 1px solid #e2e8f0;
+                    border-radius: 6px;
+                    padding: 2.5% 3%;
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 10px;
+                    box-sizing: border-box;
+                  "
+                >
+                  <span
+                    style="
+                      background: #ff6600;
+                      color: #ffffff;
+                      border-radius: 50%;
+                      width: 28px;
+                      height: 28px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      font-size: clamp(12px, 1.3vw, 14px);
+                      font-weight: 700;
+                      flex-shrink: 0;
+                    "
+                    >6</span
+                  >
+                  <div
+                    style="
+                      font-size: clamp(13px, 1.4vw, 15px);
+                      color: #334155;
+                      line-height: 1.5;
+                    "
+                  >
+                    <strong>Aplicar na prática:</strong> manusear mouse e
+                    teclado, abrir e fechar janelas
+                  </div>
+                </div>
+              </div>
+
+              <div
+                style="
+                  background: #fff8f0;
+                  border: 1px solid #ffd9b3;
+                  border-radius: 6px;
+                  padding: 2% 3%;
+                  font-size: clamp(13px, 1.4vw, 15px);
+                  color: #664422;
+                  box-sizing: border-box;
+                  flex-shrink: 0;
+                "
+              >
+                <strong>📌 Metodologia:</strong> Aula expositiva dialogada (1h)
+                + demonstração prática no laboratório (1h) + atividades guiadas
+                (2h)
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== SLIDE 3 — O QUE É INFORMÁTICA (DEFINIÇÃO) ===== -->
+          <div
+            style="
+              width: 100%;
+              aspect-ratio: 16/9;
+              background: #ffffff;
+              border-radius: 12px;
+              overflow: hidden;
+              display: flex;
+              flex-direction: column;
+              margin-bottom: 20px;
+              box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            "
+          >
+            <div
+              style="
+                background: #003f7f;
+                padding: 14px 28px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                flex-shrink: 0;
+                box-sizing: border-box;
+              "
+            >
+              <span
+                style="
+                  background: rgba(255, 255, 255, 0.15);
+                  border-radius: 4px;
+                  padding: 5px 12px;
+                  color: #ffffff;
+                  font-weight: 700;
+                  font-size: clamp(15px, 1.8vw, 19px);
+                "
+                >02</span
+              >
+              <span
+                style="
+                  color: #ffffff;
+                  font-size: clamp(18px, 2.1vw, 22px);
+                  font-weight: 600;
+                "
+              >
+                O QUE É INFORMÁTICA? — DEFINIÇÃO
+              </span>
+            </div>
+
+            <div
+              style="
+                flex: 1;
+                min-height: 0;
+                padding: 3% 4%;
+                display: flex;
+                flex-direction: column;
+                gap: 2.5%;
+                overflow-y: auto;
+                box-sizing: border-box;
+              "
+            >
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: 1.2fr 0.8fr;
+                  gap: 2.5%;
+                "
+              >
+                <div style="display: flex; flex-direction: column; gap: 2.5%">
+                  <div
+                    style="
+                      background: #f0f6ff;
+                      border: 1px solid #c8ddf5;
+                      border-radius: 8px;
+                      padding: 3.5% 4%;
+                      box-sizing: border-box;
+                    "
+                  >
+                    <div
+                      style="
+                        color: #003f7f;
+                        font-size: clamp(18px, 2.2vw, 24px);
+                        font-weight: 700;
+                        margin-bottom: 12px;
+                      "
+                    >
+                      Informação + Automática = Informática
+                    </div>
+                    <div
+                      style="
+                        color: #334155;
+                        font-size: clamp(15px, 1.8vw, 19px);
+                        line-height: 1.7;
+                      "
+                    >
+                      É a
+                      <strong
+                        >ciência que estuda o tratamento automático da
+                        informação</strong
+                      >
+                      por meio de computadores e sistemas digitais. Envolve
+                      <strong>armazenar</strong>, <strong>processar</strong> e
+                      <strong>transmitir</strong> dados de forma rápida e
+                      precisa.
+                    </div>
+                  </div>
+
+                  <div
+                    style="
+                      background: #fff8f0;
+                      border: 1px solid #ffd9b3;
+                      border-radius: 8px;
+                      padding: 3.5% 4%;
+                      box-sizing: border-box;
+                    "
+                  >
+                    <div
+                      style="
+                        color: #ff6600;
+                        font-size: clamp(18px, 2.2vw, 24px);
+                        font-weight: 700;
+                        margin-bottom: 12px;
+                      "
+                    >
+                      💡 Por que é importante?
+                    </div>
+                    <div
+                      style="
+                        color: #334155;
+                        font-size: clamp(15px, 1.8vw, 19px);
+                        line-height: 1.7;
+                      "
+                    >
+                      A informática está presente em
+                      <strong>todas as áreas</strong>: saúde, educação,
+                      comércio, indústria e na vida pessoal. É uma
+                      <strong>competência essencial</strong> para o mercado de
+                      trabalho.
+                    </div>
+                  </div>
+
+                  <div
+                    style="
+                      background: #f8fafc;
+                      border: 1px solid #e2e8f0;
+                      border-radius: 8px;
+                      padding: 3% 3.5%;
+                      box-sizing: border-box;
+                    "
+                  >
+                    <div
+                      style="
+                        color: #334155;
+                        font-size: clamp(15px, 1.8vw, 19px);
+                        line-height: 1.7;
+                      "
+                    >
+                      <strong style="color: #003f7f"
+                        >📝 Exemplo prático:</strong
+                      >
+                      Ao fazer um PIX pelo celular, a informática processa a
+                      transação, comunica os bancos e registra a operação — tudo
+                      em segundos.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ESPAÇO PARA IMAGEM -->
+                <div
+                  style="
+                    background: #fafbfc;
+                    border: 2px dashed #d0dbe8;
+                    border-radius: 8px;
+                    padding: 4%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    box-sizing: border-box;
+                  "
+                >
+                  <img
+                    style="width: 90%"
+                    src="../assets/sco_01_img_01.png"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== SLIDE 4 — APLICAÇÕES DA INFORMÁTICA ===== -->
+          <div
+            style="
+              width: 100%;
+              aspect-ratio: 16/9;
+              background: #ffffff;
+              border-radius: 12px;
+              overflow: hidden;
+              display: flex;
+              flex-direction: column;
+              margin-bottom: 20px;
+              box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            "
+          >
+            <div
+              style="
+                background: #003f7f;
+                padding: 14px 28px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                flex-shrink: 0;
+                box-sizing: border-box;
+              "
+            >
+              <span
+                style="
+                  background: rgba(255, 255, 255, 0.15);
+                  border-radius: 4px;
+                  padding: 5px 12px;
+                  color: #ffffff;
+                  font-weight: 700;
+                  font-size: clamp(15px, 1.8vw, 19px);
+                "
+                >03</span
+              >
+              <span
+                style="
+                  color: #ffffff;
+                  font-size: clamp(18px, 2.1vw, 22px);
+                  font-weight: 600;
+                "
+              >
+                APLICAÇÕES DA INFORMÁTICA NO COTIDIANO
+              </span>
+            </div>
+
+            <div
+              style="
+                flex: 1;
+                min-height: 0;
+                padding: 3% 4%;
+                display: flex;
+                flex-direction: column;
+                gap: 2.5%;
+                overflow-y: auto;
+                box-sizing: border-box;
+              "
+            >
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: repeat(3, 1fr);
+                  gap: 2%;
+                "
+              >
+                <div
+                  style="
+                    background: #ffffff;
+                    border: 1px solid #e2e8f0;
+                    border-top: 4px solid #003f7f;
+                    border-radius: 8px;
+                    padding: 4% 3%;
+                    text-align: center;
+                    box-sizing: border-box;
+                  "
+                >
+                  <div
+                    style="
+                      font-size: clamp(28px, 3vw, 36px);
+                      margin-bottom: 6px;
+                    "
+                  >
+                    🏦
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(14px, 1.5vw, 16px);
+                      font-weight: 700;
+                      color: #003f7f;
+                      margin-bottom: 4px;
+                    "
+                  >
+                    Bancos e Finanças
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(12px, 1.3vw, 14px);
+                      color: #5a6a7a;
+                      line-height: 1.5;
+                    "
+                  >
+                    PIX, caixas eletrônicos, internet banking, investimentos
+                  </div>
+                </div>
+                <div
+                  style="
+                    background: #ffffff;
+                    border: 1px solid #e2e8f0;
+                    border-top: 4px solid #003f7f;
+                    border-radius: 8px;
+                    padding: 4% 3%;
+                    text-align: center;
+                    box-sizing: border-box;
+                  "
+                >
+                  <div
+                    style="
+                      font-size: clamp(28px, 3vw, 36px);
+                      margin-bottom: 6px;
+                    "
+                  >
+                    🏥
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(14px, 1.5vw, 16px);
+                      font-weight: 700;
+                      color: #003f7f;
+                      margin-bottom: 4px;
+                    "
+                  >
+                    Saúde
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(12px, 1.3vw, 14px);
+                      color: #5a6a7a;
+                      line-height: 1.5;
+                    "
+                  >
+                    Prontuários eletrônicos, exames digitais, telemedicina
+                  </div>
+                </div>
+                <div
+                  style="
+                    background: #ffffff;
+                    border: 1px solid #e2e8f0;
+                    border-top: 4px solid #003f7f;
+                    border-radius: 8px;
+                    padding: 4% 3%;
+                    text-align: center;
+                    box-sizing: border-box;
+                  "
+                >
+                  <div
+                    style="
+                      font-size: clamp(28px, 3vw, 36px);
+                      margin-bottom: 6px;
+                    "
+                  >
+                    🏫
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(14px, 1.5vw, 16px);
+                      font-weight: 700;
+                      color: #003f7f;
+                      margin-bottom: 4px;
+                    "
+                  >
+                    Educação
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(12px, 1.3vw, 14px);
+                      color: #5a6a7a;
+                      line-height: 1.5;
+                    "
+                  >
+                    EAD, pesquisas online, bibliotecas digitais, Google
+                    Classroom
+                  </div>
+                </div>
+                <div
+                  style="
+                    background: #ffffff;
+                    border: 1px solid #e2e8f0;
+                    border-top: 4px solid #ff6600;
+                    border-radius: 8px;
+                    padding: 4% 3%;
+                    text-align: center;
+                    box-sizing: border-box;
+                  "
+                >
+                  <div
+                    style="
+                      font-size: clamp(28px, 3vw, 36px);
+                      margin-bottom: 6px;
+                    "
+                  >
+                    🏭
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(14px, 1.5vw, 16px);
+                      font-weight: 700;
+                      color: #ff6600;
+                      margin-bottom: 4px;
+                    "
+                  >
+                    Indústria
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(12px, 1.3vw, 14px);
+                      color: #5a6a7a;
+                      line-height: 1.5;
+                    "
+                  >
+                    Automação, robótica, controle de produção, máquinas CNC
+                  </div>
+                </div>
+                <div
+                  style="
+                    background: #ffffff;
+                    border: 1px solid #e2e8f0;
+                    border-top: 4px solid #ff6600;
+                    border-radius: 8px;
+                    padding: 4% 3%;
+                    text-align: center;
+                    box-sizing: border-box;
+                  "
+                >
+                  <div
+                    style="
+                      font-size: clamp(28px, 3vw, 36px);
+                      margin-bottom: 6px;
+                    "
+                  >
+                    🛒
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(14px, 1.5vw, 16px);
+                      font-weight: 700;
+                      color: #ff6600;
+                      margin-bottom: 4px;
+                    "
+                  >
+                    Comércio
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(12px, 1.3vw, 14px);
+                      color: #5a6a7a;
+                      line-height: 1.5;
+                    "
+                  >
+                    E-commerce, controle de estoque, pagamentos digitais
+                  </div>
+                </div>
+                <div
+                  style="
+                    background: #ffffff;
+                    border: 1px solid #e2e8f0;
+                    border-top: 4px solid #ff6600;
+                    border-radius: 8px;
+                    padding: 4% 3%;
+                    text-align: center;
+                    box-sizing: border-box;
+                  "
+                >
+                  <div
+                    style="
+                      font-size: clamp(28px, 3vw, 36px);
+                      margin-bottom: 6px;
+                    "
+                  >
+                    📱
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(14px, 1.5vw, 16px);
+                      font-weight: 700;
+                      color: #ff6600;
+                      margin-bottom: 4px;
+                    "
+                  >
+                    Comunicação
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(12px, 1.3vw, 14px);
+                      color: #5a6a7a;
+                      line-height: 1.5;
+                    "
+                  >
+                    E-mail, WhatsApp, redes sociais, videochamadas
+                  </div>
+                </div>
+              </div>
+
+              <!-- ESPAÇO PARA IMAGEM -->
+              <div
+                style="
+                  background: #fafbfc;
+                  border: 2px dashed #d0dbe8;
+                  border-radius: 8px;
+                  padding: 2.5%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  gap: 12px;
+                  box-sizing: border-box;
+                  flex-shrink: 0;
+                "
+              >
+                <img
+                  src="../assets/sco_01_img_02.png"
+                  style="width: 90%"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== SLIDE 5 — HARDWARE VS SOFTWARE ===== -->
+          <div
+            style="
+              width: 100%;
+              aspect-ratio: 16/9;
+              background: #ffffff;
+              border-radius: 12px;
+              overflow: hidden;
+              display: flex;
+              flex-direction: column;
+              margin-bottom: 20px;
+              box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            "
+          >
+            <div
+              style="
+                background: #003f7f;
+                padding: 14px 28px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                flex-shrink: 0;
+                box-sizing: border-box;
+              "
+            >
+              <span
+                style="
+                  background: rgba(255, 255, 255, 0.15);
+                  border-radius: 4px;
+                  padding: 5px 12px;
+                  color: #ffffff;
+                  font-weight: 700;
+                  font-size: clamp(15px, 1.8vw, 19px);
+                "
+                >04</span
+              >
+              <span
+                style="
+                  color: #ffffff;
+                  font-size: clamp(18px, 2.1vw, 22px);
+                  font-weight: 600;
+                "
+              >
+                HARDWARE vs SOFTWARE
+              </span>
+            </div>
+
+            <div
+              style="
+                flex: 1;
+                min-height: 0;
+                padding: 3% 4%;
+                display: flex;
+                flex-direction: column;
+                gap: 2.5%;
+                overflow-y: auto;
+                box-sizing: border-box;
+              "
+            >
+              <div
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5%"
+              >
+                <div
+                  style="
+                    background: #fef5f5;
+                    border: 1px solid #f0c8c8;
+                    border-radius: 8px;
+                    padding: 4% 5%;
+                    box-sizing: border-box;
+                  "
+                >
+                  <div
+                    style="
+                      color: #c0392b;
+                      font-size: clamp(18px, 2.2vw, 24px);
+                      font-weight: 700;
+                      margin-bottom: 10px;
+                    "
+                  >
+                    🔧 Hardware
+                  </div>
+                  <div
+                    style="
+                      color: #334155;
+                      font-size: clamp(15px, 1.8vw, 19px);
+                      line-height: 1.7;
+                      margin-bottom: 10px;
+                    "
+                  >
+                    É a <strong>parte física</strong> do computador — tudo que
+                    pode ser <strong>tocado e visto</strong>.
+                  </div>
+                  <div
+                    style="
+                      background: #ffffff;
+                      border: 1px solid #f0c8c8;
+                      border-radius: 6px;
+                      padding: 3% 4%;
+                      font-size: clamp(13px, 1.4vw, 15px);
+                      color: #5a6a7a;
+                      box-sizing: border-box;
+                      line-height: 1.6;
+                    "
+                  >
+                    <strong>Exemplos:</strong><br />
+                    Monitor, teclado, mouse, gabinete, placa-mãe, processador,
+                    memória RAM, HD/SSD, fonte
+                  </div>
+                </div>
+                <div
+                  style="
+                    background: #f0f8f0;
+                    border: 1px solid #b8d8b8;
+                    border-radius: 8px;
+                    padding: 4% 5%;
+                    box-sizing: border-box;
+                  "
+                >
+                  <div
+                    style="
+                      color: #27ae60;
+                      font-size: clamp(18px, 2.2vw, 24px);
+                      font-weight: 700;
+                      margin-bottom: 10px;
+                    "
+                  >
+                    💾 Software
+                  </div>
+                  <div
+                    style="
+                      color: #334155;
+                      font-size: clamp(15px, 1.8vw, 19px);
+                      line-height: 1.7;
+                      margin-bottom: 10px;
+                    "
+                  >
+                    É a <strong>parte lógica</strong> — os
+                    <strong>programas e instruções</strong> que fazem o hardware
+                    funcionar.
+                  </div>
+                  <div
+                    style="
+                      background: #ffffff;
+                      border: 1px solid #b8d8b8;
+                      border-radius: 6px;
+                      padding: 3% 4%;
+                      font-size: clamp(13px, 1.4vw, 15px);
+                      color: #5a6a7a;
+                      box-sizing: border-box;
+                      line-height: 1.6;
+                    "
+                  >
+                    <strong>Exemplos:</strong><br />
+                    Windows, Google Chrome, Google Docs, WhatsApp, jogos
+                  </div>
+                </div>
+              </div>
+
+              <!-- ESPAÇO PARA IMAGEM -->
+              <div
+                style="
+                  background: #fafbfc;
+                  border: 2px dashed #d0dbe8;
+                  border-radius: 8px;
+                  padding: 2.5%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  gap: 12px;
+                  box-sizing: border-box;
+                  flex-shrink: 0;
+                "
+              >
+                <img
+                  src="../assets/sco_01_img_03.png"
+                  style="width: 90%"
+                  alt=""
+                />
+              </div>
+
+              <div
+                style="
+                  background: #f8fafc;
+                  border: 1px solid #e2e8f0;
+                  border-radius: 8px;
+                  padding: 3% 3.5%;
+                  box-sizing: border-box;
+                "
+              >
+                <div
+                  style="
+                    color: #5a6a7a;
+                    font-size: clamp(14px, 1.6vw, 17px);
+                    margin-bottom: 8px;
+                    text-align: center;
+                  "
+                >
+                  <strong>Analogia:</strong> Hardware = corpo humano (ossos,
+                  órgãos) · Software = mente (pensamentos, instruções)
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    gap: 10px;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                  "
+                >
+                  <span
+                    style="
+                      background: #fef5f5;
+                      color: #c0392b;
+                      border: 1px solid #f0c8c8;
+                      border-radius: 24px;
+                      padding: 6px 16px;
+                      font-size: clamp(12px, 1.4vw, 15px);
+                      font-weight: 600;
+                    "
+                  >
+                    🖥️ Monitor — Hardware
+                  </span>
+                  <span
+                    style="
+                      background: #f0f8f0;
+                      color: #27ae60;
+                      border: 1px solid #b8d8b8;
+                      border-radius: 24px;
+                      padding: 6px 16px;
+                      font-size: clamp(12px, 1.4vw, 15px);
+                      font-weight: 600;
+                    "
+                  >
+                    🪟 Windows — Software
+                  </span>
+                  <span
+                    style="
+                      background: #fef5f5;
+                      color: #c0392b;
+                      border: 1px solid #f0c8c8;
+                      border-radius: 24px;
+                      padding: 6px 16px;
+                      font-size: clamp(12px, 1.4vw, 15px);
+                      font-weight: 600;
+                    "
+                  >
+                    ⌨️ Teclado — Hardware
+                  </span>
+                  <span
+                    style="
+                      background: #f0f8f0;
+                      color: #27ae60;
+                      border: 1px solid #b8d8b8;
+                      border-radius: 24px;
+                      padding: 6px 16px;
+                      font-size: clamp(12px, 1.4vw, 15px);
+                      font-weight: 600;
+                    "
+                  >
+                    🌐 Chrome — Software
+                  </span>
+                </div>
+              </div>
+
+              <div
+                style="
+                  background: #fff8f0;
+                  border: 1px solid #ffd9b3;
+                  border-radius: 8px;
+                  padding: 2.5% 3.5%;
+                  box-sizing: border-box;
+                "
+              >
+                <div
+                  style="
+                    color: #664422;
+                    font-size: clamp(14px, 1.6vw, 17px);
+                    line-height: 1.6;
+                  "
+                >
+                  <strong style="color: #ff6600">🧠 Regra prática:</strong> Se
+                  você pode <strong>tocar</strong>, é hardware. Se você pode
+                  <strong>usar</strong> mas não tocar, é software.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== SLIDE 6 — COMPONENTES DO COMPUTADOR ===== -->
+          <div
+            style="
+              width: 100%;
+              aspect-ratio: 16/9;
+              background: #ffffff;
+              border-radius: 12px;
+              overflow: hidden;
+              display: flex;
+              flex-direction: column;
+              margin-bottom: 20px;
+              box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            "
+          >
+            <div
+              style="
+                background: #003f7f;
+                padding: 14px 28px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                flex-shrink: 0;
+                box-sizing: border-box;
+              "
+            >
+              <span
+                style="
+                  background: rgba(255, 255, 255, 0.15);
+                  border-radius: 4px;
+                  padding: 5px 12px;
+                  color: #ffffff;
+                  font-weight: 700;
+                  font-size: clamp(15px, 1.8vw, 19px);
+                "
+                >05</span
+              >
+              <span
+                style="
+                  color: #ffffff;
+                  font-size: clamp(18px, 2.1vw, 22px);
+                  font-weight: 600;
+                "
+              >
+                COMPONENTES DO COMPUTADOR
+              </span>
+            </div>
+
+            <div
+              style="
+                flex: 1;
+                min-height: 0;
+                padding: 3% 4%;
+                display: flex;
+                flex-direction: column;
+                gap: 2.5%;
+                overflow-y: auto;
+                box-sizing: border-box;
+              "
+            >
+              <div
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5%"
+              >
+                <!-- Coluna esquerda: componentes -->
+                <div style="display: flex; flex-direction: column; gap: 2.5%">
+                  <div
+                    style="
+                      display: grid;
+                      grid-template-columns: 1fr 1fr;
+                      gap: 2.5%;
+                    "
+                  >
+                    <div
+                      style="
+                        background: #f0f6ff;
+                        border: 1px solid #c8ddf5;
+                        border-radius: 8px;
+                        padding: 4% 5%;
+                        box-sizing: border-box;
+                      "
+                    >
+                      <div
+                        style="
+                          font-size: clamp(24px, 2.5vw, 30px);
+                          margin-bottom: 6px;
+                        "
+                      >
+                        🔲
+                      </div>
+                      <div
+                        style="
+                          font-size: clamp(14px, 1.5vw, 17px);
+                          font-weight: 700;
+                          color: #003f7f;
+                          margin-bottom: 4px;
+                        "
+                      >
+                        Gabinete
+                      </div>
+                      <div
+                        style="
+                          font-size: clamp(11px, 1.2vw, 13px);
+                          color: #5a6a7a;
+                          line-height: 1.5;
+                        "
+                      >
+                        Abriga placa-mãe, processador, memória, HD/SSD e fonte
+                      </div>
+                    </div>
+                    <div
+                      style="
+                        background: #f0f6ff;
+                        border: 1px solid #c8ddf5;
+                        border-radius: 8px;
+                        padding: 4% 5%;
+                        box-sizing: border-box;
+                      "
+                    >
+                      <div
+                        style="
+                          font-size: clamp(24px, 2.5vw, 30px);
+                          margin-bottom: 6px;
+                        "
+                      >
+                        🖥️
+                      </div>
+                      <div
+                        style="
+                          font-size: clamp(14px, 1.5vw, 17px);
+                          font-weight: 700;
+                          color: #003f7f;
+                          margin-bottom: 4px;
+                        "
+                      >
+                        Monitor
+                      </div>
+                      <div
+                        style="
+                          font-size: clamp(11px, 1.2vw, 13px);
+                          color: #5a6a7a;
+                          line-height: 1.5;
+                        "
+                      >
+                        Exibe imagens. Conecta via VGA, HDMI ou DisplayPort
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    style="
+                      display: grid;
+                      grid-template-columns: 1fr 1fr;
+                      gap: 2.5%;
+                    "
+                  >
+                    <div
+                      style="
+                        background: #f0f6ff;
+                        border: 1px solid #c8ddf5;
+                        border-radius: 8px;
+                        padding: 4% 5%;
+                        box-sizing: border-box;
+                      "
+                    >
+                      <div
+                        style="
+                          font-size: clamp(24px, 2.5vw, 30px);
+                          margin-bottom: 6px;
+                        "
+                      >
+                        ⌨️
+                      </div>
+                      <div
+                        style="
+                          font-size: clamp(14px, 1.5vw, 17px);
+                          font-weight: 700;
+                          color: #003f7f;
+                          margin-bottom: 4px;
+                        "
+                      >
+                        Teclado
+                      </div>
+                      <div
+                        style="
+                          font-size: clamp(11px, 1.2vw, 13px);
+                          color: #5a6a7a;
+                          line-height: 1.5;
+                        "
+                      >
+                        Digita letras, números e comandos. USB ou Bluetooth
+                      </div>
+                    </div>
+                    <div
+                      style="
+                        background: #f0f6ff;
+                        border: 1px solid #c8ddf5;
+                        border-radius: 8px;
+                        padding: 4% 5%;
+                        box-sizing: border-box;
+                      "
+                    >
+                      <div
+                        style="
+                          font-size: clamp(24px, 2.5vw, 30px);
+                          margin-bottom: 6px;
+                        "
+                      >
+                        🖱️
+                      </div>
+                      <div
+                        style="
+                          font-size: clamp(14px, 1.5vw, 17px);
+                          font-weight: 700;
+                          color: #003f7f;
+                          margin-bottom: 4px;
+                        "
+                      >
+                        Mouse
+                      </div>
+                      <div
+                        style="
+                          font-size: clamp(11px, 1.2vw, 13px);
+                          color: #5a6a7a;
+                          line-height: 1.5;
+                        "
+                      >
+                        Move o cursor. Esquerdo: abrir. Direito: menu. Scroll:
+                        rolar
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    style="
+                      display: grid;
+                      grid-template-columns: 1fr 1fr;
+                      gap: 2.5%;
+                    "
+                  >
+                    <div
+                      style="
+                        background: #f0f6ff;
+                        border: 1px solid #c8ddf5;
+                        border-radius: 8px;
+                        padding: 4% 5%;
+                        box-sizing: border-box;
+                      "
+                    >
+                      <div
+                        style="
+                          font-size: clamp(24px, 2.5vw, 30px);
+                          margin-bottom: 6px;
+                        "
+                      >
+                        🔌
+                      </div>
+                      <div
+                        style="
+                          font-size: clamp(14px, 1.5vw, 17px);
+                          font-weight: 700;
+                          color: #003f7f;
+                          margin-bottom: 4px;
+                        "
+                      >
+                        Estabilizador
+                      </div>
+                      <div
+                        style="
+                          font-size: clamp(11px, 1.2vw, 13px);
+                          color: #5a6a7a;
+                          line-height: 1.5;
+                        "
+                      >
+                        Mantém tensão estável. Protege contra picos e quedas
+                      </div>
+                    </div>
+                    <div
+                      style="
+                        background: #fff8f0;
+                        border: 1px solid #ffd9b3;
+                        border-radius: 8px;
+                        padding: 4% 5%;
+                        box-sizing: border-box;
+                      "
+                    >
+                      <div
+                        style="
+                          font-size: clamp(24px, 2.5vw, 30px);
+                          margin-bottom: 6px;
+                        "
+                      >
+                        🔀
+                      </div>
+                      <div
+                        style="
+                          font-size: clamp(14px, 1.5vw, 17px);
+                          font-weight: 700;
+                          color: #ff6600;
+                          margin-bottom: 4px;
+                        "
+                      >
+                        Filtro de Linha
+                      </div>
+                      <div
+                        style="
+                          font-size: clamp(11px, 1.2vw, 13px);
+                          color: #5a6a7a;
+                          line-height: 1.5;
+                        "
+                      >
+                        Protege contra surtos, sem estabilizar a tensão
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Coluna direita: imagem -->
+                <div
+                  style="
+                    background: #fafbfc;
+                    border: 2px dashed #d0dbe8;
+                    border-radius: 8px;
+                    padding: 4%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    box-sizing: border-box;
+                  "
+                >
+                  <img
+                    src="../assets/sco_01_img_04.png"
+                    style="width: 80%"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== SLIDE 7 — PERIFÉRICOS DE ENTRADA E SAÍDA ===== -->
+          <div
+            style="
+              width: 100%;
+              aspect-ratio: 16/9;
+              background: #ffffff;
+              border-radius: 12px;
+              overflow: hidden;
+              display: flex;
+              flex-direction: column;
+              margin-bottom: 20px;
+              box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            "
+          >
+            <div
+              style="
+                background: #003f7f;
+                padding: 14px 28px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                flex-shrink: 0;
+                box-sizing: border-box;
+              "
+            >
+              <span
+                style="
+                  background: rgba(255, 255, 255, 0.15);
+                  border-radius: 4px;
+                  padding: 5px 12px;
+                  color: #ffffff;
+                  font-weight: 700;
+                  font-size: clamp(15px, 1.8vw, 19px);
+                "
+                >06</span
+              >
+              <span
+                style="
+                  color: #ffffff;
+                  font-size: clamp(18px, 2.1vw, 22px);
+                  font-weight: 600;
+                "
+              >
+                PERIFÉRICOS DE ENTRADA E SAÍDA
+              </span>
+            </div>
+
+            <div
+              style="
+                flex: 1;
+                min-height: 0;
+                padding: 3% 4%;
+                display: flex;
+                flex-direction: column;
+                gap: 2.5%;
+                overflow-y: auto;
+                box-sizing: border-box;
+              "
+            >
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: 1fr 1fr 1fr;
+                  gap: 2.5%;
+                "
+              >
+                <!-- Entrada -->
+                <div
+                  style="
+                    background: #f0f6ff;
+                    border: 1px solid #c8ddf5;
+                    border-radius: 8px;
+                    padding: 4% 5%;
+                    box-sizing: border-box;
+                  "
+                >
+                  <div
+                    style="
+                      color: #003f7f;
+                      font-size: clamp(17px, 2vw, 22px);
+                      font-weight: 700;
+                      margin-bottom: 10px;
+                    "
+                  >
+                    ⬅️ Entrada
+                  </div>
+                  <div
+                    style="
+                      color: #334155;
+                      font-size: clamp(14px, 1.6vw, 17px);
+                      line-height: 1.6;
+                      margin-bottom: 10px;
+                    "
+                  >
+                    Enviam <strong>dados do usuário para o computador</strong>.
+                  </div>
+                  <div style="display: flex; gap: 6px; flex-wrap: wrap">
+                    <span
+                      style="
+                        background: #ffffff;
+                        border: 1px solid #c8ddf5;
+                        border-radius: 20px;
+                        padding: 5px 12px;
+                        font-size: clamp(11px, 1.2vw, 13px);
+                        color: #003f7f;
+                        font-weight: 600;
+                      "
+                      >⌨️ Teclado</span
+                    >
+                    <span
+                      style="
+                        background: #ffffff;
+                        border: 1px solid #c8ddf5;
+                        border-radius: 20px;
+                        padding: 5px 12px;
+                        font-size: clamp(11px, 1.2vw, 13px);
+                        color: #003f7f;
+                        font-weight: 600;
+                      "
+                      >🖱️ Mouse</span
+                    >
+                    <span
+                      style="
+                        background: #ffffff;
+                        border: 1px solid #c8ddf5;
+                        border-radius: 20px;
+                        padding: 5px 12px;
+                        font-size: clamp(11px, 1.2vw, 13px);
+                        color: #003f7f;
+                        font-weight: 600;
+                      "
+                      >🎤 Microfone</span
+                    >
+                    <span
+                      style="
+                        background: #ffffff;
+                        border: 1px solid #c8ddf5;
+                        border-radius: 20px;
+                        padding: 5px 12px;
+                        font-size: clamp(11px, 1.2vw, 13px);
+                        color: #003f7f;
+                        font-weight: 600;
+                      "
+                      >📷 Webcam</span
+                    >
+                    <span
+                      style="
+                        background: #ffffff;
+                        border: 1px solid #c8ddf5;
+                        border-radius: 20px;
+                        padding: 5px 12px;
+                        font-size: clamp(11px, 1.2vw, 13px);
+                        color: #003f7f;
+                        font-weight: 600;
+                      "
+                      >📠 Scanner</span
+                    >
+                  </div>
+                </div>
+
+                <!-- Processamento (com imagem) -->
+                <div
+                  style="
+                    background: #fafbfc;
+                    border: 2px dashed #d0dbe8;
+                    border-radius: 8px;
+                    padding: 4%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    box-sizing: border-box;
+                  "
+                >
+                  <img src="../assets/sco_01_img_05.png" style="width: 100%;" alt="">
+                </div>
+
+                <!-- Saída -->
+                <div
+                  style="
+                    background: #fff8f0;
+                    border: 1px solid #ffd9b3;
+                    border-radius: 8px;
+                    padding: 4% 5%;
+                    box-sizing: border-box;
+                  "
+                >
+                  <div
+                    style="
+                      color: #ff6600;
+                      font-size: clamp(17px, 2vw, 22px);
+                      font-weight: 700;
+                      margin-bottom: 10px;
+                    "
+                  >
+                    ➡️ Saída
+                  </div>
+                  <div
+                    style="
+                      color: #334155;
+                      font-size: clamp(14px, 1.6vw, 17px);
+                      line-height: 1.6;
+                      margin-bottom: 10px;
+                    "
+                  >
+                    Recebem <strong>dados do computador para o usuário</strong>.
+                  </div>
+                  <div style="display: flex; gap: 6px; flex-wrap: wrap">
+                    <span
+                      style="
+                        background: #ffffff;
+                        border: 1px solid #ffd9b3;
+                        border-radius: 20px;
+                        padding: 5px 12px;
+                        font-size: clamp(11px, 1.2vw, 13px);
+                        color: #ff6600;
+                        font-weight: 600;
+                      "
+                      >🖥️ Monitor</span
+                    >
+                    <span
+                      style="
+                        background: #ffffff;
+                        border: 1px solid #ffd9b3;
+                        border-radius: 20px;
+                        padding: 5px 12px;
+                        font-size: clamp(11px, 1.2vw, 13px);
+                        color: #ff6600;
+                        font-weight: 600;
+                      "
+                      >🖨️ Impressora</span
+                    >
+                    <span
+                      style="
+                        background: #ffffff;
+                        border: 1px solid #ffd9b3;
+                        border-radius: 20px;
+                        padding: 5px 12px;
+                        font-size: clamp(11px, 1.2vw, 13px);
+                        color: #ff6600;
+                        font-weight: 600;
+                      "
+                      >🔊 Som</span
+                    >
+                    <span
+                      style="
+                        background: #ffffff;
+                        border: 1px solid #ffd9b3;
+                        border-radius: 20px;
+                        padding: 5px 12px;
+                        font-size: clamp(11px, 1.2vw, 13px);
+                        color: #ff6600;
+                        font-weight: 600;
+                      "
+                      >🎧 Fone</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div
+                style="
+                  background: #fff8f0;
+                  border: 1px solid #ffd9b3;
+                  border-radius: 8px;
+                  padding: 2.5% 3.5%;
+                  box-sizing: border-box;
+                "
+              >
+                <div
+                  style="
+                    color: #664422;
+                    font-size: clamp(14px, 1.6vw, 17px);
+                    line-height: 1.6;
+                  "
+                >
+                  <strong style="color: #ff6600">🧠 Dica:</strong> Alguns
+                  dispositivos são <strong>mistos</strong> (entrada e saída),
+                  como o <strong>touchscreen</strong> (tela sensível ao toque) e
+                  o <strong>headset</strong> (fone com microfone).
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== SLIDE 8 — LIGAR E DESLIGAR CORRETAMENTE ===== -->
+          <div
+            style="
+              width: 100%;
+              aspect-ratio: 16/9;
+              background: #ffffff;
+              border-radius: 12px;
+              overflow: hidden;
+              display: flex;
+              flex-direction: column;
+              margin-bottom: 20px;
+              box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            "
+          >
+            <div
+              style="
+                background: #003f7f;
+                padding: 14px 28px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                flex-shrink: 0;
+                box-sizing: border-box;
+              "
+            >
+              <span
+                style="
+                  background: rgba(255, 255, 255, 0.15);
+                  border-radius: 4px;
+                  padding: 5px 12px;
+                  color: #ffffff;
+                  font-weight: 700;
+                  font-size: clamp(15px, 1.8vw, 19px);
+                "
+                >07</span
+              >
+              <span
+                style="
+                  color: #ffffff;
+                  font-size: clamp(18px, 2.1vw, 22px);
+                  font-weight: 600;
+                "
+              >
+                LIGAR E DESLIGAR CORRETAMENTE
+              </span>
+            </div>
+
+            <div
+              style="
+                flex: 1;
+                min-height: 0;
+                padding: 3% 4%;
+                display: flex;
+                flex-direction: column;
+                gap: 2.5%;
+                overflow-y: auto;
+                box-sizing: border-box;
+              "
+            >
+              <div
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5%"
+              >
+                <div
+                  style="
+                    background: #f0f8f0;
+                    border: 1px solid #b8d8b8;
+                    border-radius: 8px;
+                    padding: 4% 5%;
+                    box-sizing: border-box;
+                  "
+                >
+                  <div
+                    style="
+                      color: #27ae60;
+                      font-size: clamp(18px, 2.2vw, 24px);
+                      font-weight: 700;
+                      margin-bottom: 12px;
+                    "
+                  >
+                    ✅ PARA LIGAR
+                  </div>
+                  <div
+                    style="
+                      color: #334155;
+                      font-size: clamp(15px, 1.7vw, 18px);
+                      line-height: 1.8;
+                    "
+                  >
+                    <strong>1.</strong> Ligue o estabilizador ou filtro de
+                    linha<br />
+                    <strong>2.</strong> Ligue o monitor (botão power)<br />
+                    <strong>3.</strong> Ligue o gabinete (botão power)<br />
+                    <strong>4.</strong> Aguarde o Windows carregar<br />
+                    <strong>5.</strong> Pronto! Computador disponível para uso
+                  </div>
+                </div>
+                <div
+                  style="
+                    background: #fef5f5;
+                    border: 1px solid #f0c8c8;
+                    border-radius: 8px;
+                    padding: 4% 5%;
+                    box-sizing: border-box;
+                  "
+                >
+                  <div
+                    style="
+                      color: #c0392b;
+                      font-size: clamp(18px, 2.2vw, 24px);
+                      font-weight: 700;
+                      margin-bottom: 12px;
+                    "
+                  >
+                    ⛔ PARA DESLIGAR
+                  </div>
+                  <div
+                    style="
+                      color: #334155;
+                      font-size: clamp(15px, 1.7vw, 18px);
+                      line-height: 1.8;
+                    "
+                  >
+                    <strong>1.</strong> Feche todos os programas abertos<br />
+                    <strong>2.</strong> Clique no botão <strong>Iniciar</strong
+                    ><br />
+                    <strong>3.</strong> Clique em <strong>Desligar</strong
+                    ><br />
+                    <strong>4.</strong> Aguarde desligar completamente<br />
+                    <strong>5.</strong> Desligue o estabilizador
+                  </div>
+                </div>
+              </div>
+
+              <!-- ESPAÇO PARA IMAGEM -->
+              <div
+                style="
+                  background: #fafbfc;
+                  border: 2px dashed #d0dbe8;
+                  border-radius: 8px;
+                  padding: 2.5%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  gap: 12px;
+                  box-sizing: border-box;
+                  flex-shrink: 0;
+                "
+              >
+                <img src="../assets/sco_01_img_06.png" style="width: 100%;" alt="">
+              </div>
+
+              <div
+                style="
+                  background: #fff8f0;
+                  border: 1px solid #ffd9b3;
+                  border-radius: 8px;
+                  padding: 2.5% 3.5%;
+                  box-sizing: border-box;
+                "
+              >
+                <div
+                  style="
+                    color: #664422;
+                    font-size: clamp(15px, 1.7vw, 18px);
+                    line-height: 1.6;
+                  "
+                >
+                  <strong style="color: #ff6600">⚠️ Atenção:</strong> Nunca
+                  desligue o computador diretamente no botão do gabinete ou no
+                  estabilizador. Isso pode corromper arquivos e danificar o
+                  sistema. O desligamento correto preserva a integridade dos
+                  dados.
+                </div>
+              </div>
+
+              <div
+                style="
+                  background: #f8fafc;
+                  border: 1px solid #e2e8f0;
+                  border-radius: 8px;
+                  padding: 2.5% 3.5%;
+                  box-sizing: border-box;
+                "
+              >
+                <div
+                  style="
+                    color: #5a6a7a;
+                    font-size: clamp(14px, 1.6vw, 17px);
+                    line-height: 1.6;
+                  "
+                >
+                  <strong style="color: #003f7f"
+                    >💡 E se o computador travar?</strong
+                  >
+                  Mantenha pressionado o botão power por
+                  <strong>5 a 10 segundos</strong>. Use apenas como último
+                  recurso.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== SLIDE 9 — ATIVIDADES PRÁTICAS ===== -->
+
+
+          <!-- ===== SLIDE 10 — RESUMO E ENCERRAMENTO ===== -->
+          <div
+            style="
+              width: 100%;
+              aspect-ratio: 16/9;
+              background: #ffffff;
+              border-radius: 12px;
+              overflow: hidden;
+              display: flex;
+              flex-direction: column;
+              margin-bottom: 20px;
+              box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            "
+          >
+            <div
+              style="
+                background: #003f7f;
+                padding: 14px 28px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                flex-shrink: 0;
+                box-sizing: border-box;
+              "
+            >
+              <span
+                style="
+                  background: rgba(255, 255, 255, 0.15);
+                  border-radius: 4px;
+                  padding: 5px 12px;
+                  color: #ffffff;
+                  font-weight: 700;
+                  font-size: clamp(15px, 1.8vw, 19px);
+                "
+                >08</span
+              >
+              <span
+                style="
+                  color: #ffffff;
+                  font-size: clamp(18px, 2.1vw, 22px);
+                  font-weight: 600;
+                "
+              >
+                RESUMO DO ENCONTRO
+              </span>
+            </div>
+
+            <div
+              style="
+                flex: 1;
+                min-height: 0;
+                padding: 3% 4%;
+                display: flex;
+                flex-direction: column;
+                gap: 2.5%;
+                overflow-y: auto;
+                box-sizing: border-box;
+              "
+            >
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: repeat(3, 1fr);
+                  gap: 2%;
+                "
+              >
+                <div
+                  style="
+                    background: #f0f6ff;
+                    border: 1px solid #c8ddf5;
+                    border-radius: 8px;
+                    padding: 4% 5%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    box-sizing: border-box;
+                  "
+                >
+                  <div
+                    style="
+                      font-size: clamp(22px, 2.5vw, 28px);
+                      margin-bottom: 8px;
+                    "
+                  >
+                    🌐
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(14px, 1.5vw, 16px);
+                      font-weight: 700;
+                      color: #003f7f;
+                      margin-bottom: 6px;
+                    "
+                  >
+                    Informática
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(12px, 1.3vw, 14px);
+                      color: #5a6a7a;
+                      line-height: 1.6;
+                    "
+                  >
+                    Tratamento automático da informação
+                  </div>
+                </div>
+                <div
+                  style="
+                    background: #f0f6ff;
+                    border: 1px solid #c8ddf5;
+                    border-radius: 8px;
+                    padding: 4% 5%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    box-sizing: border-box;
+                  "
+                >
+                  <div
+                    style="
+                      font-size: clamp(22px, 2.5vw, 28px);
+                      margin-bottom: 8px;
+                    "
+                  >
+                    ⚙️
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(14px, 1.5vw, 16px);
+                      font-weight: 700;
+                      color: #003f7f;
+                      margin-bottom: 6px;
+                    "
+                  >
+                    Hardware vs Software
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(12px, 1.3vw, 14px);
+                      color: #5a6a7a;
+                      line-height: 1.6;
+                    "
+                  >
+                    Físico (tocável) vs Lógico (programas)
+                  </div>
+                </div>
+                <div
+                  style="
+                    background: #f0f6ff;
+                    border: 1px solid #c8ddf5;
+                    border-radius: 8px;
+                    padding: 4% 5%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    box-sizing: border-box;
+                  "
+                >
+                  <div
+                    style="
+                      font-size: clamp(22px, 2.5vw, 28px);
+                      margin-bottom: 8px;
+                    "
+                  >
+                    🖥️
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(14px, 1.5vw, 16px);
+                      font-weight: 700;
+                      color: #003f7f;
+                      margin-bottom: 6px;
+                    "
+                  >
+                    Componentes
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(12px, 1.3vw, 14px);
+                      color: #5a6a7a;
+                      line-height: 1.6;
+                    "
+                  >
+                    Gabinete, monitor, teclado, mouse, estabilizador
+                  </div>
+                </div>
+                <div
+                  style="
+                    background: #f0f6ff;
+                    border: 1px solid #c8ddf5;
+                    border-radius: 8px;
+                    padding: 4% 5%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    box-sizing: border-box;
+                  "
+                >
+                  <div
+                    style="
+                      font-size: clamp(22px, 2.5vw, 28px);
+                      margin-bottom: 8px;
+                    "
+                  >
+                    🔀
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(14px, 1.5vw, 16px);
+                      font-weight: 700;
+                      color: #003f7f;
+                      margin-bottom: 6px;
+                    "
+                  >
+                    Periféricos
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(12px, 1.3vw, 14px);
+                      color: #5a6a7a;
+                      line-height: 1.6;
+                    "
+                  >
+                    Entrada (envia) e Saída (recebe)
+                  </div>
+                </div>
+                <div
+                  style="
+                    background: #f0f6ff;
+                    border: 1px solid #c8ddf5;
+                    border-radius: 8px;
+                    padding: 4% 5%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    box-sizing: border-box;
+                  "
+                >
+                  <div
+                    style="
+                      font-size: clamp(22px, 2.5vw, 28px);
+                      margin-bottom: 8px;
+                    "
+                  >
+                    🔌
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(14px, 1.5vw, 16px);
+                      font-weight: 700;
+                      color: #003f7f;
+                      margin-bottom: 6px;
+                    "
+                  >
+                    Ligar/Desligar
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(12px, 1.3vw, 14px);
+                      color: #5a6a7a;
+                      line-height: 1.6;
+                    "
+                  >
+                    Sequência correta preserva o sistema
+                  </div>
+                </div>
+                <div
+                  style="
+                    background: #fff8f0;
+                    border: 1px solid #ffd9b3;
+                    border-radius: 8px;
+                    padding: 4% 5%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    box-sizing: border-box;
+                  "
+                >
+                  <div
+                    style="
+                      font-size: clamp(22px, 2.5vw, 28px);
+                      margin-bottom: 8px;
+                    "
+                  >
+                    🔬
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(14px, 1.5vw, 16px);
+                      font-weight: 700;
+                      color: #ff6600;
+                      margin-bottom: 6px;
+                    "
+                  >
+                    Atividades Práticas
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(12px, 1.3vw, 14px);
+                      color: #5a6a7a;
+                      line-height: 1.6;
+                    "
+                  >
+                    Identificar, manusear e operar janelas
+                  </div>
+                </div>
+              </div>
+
+              <div
+                style="
+                  background: #f8fafc;
+                  border: 1px solid #e2e8f0;
+                  border-radius: 8px;
+                  padding: 3% 3.5%;
+                  text-align: center;
+                  box-sizing: border-box;
+                  flex-shrink: 0;
+                "
+              >
+                <div
+                  style="
+                    font-size: clamp(18px, 2.1vw, 22px);
+                    font-weight: 700;
+                    margin-bottom: 8px;
+                    color: #003f7f;
+                  "
+                >
+                  ✅ Conclusão do Encontro 1
+                </div>
+                <div
+                  style="
+                    color: #5a6a7a;
+                    font-size: clamp(15px, 1.7vw, 18px);
+                    line-height: 1.7;
+                  "
+                >
+                  Neste encontro, você aprendeu os fundamentos da informática, a
+                  diferença entre hardware e software, os componentes do
+                  computador e os periféricos de entrada e saída.
+                  <strong>No próximo encontro</strong>, vamos explorar o
+                  <strong>sistema operacional</strong> e como navegar pela
+                  interface do Windows.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </body>
+    </html>
+  </body>
+</html>
