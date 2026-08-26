@@ -1,2639 +1,1036 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Informática Básica - Aula 02</title>
+    <title>Encontro 2 - Sistema Operacional e Arquivos</title>
   </head>
-  <body>
-    <!doctype html>
-    <html lang="pt-BR">
-      <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Encontro 2 - Sistema Operacional e Arquivos</title>
-      </head>
-      <body style="margin: 0; padding: 0">
+  <body style="margin: 0; padding: 0">
+    <div
+      style="
+        font-family:
+          &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif;
+        background: #f5f7fa;
+        padding: 24px;
+        max-width: 1100px;
+        margin: 0 auto;
+        color: #2c3e50;
+        font-size: 19px;
+      "
+    >
+      <!-- ===== SLIDE 1 — CAPA ===== -->
+      <div
+        style="
+          width: 100%;
+          aspect-ratio: 16/9;
+          background: #ffffff;
+          border-radius: 12px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 4%;
+          box-sizing: border-box;
+          position: relative;
+          overflow: hidden;
+          margin-bottom: 20px;
+          box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        "
+      >
         <div
           style="
-            font-family:
-              &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Arial,
-              sans-serif;
-            background: #f5f7fa;
-            padding: 24px;
-            max-width: 1100px;
-            margin: 0 auto;
-            color: #2c3e50;
-            font-size: 19px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #003f7f 0%, #ff6600 100%);
           "
-        >
-          <!-- ===== SLIDE 1 — CAPA ===== -->
+        ></div>
+
+        <div style="text-align: center; max-width: 85%">
           <div
             style="
-              width: 100%;
-              aspect-ratio: 16/9;
-              background: #ffffff;
-              border-radius: 12px;
+              display: inline-block;
+              background: #e8f0fe;
+              border-radius: 24px;
+              padding: 8px 24px;
+              margin-bottom: 24px;
+            "
+          >
+            <span
+              style="
+                color: #003f7f;
+                font-size: clamp(15px, 1.8vw, 19px);
+                font-weight: 600;
+                letter-spacing: 1.5px;
+                text-transform: uppercase;
+              "
+              >Informática Básica · SENAI São José/SC</span
+            >
+          </div>
+          <div
+            style="
+              color: #1a202c;
+              font-size: clamp(35px, 4.4vw, 52px);
+              font-weight: 700;
+              line-height: 1.2;
+              margin-bottom: 14px;
+            "
+          >
+            Encontro 2<br />
+            <span style="color: #003f7f">Sistema Operacional</span><br />
+            <span style="color: #ff6600">e Arquivos</span>
+          </div>
+          <div
+            style="
+              color: #5a6a7a;
+              font-size: clamp(16px, 1.9vw, 20px);
+              margin-bottom: 28px;
+              line-height: 1.5;
+            "
+          >
+            Carga horária: 4 horas · Nível: Iniciante
+          </div>
+          <div
+            style="
               display: flex;
-              flex-direction: column;
+              gap: 12px;
               justify-content: center;
-              align-items: center;
-              padding: 4%;
+              flex-wrap: wrap;
+            "
+          >
+            <span
+              style="
+                background: #f0f4f8;
+                color: #003f7f;
+                border: 1px solid #d0dbe8;
+                padding: 8px 20px;
+                border-radius: 24px;
+                font-size: clamp(14px, 1.5vw, 16px);
+                font-weight: 600;
+              "
+              >Windows</span
+            >
+            <span
+              style="
+                background: #f0f4f8;
+                color: #003f7f;
+                border: 1px solid #d0dbe8;
+                padding: 8px 20px;
+                border-radius: 24px;
+                font-size: clamp(14px, 1.5vw, 16px);
+                font-weight: 600;
+              "
+              >Janelas</span
+            >
+            <span
+              style="
+                background: #f0f4f8;
+                color: #003f7f;
+                border: 1px solid #d0dbe8;
+                padding: 8px 20px;
+                border-radius: 24px;
+                font-size: clamp(14px, 1.5vw, 16px);
+                font-weight: 600;
+              "
+              >Pastas</span
+            >
+            <span
+              style="
+                background: #f0f4f8;
+                color: #003f7f;
+                border: 1px solid #d0dbe8;
+                padding: 8px 20px;
+                border-radius: 24px;
+                font-size: clamp(14px, 1.5vw, 16px);
+                font-weight: 600;
+              "
+              >Lixeira</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== SLIDE 2 — OBJETIVOS DE APRENDIZAGEM ===== -->
+      <div
+        style="
+          width: 100%;
+          aspect-ratio: 16/9;
+          background: #ffffff;
+          border-radius: 12px;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 20px;
+          box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        "
+      >
+        <div
+          style="
+            background: #003f7f;
+            padding: 14px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+            box-sizing: border-box;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.15);
+              border-radius: 4px;
+              padding: 5px 12px;
+              color: #ffffff;
+              font-weight: 700;
+              font-size: clamp(15px, 1.8vw, 19px);
+            "
+            >01</span
+          >
+          <span
+            style="
+              color: #ffffff;
+              font-size: clamp(18px, 2.1vw, 22px);
+              font-weight: 600;
+            "
+          >
+            OBJETIVOS DE APRENDIZAGEM
+          </span>
+        </div>
+
+        <div
+          style="
+            flex: 1;
+            min-height: 0;
+            padding: 3% 4%;
+            display: flex;
+            flex-direction: column;
+            gap: 2%;
+            overflow-y: auto;
+            box-sizing: border-box;
+          "
+        >
+          <div
+            style="
+              background: #f8fafc;
+              border: 1px solid #e2e8f0;
+              border-left: 4px solid #003f7f;
+              border-radius: 6px;
+              padding: 2.5% 3.5%;
               box-sizing: border-box;
-              position: relative;
-              overflow: hidden;
-              margin-bottom: 20px;
-              box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
             "
           >
             <div
               style="
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                height: 6px;
-                background: linear-gradient(90deg, #003f7f 0%, #ff6600 100%);
+                color: #003f7f;
+                font-size: clamp(14px, 1.5vw, 16px);
+                font-weight: 700;
+                margin-bottom: 4px;
               "
-            ></div>
+            >
+              🎯 Ao final deste encontro, você será capaz de:
+            </div>
+          </div>
 
-            <div style="text-align: center; max-width: 85%">
-              <div
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2%">
+            <div
+              style="
+                background: #ffffff;
+                border: 1px solid #e2e8f0;
+                border-radius: 6px;
+                padding: 2.5% 3%;
+                display: flex;
+                align-items: flex-start;
+                gap: 10px;
+                box-sizing: border-box;
+              "
+            >
+              <span
                 style="
-                  display: inline-block;
-                  background: #e8f0fe;
-                  border-radius: 24px;
-                  padding: 8px 24px;
-                  margin-bottom: 24px;
-                "
-              >
-                <span
-                  style="
-                    color: #003f7f;
-                    font-size: clamp(15px, 1.8vw, 19px);
-                    font-weight: 600;
-                    letter-spacing: 1.5px;
-                    text-transform: uppercase;
-                  "
-                  >Informática Básica · SENAI São José/SC</span
-                >
-              </div>
-              <div
-                style="
-                  color: #1a202c;
-                  font-size: clamp(35px, 4.4vw, 52px);
+                  background: #003f7f;
+                  color: #ffffff;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: clamp(12px, 1.3vw, 14px);
                   font-weight: 700;
-                  line-height: 1.2;
-                  margin-bottom: 14px;
+                  flex-shrink: 0;
                 "
+                >1</span
               >
-                Encontro 2<br />
-                <span style="color: #003f7f">Sistema Operacional</span><br />
-                <span style="color: #ff6600">e Arquivos</span>
-              </div>
               <div
                 style="
-                  color: #5a6a7a;
-                  font-size: clamp(16px, 1.9vw, 20px);
-                  margin-bottom: 28px;
+                  font-size: clamp(13px, 1.4vw, 15px);
+                  color: #334155;
                   line-height: 1.5;
                 "
               >
-                Carga horária: 4 horas · Nível: Iniciante
+                <strong>Compreender</strong> o que é um sistema operacional e
+                sua função principal
               </div>
-              <div
+            </div>
+            <div
+              style="
+                background: #ffffff;
+                border: 1px solid #e2e8f0;
+                border-radius: 6px;
+                padding: 2.5% 3%;
+                display: flex;
+                align-items: flex-start;
+                gap: 10px;
+                box-sizing: border-box;
+              "
+            >
+              <span
                 style="
+                  background: #003f7f;
+                  color: #ffffff;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
                   display: flex;
-                  gap: 12px;
+                  align-items: center;
                   justify-content: center;
-                  flex-wrap: wrap;
-                "
-              >
-                <span
-                  style="
-                    background: #f0f4f8;
-                    color: #003f7f;
-                    border: 1px solid #d0dbe8;
-                    padding: 8px 20px;
-                    border-radius: 24px;
-                    font-size: clamp(14px, 1.5vw, 16px);
-                    font-weight: 600;
-                  "
-                  >Windows</span
-                >
-                <span
-                  style="
-                    background: #f0f4f8;
-                    color: #003f7f;
-                    border: 1px solid #d0dbe8;
-                    padding: 8px 20px;
-                    border-radius: 24px;
-                    font-size: clamp(14px, 1.5vw, 16px);
-                    font-weight: 600;
-                  "
-                  >Janelas</span
-                >
-                <span
-                  style="
-                    background: #f0f4f8;
-                    color: #003f7f;
-                    border: 1px solid #d0dbe8;
-                    padding: 8px 20px;
-                    border-radius: 24px;
-                    font-size: clamp(14px, 1.5vw, 16px);
-                    font-weight: 600;
-                  "
-                  >Pastas</span
-                >
-                <span
-                  style="
-                    background: #f0f4f8;
-                    color: #003f7f;
-                    border: 1px solid #d0dbe8;
-                    padding: 8px 20px;
-                    border-radius: 24px;
-                    font-size: clamp(14px, 1.5vw, 16px);
-                    font-weight: 600;
-                  "
-                  >Lixeira</span
-                >
-              </div>
-            </div>
-          </div>
-
-          <!-- ===== SLIDE 2 — OBJETIVOS DE APRENDIZAGEM ===== -->
-          <div
-            style="
-              width: 100%;
-              aspect-ratio: 16/9;
-              background: #ffffff;
-              border-radius: 12px;
-              overflow: hidden;
-              display: flex;
-              flex-direction: column;
-              margin-bottom: 20px;
-              box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-            "
-          >
-            <div
-              style="
-                background: #003f7f;
-                padding: 14px 28px;
-                display: flex;
-                align-items: center;
-                gap: 12px;
-                flex-shrink: 0;
-                box-sizing: border-box;
-              "
-            >
-              <span
-                style="
-                  background: rgba(255, 255, 255, 0.15);
-                  border-radius: 4px;
-                  padding: 5px 12px;
-                  color: #ffffff;
+                  font-size: clamp(12px, 1.3vw, 14px);
                   font-weight: 700;
-                  font-size: clamp(15px, 1.8vw, 19px);
+                  flex-shrink: 0;
                 "
-                >01</span
+                >2</span
               >
-              <span
-                style="
-                  color: #ffffff;
-                  font-size: clamp(18px, 2.1vw, 22px);
-                  font-weight: 600;
-                "
-              >
-                OBJETIVOS DE APRENDIZAGEM
-              </span>
-            </div>
-
-            <div
-              style="
-                flex: 1;
-                min-height: 0;
-                padding: 3% 4%;
-                display: flex;
-                flex-direction: column;
-                gap: 2%;
-                overflow-y: auto;
-                box-sizing: border-box;
-              "
-            >
               <div
                 style="
-                  background: #f8fafc;
-                  border: 1px solid #e2e8f0;
-                  border-left: 4px solid #003f7f;
-                  border-radius: 6px;
-                  padding: 2.5% 3.5%;
-                  box-sizing: border-box;
-                "
-              >
-                <div
-                  style="
-                    color: #003f7f;
-                    font-size: clamp(14px, 1.5vw, 16px);
-                    font-weight: 700;
-                    margin-bottom: 4px;
-                  "
-                >
-                  🎯 Ao final deste encontro, você será capaz de:
-                </div>
-              </div>
-
-              <div
-                style="display: grid; grid-template-columns: 1fr 1fr; gap: 2%"
-              >
-                <div
-                  style="
-                    background: #ffffff;
-                    border: 1px solid #e2e8f0;
-                    border-radius: 6px;
-                    padding: 2.5% 3%;
-                    display: flex;
-                    align-items: flex-start;
-                    gap: 10px;
-                    box-sizing: border-box;
-                  "
-                >
-                  <span
-                    style="
-                      background: #003f7f;
-                      color: #ffffff;
-                      border-radius: 50%;
-                      width: 28px;
-                      height: 28px;
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      font-size: clamp(12px, 1.3vw, 14px);
-                      font-weight: 700;
-                      flex-shrink: 0;
-                    "
-                    >1</span
-                  >
-                  <div
-                    style="
-                      font-size: clamp(13px, 1.4vw, 15px);
-                      color: #334155;
-                      line-height: 1.5;
-                    "
-                  >
-                    <strong>Compreender</strong> o que é um sistema operacional
-                    e sua função principal
-                  </div>
-                </div>
-                <div
-                  style="
-                    background: #ffffff;
-                    border: 1px solid #e2e8f0;
-                    border-radius: 6px;
-                    padding: 2.5% 3%;
-                    display: flex;
-                    align-items: flex-start;
-                    gap: 10px;
-                    box-sizing: border-box;
-                  "
-                >
-                  <span
-                    style="
-                      background: #003f7f;
-                      color: #ffffff;
-                      border-radius: 50%;
-                      width: 28px;
-                      height: 28px;
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      font-size: clamp(12px, 1.3vw, 14px);
-                      font-weight: 700;
-                      flex-shrink: 0;
-                    "
-                    >2</span
-                  >
-                  <div
-                    style="
-                      font-size: clamp(13px, 1.4vw, 15px);
-                      color: #334155;
-                      line-height: 1.5;
-                    "
-                  >
-                    <strong>Navegar</strong> pela área de trabalho: ícones,
-                    barra de tarefas e menu Iniciar
-                  </div>
-                </div>
-                <div
-                  style="
-                    background: #ffffff;
-                    border: 1px solid #e2e8f0;
-                    border-radius: 6px;
-                    padding: 2.5% 3%;
-                    display: flex;
-                    align-items: flex-start;
-                    gap: 10px;
-                    box-sizing: border-box;
-                  "
-                >
-                  <span
-                    style="
-                      background: #003f7f;
-                      color: #ffffff;
-                      border-radius: 50%;
-                      width: 28px;
-                      height: 28px;
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      font-size: clamp(12px, 1.3vw, 14px);
-                      font-weight: 700;
-                      flex-shrink: 0;
-                    "
-                    >3</span
-                  >
-                  <div
-                    style="
-                      font-size: clamp(13px, 1.4vw, 15px);
-                      color: #334155;
-                      line-height: 1.5;
-                    "
-                  >
-                    <strong>Operar janelas</strong>: abrir, minimizar,
-                    maximizar, restaurar e fechar
-                  </div>
-                </div>
-                <div
-                  style="
-                    background: #ffffff;
-                    border: 1px solid #e2e8f0;
-                    border-radius: 6px;
-                    padding: 2.5% 3%;
-                    display: flex;
-                    align-items: flex-start;
-                    gap: 10px;
-                    box-sizing: border-box;
-                  "
-                >
-                  <span
-                    style="
-                      background: #003f7f;
-                      color: #ffffff;
-                      border-radius: 50%;
-                      width: 28px;
-                      height: 28px;
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      font-size: clamp(12px, 1.3vw, 14px);
-                      font-weight: 700;
-                      flex-shrink: 0;
-                    "
-                    >4</span
-                  >
-                  <div
-                    style="
-                      font-size: clamp(13px, 1.4vw, 15px);
-                      color: #334155;
-                      line-height: 1.5;
-                    "
-                  >
-                    <strong>Diferenciar</strong> pastas e arquivos,
-                    compreendendo sua organização hierárquica
-                  </div>
-                </div>
-                <div
-                  style="
-                    background: #ffffff;
-                    border: 1px solid #e2e8f0;
-                    border-radius: 6px;
-                    padding: 2.5% 3%;
-                    display: flex;
-                    align-items: flex-start;
-                    gap: 10px;
-                    box-sizing: border-box;
-                  "
-                >
-                  <span
-                    style="
-                      background: #003f7f;
-                      color: #ffffff;
-                      border-radius: 50%;
-                      width: 28px;
-                      height: 28px;
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      font-size: clamp(12px, 1.3vw, 14px);
-                      font-weight: 700;
-                      flex-shrink: 0;
-                    "
-                    >5</span
-                  >
-                  <div
-                    style="
-                      font-size: clamp(13px, 1.4vw, 15px);
-                      color: #334155;
-                      line-height: 1.5;
-                    "
-                  >
-                    <strong>Gerenciar</strong> pastas: criar, renomear, mover e
-                    excluir
-                  </div>
-                </div>
-                <div
-                  style="
-                    background: #ffffff;
-                    border: 1px solid #e2e8f0;
-                    border-radius: 6px;
-                    padding: 2.5% 3%;
-                    display: flex;
-                    align-items: flex-start;
-                    gap: 10px;
-                    box-sizing: border-box;
-                  "
-                >
-                  <span
-                    style="
-                      background: #ff6600;
-                      color: #ffffff;
-                      border-radius: 50%;
-                      width: 28px;
-                      height: 28px;
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      font-size: clamp(12px, 1.3vw, 14px);
-                      font-weight: 700;
-                      flex-shrink: 0;
-                    "
-                    >6</span
-                  >
-                  <div
-                    style="
-                      font-size: clamp(13px, 1.4vw, 15px);
-                      color: #334155;
-                      line-height: 1.5;
-                    "
-                  >
-                    <strong>Aplicar na prática:</strong> usar a Lixeira para
-                    apagar e restaurar arquivos
-                  </div>
-                </div>
-              </div>
-
-              <div
-                style="
-                  background: #fff8f0;
-                  border: 1px solid #ffd9b3;
-                  border-radius: 6px;
-                  padding: 2% 3%;
                   font-size: clamp(13px, 1.4vw, 15px);
-                  color: #664422;
-                  box-sizing: border-box;
-                  flex-shrink: 0;
+                  color: #334155;
+                  line-height: 1.5;
                 "
               >
-                <strong>📌 Metodologia:</strong> Aula expositiva dialogada (1h)
-                + demonstração prática no laboratório (1h) + atividades guiadas
-                (2h)
+                <strong>Navegar</strong> pela área de trabalho: ícones, barra de
+                tarefas e menu Iniciar
               </div>
             </div>
-          </div>
-
-          <!-- ===== SLIDE 3 — O QUE É SISTEMA OPERACIONAL ===== -->
-          <div
-            style="
-              width: 100%;
-              aspect-ratio: 16/9;
-              background: #ffffff;
-              border-radius: 12px;
-              overflow: hidden;
-              display: flex;
-              flex-direction: column;
-              margin-bottom: 20px;
-              box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-            "
-          >
             <div
               style="
-                background: #003f7f;
-                padding: 14px 28px;
+                background: #ffffff;
+                border: 1px solid #e2e8f0;
+                border-radius: 6px;
+                padding: 2.5% 3%;
                 display: flex;
-                align-items: center;
-                gap: 12px;
-                flex-shrink: 0;
+                align-items: flex-start;
+                gap: 10px;
                 box-sizing: border-box;
               "
             >
               <span
                 style="
-                  background: rgba(255, 255, 255, 0.15);
-                  border-radius: 4px;
-                  padding: 5px 12px;
+                  background: #003f7f;
                   color: #ffffff;
-                  font-weight: 700;
-                  font-size: clamp(15px, 1.8vw, 19px);
-                "
-                >02</span
-              >
-              <span
-                style="
-                  color: #ffffff;
-                  font-size: clamp(18px, 2.1vw, 22px);
-                  font-weight: 600;
-                "
-              >
-                O QUE É SISTEMA OPERACIONAL?
-              </span>
-            </div>
-
-            <div
-              style="
-                flex: 1;
-                min-height: 0;
-                padding: 3% 4%;
-                display: flex;
-                flex-direction: column;
-                gap: 2.5%;
-                overflow-y: auto;
-                box-sizing: border-box;
-              "
-            >
-              <div
-                style="
-                  display: grid;
-                  grid-template-columns: 1.2fr 0.8fr;
-                  gap: 2.5%;
-                "
-              >
-                <div style="display: flex; flex-direction: column; gap: 2.5%">
-                  <div
-                    style="
-                      background: #f0f6ff;
-                      border: 1px solid #c8ddf5;
-                      border-radius: 8px;
-                      padding: 3.5% 4%;
-                      box-sizing: border-box;
-                    "
-                  >
-                    <div
-                      style="
-                        color: #003f7f;
-                        font-size: clamp(18px, 2.2vw, 24px);
-                        font-weight: 700;
-                        margin-bottom: 12px;
-                      "
-                    >
-                      O "maestro" do computador
-                    </div>
-                    <div
-                      style="
-                        color: #334155;
-                        font-size: clamp(15px, 1.8vw, 19px);
-                        line-height: 1.7;
-                      "
-                    >
-                      O <strong>Sistema Operacional (SO)</strong> é o
-                      <strong>software principal</strong> que gerencia todos os
-                      recursos do computador. Ele controla o hardware, executa
-                      os programas e cria a <strong>interface</strong> que
-                      usamos para interagir com a máquina.
-                    </div>
-                  </div>
-
-                  <div
-                    style="
-                      background: #fff8f0;
-                      border: 1px solid #ffd9b3;
-                      border-radius: 8px;
-                      padding: 3.5% 4%;
-                      box-sizing: border-box;
-                    "
-                  >
-                    <div
-                      style="
-                        color: #ff6600;
-                        font-size: clamp(18px, 2.2vw, 24px);
-                        font-weight: 700;
-                        margin-bottom: 12px;
-                      "
-                    >
-                      💡 Funções principais
-                    </div>
-                    <div
-                      style="
-                        color: #334155;
-                        font-size: clamp(15px, 1.8vw, 19px);
-                        line-height: 1.7;
-                      "
-                    >
-                      • Gerencia o <strong>hardware</strong> (processador,
-                      memória, disco)<br />
-                      • Executa e organiza os <strong>programas</strong><br />
-                      • Controla <strong>arquivos e pastas</strong><br />
-                      • Oferece a <strong>interface gráfica</strong> (ícones,
-                      janelas, menus)
-                    </div>
-                  </div>
-
-                  <div
-                    style="
-                      background: #f8fafc;
-                      border: 1px solid #e2e8f0;
-                      border-radius: 8px;
-                      padding: 3% 3.5%;
-                      box-sizing: border-box;
-                    "
-                  >
-                    <div
-                      style="
-                        color: #334155;
-                        font-size: clamp(15px, 1.8vw, 19px);
-                        line-height: 1.7;
-                      "
-                    >
-                      <strong style="color: #003f7f">📝 Analogia:</strong> O SO
-                      é como o <strong>gerente de uma empresa</strong> — ele
-                      coordena os funcionários (programas) e os recursos
-                      (hardware) para que tudo funcione em harmonia.
-                    </div>
-                  </div>
-                </div>
-
-                <!-- ESPAÇO PARA IMAGEM -->
-                <div
-                  style="
-                    background: #fafbfc;
-                    border: 2px dashed #d0dbe8;
-                    border-radius: 8px;
-                    padding: 4%;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-                    text-align: center;
-                    box-sizing: border-box;
-                  "
-                >
-                  <img
-                    src="../assets/sco_02_img_01.png"
-                    style="width: 100%"
-                    alt=""
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- ===== SLIDE 4 — SISTEMAS OPERACIONAIS COMUNS ===== -->
-          <div
-            style="
-              width: 100%;
-              aspect-ratio: 16/9;
-              background: #ffffff;
-              border-radius: 12px;
-              overflow: hidden;
-              display: flex;
-              flex-direction: column;
-              margin-bottom: 20px;
-              box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-            "
-          >
-            <div
-              style="
-                background: #003f7f;
-                padding: 14px 28px;
-                display: flex;
-                align-items: center;
-                gap: 12px;
-                flex-shrink: 0;
-                box-sizing: border-box;
-              "
-            >
-              <span
-                style="
-                  background: rgba(255, 255, 255, 0.15);
-                  border-radius: 4px;
-                  padding: 5px 12px;
-                  color: #ffffff;
-                  font-weight: 700;
-                  font-size: clamp(15px, 1.8vw, 19px);
-                "
-                >03</span
-              >
-              <span
-                style="
-                  color: #ffffff;
-                  font-size: clamp(18px, 2.1vw, 22px);
-                  font-weight: 600;
-                "
-              >
-                SISTEMAS OPERACIONAIS COMUNS
-              </span>
-            </div>
-
-            <div
-              style="
-                flex: 1;
-                min-height: 0;
-                padding: 3% 4%;
-                display: flex;
-                flex-direction: column;
-                gap: 2.5%;
-                overflow-y: auto;
-                box-sizing: border-box;
-              "
-            >
-              <div
-                style="
-                  display: grid;
-                  grid-template-columns: repeat(4, 1fr);
-                  gap: 2%;
-                "
-              >
-                <div
-                  style="
-                    background: #ffffff;
-                    border: 1px solid #e2e8f0;
-                    border-top: 4px solid #003f7f;
-                    border-radius: 8px;
-                    padding: 4% 3%;
-                    text-align: center;
-                    box-sizing: border-box;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                  "
-                >
-                  <div
-                    style="
-                      font-size: clamp(28px, 3vw, 36px);
-                      margin-bottom: 6px;
-                    "
-                  >
-                    🪟
-                  </div>
-                  <div
-                    style="
-                      font-size: clamp(14px, 1.5vw, 16px);
-                      font-weight: 700;
-                      color: #003f7f;
-                      margin-bottom: 4px;
-                    "
-                  >
-                    Windows
-                  </div>
-                  <div
-                    style="
-                      font-size: clamp(12px, 1.3vw, 14px);
-                      color: #5a6a7a;
-                      line-height: 1.5;
-                    "
-                  >
-                    O mais usado em computadores pessoais e empresas
-                  </div>
-                </div>
-                <div
-                  style="
-                    background: #ffffff;
-                    border: 1px solid #e2e8f0;
-                    border-top: 4px solid #003f7f;
-                    border-radius: 8px;
-                    padding: 4% 3%;
-                    text-align: center;
-                    box-sizing: border-box;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                  "
-                >
-                  <div
-                    style="
-                      font-size: clamp(28px, 3vw, 36px);
-                      margin-bottom: 6px;
-                    "
-                  >
-                    🍎
-                  </div>
-                  <div
-                    style="
-                      font-size: clamp(14px, 1.5vw, 16px);
-                      font-weight: 700;
-                      color: #003f7f;
-                      margin-bottom: 4px;
-                    "
-                  >
-                    macOS
-                  </div>
-                  <div
-                    style="
-                      font-size: clamp(12px, 1.3vw, 14px);
-                      color: #5a6a7a;
-                      line-height: 1.5;
-                    "
-                  >
-                    Exclusivo dos computadores Apple (MacBook, iMac)
-                  </div>
-                </div>
-                <div
-                  style="
-                    background: #ffffff;
-                    border: 1px solid #e2e8f0;
-                    border-top: 4px solid #ff6600;
-                    border-radius: 8px;
-                    padding: 4% 3%;
-                    text-align: center;
-                    box-sizing: border-box;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                  "
-                >
-                  <div
-                    style="
-                      font-size: clamp(28px, 3vw, 36px);
-                      margin-bottom: 6px;
-                    "
-                  >
-                    🐧
-                  </div>
-                  <div
-                    style="
-                      font-size: clamp(14px, 1.5vw, 16px);
-                      font-weight: 700;
-                      color: #ff6600;
-                      margin-bottom: 4px;
-                    "
-                  >
-                    Linux
-                  </div>
-                  <div
-                    style="
-                      font-size: clamp(12px, 1.3vw, 14px);
-                      color: #5a6a7a;
-                      line-height: 1.5;
-                    "
-                  >
-                    Gratuito e de código aberto. Muito usado em servidores
-                  </div>
-                </div>
-                <div
-                  style="
-                    background: #ffffff;
-                    border: 1px solid #e2e8f0;
-                    border-top: 4px solid #ff6600;
-                    border-radius: 8px;
-                    padding: 4% 3%;
-                    text-align: center;
-                    box-sizing: border-box;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                  "
-                >
-                  <div
-                    style="
-                      font-size: clamp(28px, 3vw, 36px);
-                      margin-bottom: 6px;
-                    "
-                  >
-                    📱
-                  </div>
-                  <div
-                    style="
-                      font-size: clamp(14px, 1.5vw, 16px);
-                      font-weight: 700;
-                      color: #ff6600;
-                      margin-bottom: 4px;
-                    "
-                  >
-                    Android / iOS
-                  </div>
-                  <div
-                    style="
-                      font-size: clamp(12px, 1.3vw, 14px);
-                      color: #5a6a7a;
-                      line-height: 1.5;
-                    "
-                  >
-                    Sistemas operacionais de celulares e tablets
-                  </div>
-                </div>
-              </div>
-
-              <div
-                style="
-                  background: #f8fafc;
-                  border: 1px solid #e2e8f0;
-                  border-radius: 8px;
-                  padding: 3% 3.5%;
-                  box-sizing: border-box;
-                "
-              >
-                <div
-                  style="
-                    color: #5a6a7a;
-                    font-size: clamp(14px, 1.6vw, 17px);
-                    margin-bottom: 8px;
-                    text-align: center;
-                  "
-                >
-                  <strong
-                    >💻 No nosso laboratório, usaremos o
-                    <span style="color: #003f7f">Windows</span></strong
-                  >
-                </div>
-                <div
-                  style="
-                    display: flex;
-                    gap: 10px;
-                    justify-content: center;
-                    flex-wrap: wrap;
-                  "
-                >
-                  <span
-                    style="
-                      background: #f0f6ff;
-                      color: #003f7f;
-                      border: 1px solid #c8ddf5;
-                      border-radius: 24px;
-                      padding: 6px 16px;
-                      font-size: clamp(12px, 1.4vw, 15px);
-                      font-weight: 600;
-                    "
-                  >
-                    🖥️ Computadores de mesa
-                  </span>
-                  <span
-                    style="
-                      background: #f0f6ff;
-                      color: #003f7f;
-                      border: 1px solid #c8ddf5;
-                      border-radius: 24px;
-                      padding: 6px 16px;
-                      font-size: clamp(12px, 1.4vw, 15px);
-                      font-weight: 600;
-                    "
-                  >
-                    💼 Empresas
-                  </span>
-                  <span
-                    style="
-                      background: #f0f6ff;
-                      color: #003f7f;
-                      border: 1px solid #c8ddf5;
-                      border-radius: 24px;
-                      padding: 6px 16px;
-                      font-size: clamp(12px, 1.4vw, 15px);
-                      font-weight: 600;
-                    "
-                  >
-                    🏫 Escolas
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- ===== SLIDE 5 — ÁREA DE TRABALHO ===== -->
-          <div
-            style="
-              width: 100%;
-              aspect-ratio: 16/9;
-              background: #ffffff;
-              border-radius: 12px;
-              overflow: hidden;
-              display: flex;
-              flex-direction: column;
-              margin-bottom: 20px;
-              box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-            "
-          >
-            <div
-              style="
-                background: #003f7f;
-                padding: 14px 28px;
-                display: flex;
-                align-items: center;
-                gap: 12px;
-                flex-shrink: 0;
-                box-sizing: border-box;
-              "
-            >
-              <span
-                style="
-                  background: rgba(255, 255, 255, 0.15);
-                  border-radius: 4px;
-                  padding: 5px 12px;
-                  color: #ffffff;
-                  font-weight: 700;
-                  font-size: clamp(15px, 1.8vw, 19px);
-                "
-                >04</span
-              >
-              <span
-                style="
-                  color: #ffffff;
-                  font-size: clamp(18px, 2.1vw, 22px);
-                  font-weight: 600;
-                "
-              >
-                ÁREA DE TRABALHO (DESKTOP)
-              </span>
-            </div>
-
-            <div
-              style="
-                flex: 1;
-                min-height: 0;
-                padding: 3% 4%;
-                display: flex;
-                flex-direction: column;
-                gap: 2.5%;
-                overflow-y: auto;
-                box-sizing: border-box;
-              "
-            >
-              <div
-                style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5%"
-              >
-                <!-- Coluna esquerda: conteúdo -->
-                <div style="display: flex; flex-direction: column; gap: 2.5%">
-                  <div
-                    style="
-                      display: grid;
-                      grid-template-columns: 1fr 1fr;
-                      gap: 2.5%;
-                    "
-                  >
-                    <div
-                      style="
-                        background: #f0f6ff;
-                        border: 1px solid #c8ddf5;
-                        border-radius: 8px;
-                        padding: 4% 5%;
-                        box-sizing: border-box;
-                      "
-                    >
-                      <div
-                        style="
-                          font-size: clamp(24px, 2.5vw, 30px);
-                          margin-bottom: 6px;
-                        "
-                      >
-                        🖼️
-                      </div>
-                      <div
-                        style="
-                          font-size: clamp(14px, 1.5vw, 17px);
-                          font-weight: 700;
-                          color: #003f7f;
-                          margin-bottom: 4px;
-                        "
-                      >
-                        Ícones
-                      </div>
-                      <div
-                        style="
-                          font-size: clamp(11px, 1.2vw, 13px);
-                          color: #5a6a7a;
-                          line-height: 1.5;
-                        "
-                      >
-                        Atalhos para programas, pastas e arquivos. Clique duplo
-                        abre
-                      </div>
-                    </div>
-                    <div
-                      style="
-                        background: #f0f6ff;
-                        border: 1px solid #c8ddf5;
-                        border-radius: 8px;
-                        padding: 4% 5%;
-                        box-sizing: border-box;
-                      "
-                    >
-                      <div
-                        style="
-                          font-size: clamp(24px, 2.5vw, 30px);
-                          margin-bottom: 6px;
-                        "
-                      >
-                        📊
-                      </div>
-                      <div
-                        style="
-                          font-size: clamp(14px, 1.5vw, 17px);
-                          font-weight: 700;
-                          color: #003f7f;
-                          margin-bottom: 4px;
-                        "
-                      >
-                        Barra de Tarefas
-                      </div>
-                      <div
-                        style="
-                          font-size: clamp(11px, 1.2vw, 13px);
-                          color: #5a6a7a;
-                          line-height: 1.5;
-                        "
-                      >
-                        Mostra programas abertos, relógio e botão Iniciar
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    style="
-                      display: grid;
-                      grid-template-columns: 1fr 1fr;
-                      gap: 2.5%;
-                    "
-                  >
-                    <div
-                      style="
-                        background: #f0f6ff;
-                        border: 1px solid #c8ddf5;
-                        border-radius: 8px;
-                        padding: 4% 5%;
-                        box-sizing: border-box;
-                      "
-                    >
-                      <div
-                        style="
-                          font-size: clamp(24px, 2.5vw, 30px);
-                          margin-bottom: 6px;
-                        "
-                      >
-                        🏁
-                      </div>
-                      <div
-                        style="
-                          font-size: clamp(14px, 1.5vw, 17px);
-                          font-weight: 700;
-                          color: #003f7f;
-                          margin-bottom: 4px;
-                        "
-                      >
-                        Menu Iniciar
-                      </div>
-                      <div
-                        style="
-                          font-size: clamp(11px, 1.2vw, 13px);
-                          color: #5a6a7a;
-                          line-height: 1.5;
-                        "
-                      >
-                        Acesso rápido a programas, configurações e desligar
-                      </div>
-                    </div>
-                    <div
-                      style="
-                        background: #fff8f0;
-                        border: 1px solid #ffd9b3;
-                        border-radius: 8px;
-                        padding: 4% 5%;
-                        box-sizing: border-box;
-                      "
-                    >
-                      <div
-                        style="
-                          font-size: clamp(24px, 2.5vw, 30px);
-                          margin-bottom: 6px;
-                        "
-                      >
-                        🔔
-                      </div>
-                      <div
-                        style="
-                          font-size: clamp(14px, 1.5vw, 17px);
-                          font-weight: 700;
-                          color: #ff6600;
-                          margin-bottom: 4px;
-                        "
-                      >
-                        Área de Notificação
-                      </div>
-                      <div
-                        style="
-                          font-size: clamp(11px, 1.2vw, 13px);
-                          color: #5a6a7a;
-                          line-height: 1.5;
-                        "
-                      >
-                        Relógio, volume, rede Wi-Fi e notificações do sistema
-                      </div>
-                    </div>
-                  </div>
-
-                  <div
-                    style="
-                      background: #f8fafc;
-                      border: 1px solid #e2e8f0;
-                      border-radius: 8px;
-                      padding: 3% 3.5%;
-                      box-sizing: border-box;
-                    "
-                  >
-                    <div
-                      style="
-                        color: #5a6a7a;
-                        font-size: clamp(14px, 1.6vw, 17px);
-                        line-height: 1.7;
-                      "
-                    >
-                      <strong style="color: #003f7f">🧠 Dica:</strong> A área de
-                      trabalho é a <strong>tela inicial</strong> que aparece ao
-                      ligar o computador. É o ponto de partida para tudo.
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Coluna direita: imagem -->
-                <div
-                  style="
-                    background: #fafbfc;
-                    border: 2px dashed #d0dbe8;
-                    border-radius: 8px;
-                    padding: 4%;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-                    text-align: center;
-                    box-sizing: border-box;
-                  "
-                >
-                  <img
-                    src="../assets/sco_02_img_02.png"
-                    style="width: 100%"
-                    alt=""
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- ===== SLIDE 6 — JANELAS ===== -->
-          <div
-            style="
-              width: 100%;
-              aspect-ratio: 16/9;
-              background: #ffffff;
-              border-radius: 12px;
-              overflow: hidden;
-              display: flex;
-              flex-direction: column;
-              margin-bottom: 20px;
-              box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-            "
-          >
-            <div
-              style="
-                background: #003f7f;
-                padding: 14px 28px;
-                display: flex;
-                align-items: center;
-                gap: 12px;
-                flex-shrink: 0;
-                box-sizing: border-box;
-              "
-            >
-              <span
-                style="
-                  background: rgba(255, 255, 255, 0.15);
-                  border-radius: 4px;
-                  padding: 5px 12px;
-                  color: #ffffff;
-                  font-weight: 700;
-                  font-size: clamp(15px, 1.8vw, 19px);
-                "
-                >05</span
-              >
-              <span
-                style="
-                  color: #ffffff;
-                  font-size: clamp(18px, 2.1vw, 22px);
-                  font-weight: 600;
-                "
-              >
-                TRABALHANDO COM JANELAS
-              </span>
-            </div>
-
-            <div
-              style="
-                flex: 1;
-                min-height: 0;
-                padding: 3% 4%;
-                display: flex;
-                flex-direction: column;
-                gap: 2.5%;
-                overflow-y: auto;
-                box-sizing: border-box;
-              "
-            >
-              <div
-                style="
-                  display: grid;
-                  grid-template-columns: repeat(3, 1fr);
-                  gap: 2%;
-                "
-              >
-                <div
-                  style="
-                    background: #f0f6ff;
-                    border: 1px solid #c8ddf5;
-                    border-radius: 8px;
-                    padding: 4% 5%;
-                    box-sizing: border-box;
-                    display: flex;
-                    flex-direction: column;
-                  "
-                >
-                  <div
-                    style="
-                      font-size: clamp(24px, 2.5vw, 30px);
-                      margin-bottom: 6px;
-                    "
-                  >
-                    ➖
-                  </div>
-                  <div
-                    style="
-                      font-size: clamp(14px, 1.5vw, 17px);
-                      font-weight: 700;
-                      color: #003f7f;
-                      margin-bottom: 4px;
-                    "
-                  >
-                    Minimizar
-                  </div>
-                  <div
-                    style="
-                      font-size: clamp(11px, 1.2vw, 13px);
-                      color: #5a6a7a;
-                      line-height: 1.5;
-                    "
-                  >
-                    Esconde a janela, mas o programa continua aberto na barra de
-                    tarefas. Clique para restaurar
-                  </div>
-                </div>
-                <div
-                  style="
-                    background: #f0f6ff;
-                    border: 1px solid #c8ddf5;
-                    border-radius: 8px;
-                    padding: 4% 5%;
-                    box-sizing: border-box;
-                    display: flex;
-                    flex-direction: column;
-                  "
-                >
-                  <div
-                    style="
-                      font-size: clamp(24px, 2.5vw, 30px);
-                      margin-bottom: 6px;
-                    "
-                  >
-                    ⬜
-                  </div>
-                  <div
-                    style="
-                      font-size: clamp(14px, 1.5vw, 17px);
-                      font-weight: 700;
-                      color: #003f7f;
-                      margin-bottom: 4px;
-                    "
-                  >
-                    Maximizar / Restaurar
-                  </div>
-                  <div
-                    style="
-                      font-size: clamp(11px, 1.2vw, 13px);
-                      color: #5a6a7a;
-                      line-height: 1.5;
-                    "
-                  >
-                    Expande a janela para tela cheia. Clique novamente para
-                    restaurar o tamanho anterior
-                  </div>
-                </div>
-                <div
-                  style="
-                    background: #fff8f0;
-                    border: 1px solid #ffd9b3;
-                    border-radius: 8px;
-                    padding: 4% 5%;
-                    box-sizing: border-box;
-                    display: flex;
-                    flex-direction: column;
-                  "
-                >
-                  <div
-                    style="
-                      font-size: clamp(24px, 2.5vw, 30px);
-                      margin-bottom: 6px;
-                    "
-                  >
-                    ✖️
-                  </div>
-                  <div
-                    style="
-                      font-size: clamp(14px, 1.5vw, 17px);
-                      font-weight: 700;
-                      color: #ff6600;
-                      margin-bottom: 4px;
-                    "
-                  >
-                    Fechar
-                  </div>
-                  <div
-                    style="
-                      font-size: clamp(11px, 1.2vw, 13px);
-                      color: #5a6a7a;
-                      line-height: 1.5;
-                    "
-                  >
-                    Encerra o programa completamente. Salve antes de fechar para
-                    não perder o trabalho
-                  </div>
-                </div>
-              </div>
-
-              <div
-                style="
-                  background: #f8fafc;
-                  border: 1px solid #e2e8f0;
-                  border-radius: 8px;
-                  padding: 3% 3.5%;
-                  box-sizing: border-box;
-                "
-              >
-                <div
-                  style="
-                    color: #5a6a7a;
-                    font-size: clamp(14px, 1.6vw, 17px);
-                    margin-bottom: 8px;
-                    text-align: center;
-                  "
-                >
-                  <strong
-                    >Os 3 botões ficam no canto superior direito de toda
-                    janela</strong
-                  >
-                </div>
-                <div
-                  style="
-                    display: flex;
-                    gap: 8px;
-                    justify-content: center;
-                    flex-wrap: wrap;
-                  "
-                >
-                  <span
-                    style="
-                      background: #f0f6ff;
-                      color: #003f7f;
-                      border: 1px solid #c8ddf5;
-                      border-radius: 20px;
-                      padding: 5px 14px;
-                      font-size: clamp(11px, 1.2vw, 13px);
-                      font-weight: 600;
-                    "
-                  >
-                    ➖ Minimizar
-                  </span>
-                  <span
-                    style="
-                      background: #f0f6ff;
-                      color: #003f7f;
-                      border: 1px solid #c8ddf5;
-                      border-radius: 20px;
-                      padding: 5px 14px;
-                      font-size: clamp(11px, 1.2vw, 13px);
-                      font-weight: 600;
-                    "
-                  >
-                    ⬜ Maximizar
-                  </span>
-                  <span
-                    style="
-                      background: #fff8f0;
-                      color: #ff6600;
-                      border: 1px solid #ffd9b3;
-                      border-radius: 20px;
-                      padding: 5px 14px;
-                      font-size: clamp(11px, 1.2vw, 13px);
-                      font-weight: 600;
-                    "
-                  >
-                    ✖️ Fechar
-                  </span>
-                </div>
-              </div>
-
-              <!-- ESPAÇO PARA IMAGEM -->
-              <div
-                style="
-                  background: #fafbfc;
-                  border: 2px dashed #d0dbe8;
-                  border-radius: 8px;
-                  padding: 2.5%;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
                   display: flex;
                   align-items: center;
                   justify-content: center;
-                  gap: 12px;
-                  box-sizing: border-box;
+                  font-size: clamp(12px, 1.3vw, 14px);
+                  font-weight: 700;
                   flex-shrink: 0;
                 "
+                >3</span
               >
-                <img
-                  src="../assets/sco_02_img_03.png"
-                  style="width: 100%"
-                  alt=""
-                />
+              <div
+                style="
+                  font-size: clamp(13px, 1.4vw, 15px);
+                  color: #334155;
+                  line-height: 1.5;
+                "
+              >
+                <strong>Operar janelas</strong>: abrir, minimizar, maximizar,
+                restaurar e fechar
+              </div>
+            </div>
+            <div
+              style="
+                background: #ffffff;
+                border: 1px solid #e2e8f0;
+                border-radius: 6px;
+                padding: 2.5% 3%;
+                display: flex;
+                align-items: flex-start;
+                gap: 10px;
+                box-sizing: border-box;
+              "
+            >
+              <span
+                style="
+                  background: #003f7f;
+                  color: #ffffff;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: clamp(12px, 1.3vw, 14px);
+                  font-weight: 700;
+                  flex-shrink: 0;
+                "
+                >4</span
+              >
+              <div
+                style="
+                  font-size: clamp(13px, 1.4vw, 15px);
+                  color: #334155;
+                  line-height: 1.5;
+                "
+              >
+                <strong>Diferenciar</strong> pastas e arquivos, compreendendo
+                sua organização hierárquica
+              </div>
+            </div>
+            <div
+              style="
+                background: #ffffff;
+                border: 1px solid #e2e8f0;
+                border-radius: 6px;
+                padding: 2.5% 3%;
+                display: flex;
+                align-items: flex-start;
+                gap: 10px;
+                box-sizing: border-box;
+              "
+            >
+              <span
+                style="
+                  background: #003f7f;
+                  color: #ffffff;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: clamp(12px, 1.3vw, 14px);
+                  font-weight: 700;
+                  flex-shrink: 0;
+                "
+                >5</span
+              >
+              <div
+                style="
+                  font-size: clamp(13px, 1.4vw, 15px);
+                  color: #334155;
+                  line-height: 1.5;
+                "
+              >
+                <strong>Gerenciar</strong> pastas: criar, renomear, mover e
+                excluir
+              </div>
+            </div>
+            <div
+              style="
+                background: #ffffff;
+                border: 1px solid #e2e8f0;
+                border-radius: 6px;
+                padding: 2.5% 3%;
+                display: flex;
+                align-items: flex-start;
+                gap: 10px;
+                box-sizing: border-box;
+              "
+            >
+              <span
+                style="
+                  background: #ff6600;
+                  color: #ffffff;
+                  border-radius: 50%;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: clamp(12px, 1.3vw, 14px);
+                  font-weight: 700;
+                  flex-shrink: 0;
+                "
+                >6</span
+              >
+              <div
+                style="
+                  font-size: clamp(13px, 1.4vw, 15px);
+                  color: #334155;
+                  line-height: 1.5;
+                "
+              >
+                <strong>Aplicar na prática:</strong> usar a Lixeira para apagar
+                e restaurar arquivos
               </div>
             </div>
           </div>
 
-          <!-- ===== SLIDE 7 — PASTAS E ARQUIVOS ===== -->
           <div
             style="
-              width: 100%;
-              aspect-ratio: 16/9;
-              background: #ffffff;
-              border-radius: 12px;
-              overflow: hidden;
-              display: flex;
-              flex-direction: column;
-              margin-bottom: 20px;
-              box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+              background: #fff8f0;
+              border: 1px solid #ffd9b3;
+              border-radius: 6px;
+              padding: 2% 3%;
+              font-size: clamp(13px, 1.4vw, 15px);
+              color: #664422;
+              box-sizing: border-box;
+              flex-shrink: 0;
             "
           >
-            <div
-              style="
-                background: #003f7f;
-                padding: 14px 28px;
-                display: flex;
-                align-items: center;
-                gap: 12px;
-                flex-shrink: 0;
-                box-sizing: border-box;
-              "
-            >
-              <span
-                style="
-                  background: rgba(255, 255, 255, 0.15);
-                  border-radius: 4px;
-                  padding: 5px 12px;
-                  color: #ffffff;
-                  font-weight: 700;
-                  font-size: clamp(15px, 1.8vw, 19px);
-                "
-                >06</span
-              >
-              <span
-                style="
-                  color: #ffffff;
-                  font-size: clamp(18px, 2.1vw, 22px);
-                  font-weight: 600;
-                "
-              >
-                PASTAS E ARQUIVOS
-              </span>
-            </div>
-
-            <div
-              style="
-                flex: 1;
-                min-height: 0;
-                padding: 3% 4%;
-                display: flex;
-                flex-direction: column;
-                gap: 2.5%;
-                overflow-y: auto;
-                box-sizing: border-box;
-              "
-            >
-              <div
-                style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5%"
-              >
-                <div
-                  style="
-                    background: #f0f6ff;
-                    border: 1px solid #c8ddf5;
-                    border-radius: 8px;
-                    padding: 4% 5%;
-                    box-sizing: border-box;
-                  "
-                >
-                  <div
-                    style="
-                      color: #003f7f;
-                      font-size: clamp(17px, 2vw, 22px);
-                      font-weight: 700;
-                      margin-bottom: 10px;
-                    "
-                  >
-                    📁 Pastas
-                  </div>
-                  <div
-                    style="
-                      color: #334155;
-                      font-size: clamp(14px, 1.6vw, 17px);
-                      line-height: 1.6;
-                      margin-bottom: 10px;
-                    "
-                  >
-                    São <strong>contêineres</strong> que organizam arquivos.
-                    Funcionam como <strong>gavetas</strong> em um armário — cada
-                    pasta pode conter arquivos e outras pastas (subpastas).
-                  </div>
-                  <div
-                    style="
-                      background: #ffffff;
-                      border: 1px solid #c8ddf5;
-                      border-radius: 6px;
-                      padding: 3% 4%;
-                      font-size: clamp(12px, 1.3vw, 14px);
-                      color: #5a6a7a;
-                      box-sizing: border-box;
-                      line-height: 1.6;
-                    "
-                  >
-                    <strong>Exemplo:</strong><br />
-                    📁 Documentos<br />
-                    &nbsp;&nbsp;├── 📁 Trabalho<br />
-                    &nbsp;&nbsp;├── 📁 Pessoal<br />
-                    &nbsp;&nbsp;└── 📁 Estudos
-                  </div>
-                </div>
-                <div
-                  style="
-                    background: #fff8f0;
-                    border: 1px solid #ffd9b3;
-                    border-radius: 8px;
-                    padding: 4% 5%;
-                    box-sizing: border-box;
-                  "
-                >
-                  <div
-                    style="
-                      color: #ff6600;
-                      font-size: clamp(17px, 2vw, 22px);
-                      font-weight: 700;
-                      margin-bottom: 10px;
-                    "
-                  >
-                    📄 Arquivos
-                  </div>
-                  <div
-                    style="
-                      color: #334155;
-                      font-size: clamp(14px, 1.6vw, 17px);
-                      line-height: 1.6;
-                      margin-bottom: 10px;
-                    "
-                  >
-                    São <strong>unidades de informação</strong> que contêm
-                    dados: textos, imagens, músicas, vídeos, planilhas. Cada
-                    arquivo tem um <strong>nome</strong> e uma
-                    <strong>extensão</strong>.
-                  </div>
-                  <div
-                    style="
-                      background: #ffffff;
-                      border: 1px solid #ffd9b3;
-                      border-radius: 6px;
-                      padding: 3% 4%;
-                      font-size: clamp(12px, 1.3vw, 14px);
-                      color: #5a6a7a;
-                      box-sizing: border-box;
-                      line-height: 1.6;
-                    "
-                  >
-                    <strong>Exemplos:</strong><br />
-                    📄 relatorio.docx (Word)<br />
-                    📄 planilha.xlsx (Excel)<br />
-                    📄 foto.jpg (Imagem)<br />
-                    📄 musica.mp3 (Áudio)
-                  </div>
-                </div>
-              </div>
-
-              <!-- ESPAÇO PARA IMAGEM -->
-              <div
-                style="
-                  background: #fafbfc;
-                  border: 2px dashed #d0dbe8;
-                  border-radius: 8px;
-                  padding: 2.5%;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  gap: 12px;
-                  box-sizing: border-box;
-                  flex-shrink: 0;
-                "
-              >
-                <img
-                  src="../assets/sco_02_img_04.png"
-                  style="width: 100%"
-                  alt=""
-                />
-              </div>
-
-              <div
-                style="
-                  background: #fff8f0;
-                  border: 1px solid #ffd9b3;
-                  border-radius: 8px;
-                  padding: 2.5% 3.5%;
-                  box-sizing: border-box;
-                "
-              >
-                <div
-                  style="
-                    color: #664422;
-                    font-size: clamp(14px, 1.6vw, 17px);
-                    line-height: 1.6;
-                  "
-                >
-                  <strong style="color: #ff6600">🧠 Dica:</strong> Organize seus
-                  arquivos em pastas com
-                  <strong>nomes claros e objetivos</strong>. Isso facilita
-                  encontrar o que precisa rapidamente.
-                </div>
-              </div>
-            </div>
+            <strong>📌 Metodologia:</strong> Aula expositiva dialogada (1h) +
+            demonstração prática no laboratório (1h) + atividades guiadas (2h)
           </div>
+        </div>
+      </div>
 
-          <!-- ===== SLIDE 8 — GERENCIANDO PASTAS E ARQUIVOS ===== -->
-          <div
+      <!-- ===== SLIDE 3 — O QUE É SISTEMA OPERACIONAL ===== -->
+      <div
+        style="
+          width: 100%;
+          aspect-ratio: 16/9;
+          background: #ffffff;
+          border-radius: 12px;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 20px;
+          box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        "
+      >
+        <div
+          style="
+            background: #003f7f;
+            padding: 14px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+            box-sizing: border-box;
+          "
+        >
+          <span
             style="
-              width: 100%;
-              aspect-ratio: 16/9;
-              background: #ffffff;
-              border-radius: 12px;
-              overflow: hidden;
-              display: flex;
-              flex-direction: column;
-              margin-bottom: 20px;
-              box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+              background: rgba(255, 255, 255, 0.15);
+              border-radius: 4px;
+              padding: 5px 12px;
+              color: #ffffff;
+              font-weight: 700;
+              font-size: clamp(15px, 1.8vw, 19px);
+            "
+            >02</span
+          >
+          <span
+            style="
+              color: #ffffff;
+              font-size: clamp(18px, 2.1vw, 22px);
+              font-weight: 600;
             "
           >
-            <div
-              style="
-                background: #003f7f;
-                padding: 14px 28px;
-                display: flex;
-                align-items: center;
-                gap: 12px;
-                flex-shrink: 0;
-                box-sizing: border-box;
-              "
-            >
-              <span
-                style="
-                  background: rgba(255, 255, 255, 0.15);
-                  border-radius: 4px;
-                  padding: 5px 12px;
-                  color: #ffffff;
-                  font-weight: 700;
-                  font-size: clamp(15px, 1.8vw, 19px);
-                "
-                >07</span
-              >
-              <span
-                style="
-                  color: #ffffff;
-                  font-size: clamp(18px, 2.1vw, 22px);
-                  font-weight: 600;
-                "
-              >
-                GERENCIANDO PASTAS E ARQUIVOS
-              </span>
-            </div>
+            O QUE É SISTEMA OPERACIONAL?
+          </span>
+        </div>
 
-            <div
-              style="
-                flex: 1;
-                min-height: 0;
-                padding: 3% 4%;
-                display: flex;
-                flex-direction: column;
-                gap: 2.5%;
-                overflow-y: auto;
-                box-sizing: border-box;
-              "
-            >
-              <div
-                style="
-                  display: grid;
-                  grid-template-columns: repeat(4, 1fr);
-                  gap: 2%;
-                "
-              >
-                <div
-                  style="
-                    background: #f0f6ff;
-                    border: 1px solid #c8ddf5;
-                    border-radius: 8px;
-                    padding: 4% 5%;
-                    box-sizing: border-box;
-                    display: flex;
-                    flex-direction: column;
-                  "
-                >
-                  <div
-                    style="
-                      background: #003f7f;
-                      color: #ffffff;
-                      border-radius: 50%;
-                      width: 36px;
-                      height: 36px;
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      font-weight: 700;
-                      font-size: clamp(14px, 1.5vw, 16px);
-                      margin-bottom: 10px;
-                    "
-                  >
-                    1
-                  </div>
-                  <div
-                    style="
-                      font-size: clamp(14px, 1.5vw, 16px);
-                      font-weight: 700;
-                      color: #003f7f;
-                      margin-bottom: 6px;
-                    "
-                  >
-                    Criar
-                  </div>
-                  <div
-                    style="
-                      font-size: clamp(11px, 1.2vw, 13px);
-                      color: #5a6a7a;
-                      line-height: 1.5;
-                    "
-                  >
-                    Clique com botão direito → Novo → Pasta. Digite o nome e
-                    pressione Enter
-                  </div>
-                </div>
-                <div
-                  style="
-                    background: #f0f6ff;
-                    border: 1px solid #c8ddf5;
-                    border-radius: 8px;
-                    padding: 4% 5%;
-                    box-sizing: border-box;
-                    display: flex;
-                    flex-direction: column;
-                  "
-                >
-                  <div
-                    style="
-                      background: #003f7f;
-                      color: #ffffff;
-                      border-radius: 50%;
-                      width: 36px;
-                      height: 36px;
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      font-weight: 700;
-                      font-size: clamp(14px, 1.5vw, 16px);
-                      margin-bottom: 10px;
-                    "
-                  >
-                    2
-                  </div>
-                  <div
-                    style="
-                      font-size: clamp(14px, 1.5vw, 16px);
-                      font-weight: 700;
-                      color: #003f7f;
-                      margin-bottom: 6px;
-                    "
-                  >
-                    Renomear
-                  </div>
-                  <div
-                    style="
-                      font-size: clamp(11px, 1.2vw, 13px);
-                      color: #5a6a7a;
-                      line-height: 1.5;
-                    "
-                  >
-                    Clique com botão direito → Renomear. Digite o novo nome e
-                    pressione Enter
-                  </div>
-                </div>
-                <div
-                  style="
-                    background: #f0f6ff;
-                    border: 1px solid #c8ddf5;
-                    border-radius: 8px;
-                    padding: 4% 5%;
-                    box-sizing: border-box;
-                    display: flex;
-                    flex-direction: column;
-                  "
-                >
-                  <div
-                    style="
-                      background: #003f7f;
-                      color: #ffffff;
-                      border-radius: 50%;
-                      width: 36px;
-                      height: 36px;
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      font-weight: 700;
-                      font-size: clamp(14px, 1.5vw, 16px);
-                      margin-bottom: 10px;
-                    "
-                  >
-                    3
-                  </div>
-                  <div
-                    style="
-                      font-size: clamp(14px, 1.5vw, 16px);
-                      font-weight: 700;
-                      color: #003f7f;
-                      margin-bottom: 6px;
-                    "
-                  >
-                    Mover
-                  </div>
-                  <div
-                    style="
-                      font-size: clamp(11px, 1.2vw, 13px);
-                      color: #5a6a7a;
-                      line-height: 1.5;
-                    "
-                  >
-                    Arraste com o mouse ou use Ctrl+X (recortar) + Ctrl+V
-                    (colar) na pasta de destino
-                  </div>
-                </div>
-                <div
-                  style="
-                    background: #fff8f0;
-                    border: 1px solid #ffd9b3;
-                    border-radius: 8px;
-                    padding: 4% 5%;
-                    box-sizing: border-box;
-                    display: flex;
-                    flex-direction: column;
-                  "
-                >
-                  <div
-                    style="
-                      background: #ff6600;
-                      color: #ffffff;
-                      border-radius: 50%;
-                      width: 36px;
-                      height: 36px;
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      font-weight: 700;
-                      font-size: clamp(14px, 1.5vw, 16px);
-                      margin-bottom: 10px;
-                    "
-                  >
-                    4
-                  </div>
-                  <div
-                    style="
-                      font-size: clamp(14px, 1.5vw, 16px);
-                      font-weight: 700;
-                      color: #ff6600;
-                      margin-bottom: 6px;
-                    "
-                  >
-                    Excluir
-                  </div>
-                  <div
-                    style="
-                      font-size: clamp(11px, 1.2vw, 13px);
-                      color: #5a6a7a;
-                      line-height: 1.5;
-                    "
-                  >
-                    Clique com botão direito → Excluir ou pressione Delete. Vai
-                    para a Lixeira
-                  </div>
-                </div>
-              </div>
-
-              <!-- ESPAÇO PARA IMAGEM -->
-              <div
-                style="
-                  background: #fafbfc;
-                  border: 2px dashed #d0dbe8;
-                  border-radius: 8px;
-                  padding: 2.5%;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  gap: 12px;
-                  box-sizing: border-box;
-                  flex-shrink: 0;
-                "
-              >
-                <img
-                  src="../assets/sco_02_img_05.png"
-                  style="width: 100%"
-                  alt=""
-                />
-              </div>
-
-              <div
-                style="
-                  background: #f8fafc;
-                  border: 1px solid #e2e8f0;
-                  border-radius: 8px;
-                  padding: 2.5% 3.5%;
-                  box-sizing: border-box;
-                "
-              >
-                <div
-                  style="
-                    color: #5a6a7a;
-                    font-size: clamp(13px, 1.4vw, 15px);
-                    line-height: 1.6;
-                  "
-                >
-                  <strong style="color: #003f7f">⌨️ Atalhos úteis:</strong>
-                  <strong>F2</strong> = Renomear · <strong>Delete</strong> =
-                  Excluir · <strong>Ctrl+C</strong> = Copiar ·
-                  <strong>Ctrl+X</strong> = Recortar · <strong>Ctrl+V</strong> =
-                  Colar
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- ===== SLIDE 9 — LIXEIRA ===== -->
+        <div
+          style="
+            flex: 1;
+            min-height: 0;
+            padding: 3% 4%;
+            display: flex;
+            flex-direction: column;
+            gap: 2.5%;
+            overflow-y: auto;
+            box-sizing: border-box;
+          "
+        >
           <div
-            style="
-              width: 100%;
-              aspect-ratio: 16/9;
-              background: #ffffff;
-              border-radius: 12px;
-              overflow: hidden;
-              display: flex;
-              flex-direction: column;
-              margin-bottom: 20px;
-              box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-            "
+            style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 2.5%"
           >
-            <div
-              style="
-                background: #003f7f;
-                padding: 14px 28px;
-                display: flex;
-                align-items: center;
-                gap: 12px;
-                flex-shrink: 0;
-                box-sizing: border-box;
-              "
-            >
-              <span
-                style="
-                  background: rgba(255, 255, 255, 0.15);
-                  border-radius: 4px;
-                  padding: 5px 12px;
-                  color: #ffffff;
-                  font-weight: 700;
-                  font-size: clamp(15px, 1.8vw, 19px);
-                "
-                >08</span
-              >
-              <span
-                style="
-                  color: #ffffff;
-                  font-size: clamp(18px, 2.1vw, 22px);
-                  font-weight: 600;
-                "
-              >
-                LIXEIRA: APAGAR E RESTAURAR
-              </span>
-            </div>
-
-            <div
-              style="
-                flex: 1;
-                min-height: 0;
-                padding: 3% 4%;
-                display: flex;
-                flex-direction: column;
-                gap: 2.5%;
-                overflow-y: auto;
-                box-sizing: border-box;
-              "
-            >
-              <div
-                style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5%"
-              >
-                <div
-                  style="
-                    background: #fef5f5;
-                    border: 1px solid #f0c8c8;
-                    border-radius: 8px;
-                    padding: 4% 5%;
-                    box-sizing: border-box;
-                  "
-                >
-                  <div
-                    style="
-                      color: #c0392b;
-                      font-size: clamp(17px, 2vw, 22px);
-                      font-weight: 700;
-                      margin-bottom: 10px;
-                    "
-                  >
-                    🗑️ Apagar um Arquivo
-                  </div>
-                  <div
-                    style="
-                      color: #334155;
-                      font-size: clamp(14px, 1.6vw, 17px);
-                      line-height: 1.8;
-                    "
-                  >
-                    <strong>1.</strong> Selecione o arquivo ou pasta<br />
-                    <strong>2.</strong> Clique com botão direito →
-                    <strong>Excluir</strong><br />
-                    <strong>3.</strong> Confirme a exclusão<br />
-                    <strong>4.</strong> O item vai para a
-                    <strong>Lixeira</strong><br />
-                    <strong>5.</strong> O arquivo
-                    <strong>não foi apagado definitivamente</strong>
-                  </div>
-                </div>
-                <div
-                  style="
-                    background: #f0f8f0;
-                    border: 1px solid #b8d8b8;
-                    border-radius: 8px;
-                    padding: 4% 5%;
-                    box-sizing: border-box;
-                  "
-                >
-                  <div
-                    style="
-                      color: #27ae60;
-                      font-size: clamp(17px, 2vw, 22px);
-                      font-weight: 700;
-                      margin-bottom: 10px;
-                    "
-                  >
-                    ♻️ Restaurar da Lixeira
-                  </div>
-                  <div
-                    style="
-                      color: #334155;
-                      font-size: clamp(14px, 1.6vw, 17px);
-                      line-height: 1.8;
-                    "
-                  >
-                    <strong>1.</strong> Abra a Lixeira (ícone na área de
-                    trabalho)<br />
-                    <strong>2.</strong> Selecione o arquivo<br />
-                    <strong>3.</strong> Clique com botão direito →
-                    <strong>Restaurar</strong><br />
-                    <strong>4.</strong> O arquivo volta para a
-                    <strong>pasta original</strong><br />
-                    <strong>5.</strong> Pronto! Arquivo recuperado
-                  </div>
-                </div>
-              </div>
-
-              <!-- ESPAÇO PARA IMAGEM -->
+            <div style="display: flex; flex-direction: column; gap: 2.5%">
               <div
                 style="
-                  background: #fafbfc;
-                  border: 2px dashed #d0dbe8;
+                  background: #f0f6ff;
+                  border: 1px solid #c8ddf5;
                   border-radius: 8px;
-                  padding: 2.5%;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  gap: 12px;
-                  box-sizing: border-box;
-                  flex-shrink: 0;
-                "
-              >
-                <img
-                  src="../assets/sco_02_img_06.png"
-                  style="width: 100%"
-                  alt=""
-                />
-              </div>
-
-              <div
-                style="
-                  background: #fff8f0;
-                  border: 1px solid #ffd9b3;
-                  border-radius: 8px;
-                  padding: 2.5% 3.5%;
+                  padding: 3.5% 4%;
                   box-sizing: border-box;
                 "
               >
                 <div
                   style="
-                    color: #664422;
-                    font-size: clamp(14px, 1.6vw, 17px);
-                    line-height: 1.6;
+                    color: #003f7f;
+                    font-size: clamp(18px, 2.2vw, 24px);
+                    font-weight: 700;
+                    margin-bottom: 12px;
                   "
                 >
-                  <strong style="color: #ff6600">⚠️ Atenção:</strong> Para
-                  apagar definitivamente, abra a Lixeira e use
-                  <strong>Esvaziar Lixeira</strong>. Depois disso, o arquivo
-                  <strong>não poderá mais ser recuperado</strong>
-                  pelos métodos comuns.
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- ===== SLIDE 10 — ATIVIDADES PRÁTICAS ===== -->
-          <div
-            style="
-              width: 100%;
-              aspect-ratio: 16/9;
-              background: #ffffff;
-              border-radius: 12px;
-              overflow: hidden;
-              display: flex;
-              flex-direction: column;
-              margin-bottom: 20px;
-              box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-            "
-          >
-            <div
-              style="
-                background: #003f7f;
-                padding: 14px 28px;
-                display: flex;
-                align-items: center;
-                gap: 12px;
-                flex-shrink: 0;
-                box-sizing: border-box;
-              "
-            >
-              <span
-                style="
-                  background: rgba(255, 255, 255, 0.15);
-                  border-radius: 4px;
-                  padding: 5px 12px;
-                  color: #ffffff;
-                  font-weight: 700;
-                  font-size: clamp(15px, 1.8vw, 19px);
-                "
-                >09</span
-              >
-              <span
-                style="
-                  color: #ffffff;
-                  font-size: clamp(18px, 2.1vw, 22px);
-                  font-weight: 600;
-                "
-              >
-                ATIVIDADES PRÁTICAS
-              </span>
-            </div>
-
-            <div
-              style="
-                flex: 1;
-                min-height: 0;
-                padding: 3% 4%;
-                display: flex;
-                flex-direction: column;
-                gap: 2.5%;
-                overflow-y: auto;
-                box-sizing: border-box;
-              "
-            >
-              <div
-                style="
-                  display: grid;
-                  grid-template-columns: repeat(3, 1fr);
-                  gap: 2%;
-                "
-              >
-                <div
-                  style="
-                    background: #f0f6ff;
-                    border: 1px solid #c8ddf5;
-                    border-radius: 8px;
-                    padding: 5% 6%;
-                    display: flex;
-                    flex-direction: column;
-                    box-sizing: border-box;
-                  "
-                >
-                  <div
-                    style="
-                      background: #003f7f;
-                      color: #ffffff;
-                      border-radius: 50%;
-                      width: 40px;
-                      height: 40px;
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      font-weight: 700;
-                      font-size: clamp(16px, 1.8vw, 19px);
-                      margin-bottom: 12px;
-                    "
-                  >
-                    1
-                  </div>
-                  <div
-                    style="
-                      font-size: clamp(15px, 1.7vw, 18px);
-                      font-weight: 700;
-                      color: #003f7f;
-                      margin-bottom: 8px;
-                    "
-                  >
-                    Criar Estrutura de Pastas
-                  </div>
-                  <div
-                    style="
-                      font-size: clamp(12px, 1.3vw, 14px);
-                      color: #5a6a7a;
-                      line-height: 1.7;
-                    "
-                  >
-                    Crie a seguinte estrutura:<br /><br />
-                    📁 <strong>Meus Documentos</strong><br />
-                    &nbsp;&nbsp;├── 📁 Trabalho<br />
-                    &nbsp;&nbsp;├── 📁 Pessoal<br />
-                    &nbsp;&nbsp;└── 📁 Estudos
-                  </div>
-                  <div
-                    style="
-                      margin-top: auto;
-                      padding-top: 10px;
-                      font-size: clamp(11px, 1.2vw, 13px);
-                      color: #003f7f;
-                      font-weight: 600;
-                    "
-                  >
-                    ⏱️ Tempo: 40 min
-                  </div>
+                  O "maestro" do computador
                 </div>
                 <div
                   style="
-                    background: #f0f8f0;
-                    border: 1px solid #b8d8b8;
-                    border-radius: 8px;
-                    padding: 5% 6%;
-                    display: flex;
-                    flex-direction: column;
-                    box-sizing: border-box;
-                  "
-                >
-                  <div
-                    style="
-                      background: #27ae60;
-                      color: #ffffff;
-                      border-radius: 50%;
-                      width: 40px;
-                      height: 40px;
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      font-weight: 700;
-                      font-size: clamp(16px, 1.8vw, 19px);
-                      margin-bottom: 12px;
-                    "
-                  >
-                    2
-                  </div>
-                  <div
-                    style="
-                      font-size: clamp(15px, 1.7vw, 18px);
-                      font-weight: 700;
-                      color: #27ae60;
-                      margin-bottom: 8px;
-                    "
-                  >
-                    Renomear e Organizar
-                  </div>
-                  <div
-                    style="
-                      font-size: clamp(12px, 1.3vw, 14px);
-                      color: #5a6a7a;
-                      line-height: 1.7;
-                    "
-                  >
-                    Crie 3 arquivos de texto em "Trabalho". Renomeie para:
-                    relatorio.txt, planilha.txt, apresentacao.txt. Mova um deles
-                    para a pasta "Pessoal".
-                  </div>
-                  <div
-                    style="
-                      margin-top: auto;
-                      padding-top: 10px;
-                      font-size: clamp(11px, 1.2vw, 13px);
-                      color: #27ae60;
-                      font-weight: 600;
-                    "
-                  >
-                    ⏱️ Tempo: 40 min
-                  </div>
-                </div>
-                <div
-                  style="
-                    background: #fff8f0;
-                    border: 1px solid #ffd9b3;
-                    border-radius: 8px;
-                    padding: 5% 6%;
-                    display: flex;
-                    flex-direction: column;
-                    box-sizing: border-box;
-                  "
-                >
-                  <div
-                    style="
-                      background: #ff6600;
-                      color: #ffffff;
-                      border-radius: 50%;
-                      width: 40px;
-                      height: 40px;
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      font-weight: 700;
-                      font-size: clamp(16px, 1.8vw, 19px);
-                      margin-bottom: 12px;
-                    "
-                  >
-                    3
-                  </div>
-                  <div
-                    style="
-                      font-size: clamp(15px, 1.7vw, 18px);
-                      font-weight: 700;
-                      color: #ff6600;
-                      margin-bottom: 8px;
-                    "
-                  >
-                    Excluir e Restaurar
-                  </div>
-                  <div
-                    style="
-                      font-size: clamp(12px, 1.3vw, 14px);
-                      color: #5a6a7a;
-                      line-height: 1.7;
-                    "
-                  >
-                    Exclua o arquivo "apresentacao.txt". Abra a Lixeira e
-                    verifique que ele está lá. Restaure o arquivo e confirme que
-                    voltou para a pasta "Trabalho".
-                  </div>
-                  <div
-                    style="
-                      margin-top: auto;
-                      padding-top: 10px;
-                      font-size: clamp(11px, 1.2vw, 13px);
-                      color: #ff6600;
-                      font-weight: 600;
-                    "
-                  >
-                    ⏱️ Tempo: 40 min
-                  </div>
-                </div>
-              </div>
-
-              <!-- ESPAÇO PARA IMAGEM -->
-              <div
-                style="
-                  background: #fafbfc;
-                  border: 2px dashed #d0dbe8;
-                  border-radius: 8px;
-                  padding: 2.5%;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  gap: 12px;
-                  box-sizing: border-box;
-                  flex-shrink: 0;
-                "
-              >
-                <img
-                  src="../assets/sco_02_img_07.png"
-                  style="width: 100%"
-                  alt=""
-                />
-              </div>
-
-              <div
-                style="
-                  background: #f8fafc;
-                  border: 1px solid #e2e8f0;
-                  border-radius: 8px;
-                  padding: 2.5% 3.5%;
-                  box-sizing: border-box;
-                  flex-shrink: 0;
-                "
-              >
-                <div
-                  style="
-                    color: #5a6a7a;
-                    font-size: clamp(13px, 1.4vw, 15px);
+                    color: #334155;
+                    font-size: clamp(15px, 1.8vw, 19px);
                     line-height: 1.7;
                   "
                 >
-                  <strong style="color: #003f7f"
-                    >📌 Orientação ao professor:</strong
-                  >
-                  Verifique se os alunos compreenderam a hierarquia de pastas.
-                  Reforce que a Lixeira é uma área temporária e que "Esvaziar
-                  Lixeira" é uma ação definitiva. Auxilie individualmente quem
-                  tiver dificuldade com o mouse ou teclado.
+                  O <strong>Sistema Operacional (SO)</strong> é o
+                  <strong>software principal</strong> que gerencia todos os
+                  recursos do computador. Ele controla o hardware, executa os
+                  programas e cria a <strong>interface</strong> que usamos para
+                  interagir com a máquina.
+                </div>
+              </div>
+
+              <div
+                style="
+                  background: #fff8f0;
+                  border: 1px solid #ffd9b3;
+                  border-radius: 8px;
+                  padding: 3.5% 4%;
+                  box-sizing: border-box;
+                "
+              >
+                <div
+                  style="
+                    color: #ff6600;
+                    font-size: clamp(18px, 2.2vw, 24px);
+                    font-weight: 700;
+                    margin-bottom: 12px;
+                  "
+                >
+                  💡 Funções principais
+                </div>
+                <div
+                  style="
+                    color: #334155;
+                    font-size: clamp(15px, 1.8vw, 19px);
+                    line-height: 1.7;
+                  "
+                >
+                  • Gerencia o <strong>hardware</strong> (processador, memória,
+                  disco)<br />
+                  • Executa e organiza os <strong>programas</strong><br />
+                  • Controla <strong>arquivos e pastas</strong><br />
+                  • Oferece a <strong>interface gráfica</strong> (ícones,
+                  janelas, menus)
+                </div>
+              </div>
+
+              <div
+                style="
+                  background: #f8fafc;
+                  border: 1px solid #e2e8f0;
+                  border-radius: 8px;
+                  padding: 3% 3.5%;
+                  box-sizing: border-box;
+                "
+              >
+                <div
+                  style="
+                    color: #334155;
+                    font-size: clamp(15px, 1.8vw, 19px);
+                    line-height: 1.7;
+                  "
+                >
+                  <strong style="color: #003f7f">📝 Analogia:</strong> O SO é
+                  como o <strong>gerente de uma empresa</strong> — ele coordena
+                  os funcionários (programas) e os recursos (hardware) para que
+                  tudo funcione em harmonia.
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- ===== SLIDE 11 — RESUMO E ENCERRAMENTO ===== -->
+            <!-- ESPAÇO PARA IMAGEM -->
+            <div
+              style="
+                background: #fafbfc;
+                border: 2px dashed #d0dbe8;
+                border-radius: 8px;
+                padding: 4%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                box-sizing: border-box;
+              "
+            >
+              <img
+                src="../assets/sco_02_img_01.png"
+                style="width: 100%"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== SLIDE 4 — SISTEMAS OPERACIONAIS COMUNS ===== -->
+      <div
+        style="
+          width: 100%;
+          aspect-ratio: 16/9;
+          background: #ffffff;
+          border-radius: 12px;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 20px;
+          box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        "
+      >
+        <div
+          style="
+            background: #003f7f;
+            padding: 14px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+            box-sizing: border-box;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.15);
+              border-radius: 4px;
+              padding: 5px 12px;
+              color: #ffffff;
+              font-weight: 700;
+              font-size: clamp(15px, 1.8vw, 19px);
+            "
+            >03</span
+          >
+          <span
+            style="
+              color: #ffffff;
+              font-size: clamp(18px, 2.1vw, 22px);
+              font-weight: 600;
+            "
+          >
+            SISTEMAS OPERACIONAIS COMUNS
+          </span>
+        </div>
+
+        <div
+          style="
+            flex: 1;
+            min-height: 0;
+            padding: 3% 4%;
+            display: flex;
+            flex-direction: column;
+            gap: 2.5%;
+            overflow-y: auto;
+            box-sizing: border-box;
+          "
+        >
           <div
             style="
-              width: 100%;
-              aspect-ratio: 16/9;
-              background: #ffffff;
-              border-radius: 12px;
-              overflow: hidden;
-              display: flex;
-              flex-direction: column;
-              margin-bottom: 20px;
-              box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+              display: grid;
+              grid-template-columns: repeat(4, 1fr);
+              gap: 2%;
             "
           >
             <div
               style="
-                background: #003f7f;
-                padding: 14px 28px;
-                display: flex;
-                align-items: center;
-                gap: 12px;
-                flex-shrink: 0;
+                background: #ffffff;
+                border: 1px solid #e2e8f0;
+                border-top: 4px solid #003f7f;
+                border-radius: 8px;
+                padding: 4% 3%;
+                text-align: center;
                 box-sizing: border-box;
-              "
-            >
-              <span
-                style="
-                  background: rgba(255, 255, 255, 0.15);
-                  border-radius: 4px;
-                  padding: 5px 12px;
-                  color: #ffffff;
-                  font-weight: 700;
-                  font-size: clamp(15px, 1.8vw, 19px);
-                "
-                >10</span
-              >
-              <span
-                style="
-                  color: #ffffff;
-                  font-size: clamp(18px, 2.1vw, 22px);
-                  font-weight: 600;
-                "
-              >
-                RESUMO DO ENCONTRO
-              </span>
-            </div>
-
-            <div
-              style="
-                flex: 1;
-                min-height: 0;
-                padding: 3% 4%;
                 display: flex;
                 flex-direction: column;
-                gap: 2.5%;
-                overflow-y: auto;
-                box-sizing: border-box;
+                justify-content: center;
               "
             >
               <div
+                style="font-size: clamp(28px, 3vw, 36px); margin-bottom: 6px"
+              >
+                🪟
+              </div>
+              <div
                 style="
-                  display: grid;
-                  grid-template-columns: repeat(3, 1fr);
-                  gap: 2%;
+                  font-size: clamp(14px, 1.5vw, 16px);
+                  font-weight: 700;
+                  color: #003f7f;
+                  margin-bottom: 4px;
                 "
+              >
+                Windows
+              </div>
+              <div
+                style="
+                  font-size: clamp(12px, 1.3vw, 14px);
+                  color: #5a6a7a;
+                  line-height: 1.5;
+                "
+              >
+                O mais usado em computadores pessoais e empresas
+              </div>
+            </div>
+            <div
+              style="
+                background: #ffffff;
+                border: 1px solid #e2e8f0;
+                border-top: 4px solid #003f7f;
+                border-radius: 8px;
+                padding: 4% 3%;
+                text-align: center;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+              "
+            >
+              <div
+                style="font-size: clamp(28px, 3vw, 36px); margin-bottom: 6px"
+              >
+                🍎
+              </div>
+              <div
+                style="
+                  font-size: clamp(14px, 1.5vw, 16px);
+                  font-weight: 700;
+                  color: #003f7f;
+                  margin-bottom: 4px;
+                "
+              >
+                macOS
+              </div>
+              <div
+                style="
+                  font-size: clamp(12px, 1.3vw, 14px);
+                  color: #5a6a7a;
+                  line-height: 1.5;
+                "
+              >
+                Exclusivo dos computadores Apple (MacBook, iMac)
+              </div>
+            </div>
+            <div
+              style="
+                background: #ffffff;
+                border: 1px solid #e2e8f0;
+                border-top: 4px solid #ff6600;
+                border-radius: 8px;
+                padding: 4% 3%;
+                text-align: center;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+              "
+            >
+              <div
+                style="font-size: clamp(28px, 3vw, 36px); margin-bottom: 6px"
+              >
+                🐧
+              </div>
+              <div
+                style="
+                  font-size: clamp(14px, 1.5vw, 16px);
+                  font-weight: 700;
+                  color: #ff6600;
+                  margin-bottom: 4px;
+                "
+              >
+                Linux
+              </div>
+              <div
+                style="
+                  font-size: clamp(12px, 1.3vw, 14px);
+                  color: #5a6a7a;
+                  line-height: 1.5;
+                "
+              >
+                Gratuito e de código aberto. Muito usado em servidores
+              </div>
+            </div>
+            <div
+              style="
+                background: #ffffff;
+                border: 1px solid #e2e8f0;
+                border-top: 4px solid #ff6600;
+                border-radius: 8px;
+                padding: 4% 3%;
+                text-align: center;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+              "
+            >
+              <div
+                style="font-size: clamp(28px, 3vw, 36px); margin-bottom: 6px"
+              >
+                📱
+              </div>
+              <div
+                style="
+                  font-size: clamp(14px, 1.5vw, 16px);
+                  font-weight: 700;
+                  color: #ff6600;
+                  margin-bottom: 4px;
+                "
+              >
+                Android / iOS
+              </div>
+              <div
+                style="
+                  font-size: clamp(12px, 1.3vw, 14px);
+                  color: #5a6a7a;
+                  line-height: 1.5;
+                "
+              >
+                Sistemas operacionais de celulares e tablets
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #f8fafc;
+              border: 1px solid #e2e8f0;
+              border-radius: 8px;
+              padding: 3% 3.5%;
+              box-sizing: border-box;
+            "
+          >
+            <div
+              style="
+                color: #5a6a7a;
+                font-size: clamp(14px, 1.6vw, 17px);
+                margin-bottom: 8px;
+                text-align: center;
+              "
+            >
+              <strong
+                >💻 No nosso laboratório, usaremos o
+                <span style="color: #003f7f">Windows</span></strong
+              >
+            </div>
+            <div
+              style="
+                display: flex;
+                gap: 10px;
+                justify-content: center;
+                flex-wrap: wrap;
+              "
+            >
+              <span
+                style="
+                  background: #f0f6ff;
+                  color: #003f7f;
+                  border: 1px solid #c8ddf5;
+                  border-radius: 24px;
+                  padding: 6px 16px;
+                  font-size: clamp(12px, 1.4vw, 15px);
+                  font-weight: 600;
+                "
+              >
+                🖥️ Computadores de mesa
+              </span>
+              <span
+                style="
+                  background: #f0f6ff;
+                  color: #003f7f;
+                  border: 1px solid #c8ddf5;
+                  border-radius: 24px;
+                  padding: 6px 16px;
+                  font-size: clamp(12px, 1.4vw, 15px);
+                  font-weight: 600;
+                "
+              >
+                💼 Empresas
+              </span>
+              <span
+                style="
+                  background: #f0f6ff;
+                  color: #003f7f;
+                  border: 1px solid #c8ddf5;
+                  border-radius: 24px;
+                  padding: 6px 16px;
+                  font-size: clamp(12px, 1.4vw, 15px);
+                  font-weight: 600;
+                "
+              >
+                🏫 Escolas
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== SLIDE 5 — ÁREA DE TRABALHO ===== -->
+      <div
+        style="
+          width: 100%;
+          aspect-ratio: 16/9;
+          background: #ffffff;
+          border-radius: 12px;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 20px;
+          box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        "
+      >
+        <div
+          style="
+            background: #003f7f;
+            padding: 14px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+            box-sizing: border-box;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.15);
+              border-radius: 4px;
+              padding: 5px 12px;
+              color: #ffffff;
+              font-weight: 700;
+              font-size: clamp(15px, 1.8vw, 19px);
+            "
+            >04</span
+          >
+          <span
+            style="
+              color: #ffffff;
+              font-size: clamp(18px, 2.1vw, 22px);
+              font-weight: 600;
+            "
+          >
+            ÁREA DE TRABALHO (DESKTOP)
+          </span>
+        </div>
+
+        <div
+          style="
+            flex: 1;
+            min-height: 0;
+            padding: 3% 4%;
+            display: flex;
+            flex-direction: column;
+            gap: 2.5%;
+            overflow-y: auto;
+            box-sizing: border-box;
+          "
+        >
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5%">
+            <!-- Coluna esquerda: conteúdo -->
+            <div style="display: flex; flex-direction: column; gap: 2.5%">
+              <div
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5%"
               >
                 <div
                   style="
@@ -2641,78 +1038,35 @@
                     border: 1px solid #c8ddf5;
                     border-radius: 8px;
                     padding: 4% 5%;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
                     box-sizing: border-box;
                   "
                 >
                   <div
                     style="
-                      font-size: clamp(22px, 2.5vw, 28px);
-                      margin-bottom: 8px;
-                    "
-                  >
-                    🪟
-                  </div>
-                  <div
-                    style="
-                      font-size: clamp(14px, 1.5vw, 16px);
-                      font-weight: 700;
-                      color: #003f7f;
+                      font-size: clamp(24px, 2.5vw, 30px);
                       margin-bottom: 6px;
-                    "
-                  >
-                    Sistema Operacional
-                  </div>
-                  <div
-                    style="
-                      font-size: clamp(12px, 1.3vw, 14px);
-                      color: #5a6a7a;
-                      line-height: 1.6;
-                    "
-                  >
-                    Gerencia hardware e software
-                  </div>
-                </div>
-                <div
-                  style="
-                    background: #f0f6ff;
-                    border: 1px solid #c8ddf5;
-                    border-radius: 8px;
-                    padding: 4% 5%;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    box-sizing: border-box;
-                  "
-                >
-                  <div
-                    style="
-                      font-size: clamp(22px, 2.5vw, 28px);
-                      margin-bottom: 8px;
                     "
                   >
                     🖼️
                   </div>
                   <div
                     style="
-                      font-size: clamp(14px, 1.5vw, 16px);
+                      font-size: clamp(14px, 1.5vw, 17px);
                       font-weight: 700;
                       color: #003f7f;
-                      margin-bottom: 6px;
+                      margin-bottom: 4px;
                     "
                   >
-                    Área de Trabalho
+                    Ícones
                   </div>
                   <div
                     style="
-                      font-size: clamp(12px, 1.3vw, 14px);
+                      font-size: clamp(11px, 1.2vw, 13px);
                       color: #5a6a7a;
-                      line-height: 1.6;
+                      line-height: 1.5;
                     "
                   >
-                    Ícones, barra de tarefas, menu Iniciar
+                    Atalhos para programas, pastas e arquivos. Clique duplo abre
                   </div>
                 </div>
                 <div
@@ -2721,118 +1075,76 @@
                     border: 1px solid #c8ddf5;
                     border-radius: 8px;
                     padding: 4% 5%;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
                     box-sizing: border-box;
                   "
                 >
                   <div
                     style="
-                      font-size: clamp(22px, 2.5vw, 28px);
-                      margin-bottom: 8px;
-                    "
-                  >
-                    🪟
-                  </div>
-                  <div
-                    style="
-                      font-size: clamp(14px, 1.5vw, 16px);
-                      font-weight: 700;
-                      color: #003f7f;
+                      font-size: clamp(24px, 2.5vw, 30px);
                       margin-bottom: 6px;
                     "
                   >
-                    Janelas
+                    📊
                   </div>
                   <div
                     style="
-                      font-size: clamp(12px, 1.3vw, 14px);
-                      color: #5a6a7a;
-                      line-height: 1.6;
+                      font-size: clamp(14px, 1.5vw, 17px);
+                      font-weight: 700;
+                      color: #003f7f;
+                      margin-bottom: 4px;
                     "
                   >
-                    Minimizar, maximizar, fechar
+                    Barra de Tarefas
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(11px, 1.2vw, 13px);
+                      color: #5a6a7a;
+                      line-height: 1.5;
+                    "
+                  >
+                    Mostra programas abertos, relógio e botão Iniciar
                   </div>
                 </div>
+              </div>
+              <div
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5%"
+              >
                 <div
                   style="
                     background: #f0f6ff;
                     border: 1px solid #c8ddf5;
                     border-radius: 8px;
                     padding: 4% 5%;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
                     box-sizing: border-box;
                   "
                 >
                   <div
                     style="
-                      font-size: clamp(22px, 2.5vw, 28px);
-                      margin-bottom: 8px;
-                    "
-                  >
-                    📁
-                  </div>
-                  <div
-                    style="
-                      font-size: clamp(14px, 1.5vw, 16px);
-                      font-weight: 700;
-                      color: #003f7f;
+                      font-size: clamp(24px, 2.5vw, 30px);
                       margin-bottom: 6px;
                     "
                   >
-                    Pastas e Arquivos
+                    🏁
                   </div>
                   <div
                     style="
-                      font-size: clamp(12px, 1.3vw, 14px);
-                      color: #5a6a7a;
-                      line-height: 1.6;
-                    "
-                  >
-                    Organização hierárquica
-                  </div>
-                </div>
-                <div
-                  style="
-                    background: #f0f6ff;
-                    border: 1px solid #c8ddf5;
-                    border-radius: 8px;
-                    padding: 4% 5%;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    box-sizing: border-box;
-                  "
-                >
-                  <div
-                    style="
-                      font-size: clamp(22px, 2.5vw, 28px);
-                      margin-bottom: 8px;
-                    "
-                  >
-                    🗑️
-                  </div>
-                  <div
-                    style="
-                      font-size: clamp(14px, 1.5vw, 16px);
+                      font-size: clamp(14px, 1.5vw, 17px);
                       font-weight: 700;
                       color: #003f7f;
-                      margin-bottom: 6px;
+                      margin-bottom: 4px;
                     "
                   >
-                    Lixeira
+                    Menu Iniciar
                   </div>
                   <div
                     style="
-                      font-size: clamp(12px, 1.3vw, 14px);
+                      font-size: clamp(11px, 1.2vw, 13px);
                       color: #5a6a7a;
-                      line-height: 1.6;
+                      line-height: 1.5;
                     "
                   >
-                    Apagar e restaurar arquivos
+                    Acesso rápido a programas, configurações e desligar
                   </div>
                 </div>
                 <div
@@ -2841,38 +1153,35 @@
                     border: 1px solid #ffd9b3;
                     border-radius: 8px;
                     padding: 4% 5%;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
                     box-sizing: border-box;
                   "
                 >
                   <div
                     style="
-                      font-size: clamp(22px, 2.5vw, 28px);
-                      margin-bottom: 8px;
-                    "
-                  >
-                    🔬
-                  </div>
-                  <div
-                    style="
-                      font-size: clamp(14px, 1.5vw, 16px);
-                      font-weight: 700;
-                      color: #ff6600;
+                      font-size: clamp(24px, 2.5vw, 30px);
                       margin-bottom: 6px;
                     "
                   >
-                    Atividades Práticas
+                    🔔
                   </div>
                   <div
                     style="
-                      font-size: clamp(12px, 1.3vw, 14px);
-                      color: #5a6a7a;
-                      line-height: 1.6;
+                      font-size: clamp(14px, 1.5vw, 17px);
+                      font-weight: 700;
+                      color: #ff6600;
+                      margin-bottom: 4px;
                     "
                   >
-                    Criar, renomear, mover, excluir
+                    Área de Notificação
+                  </div>
+                  <div
+                    style="
+                      font-size: clamp(11px, 1.2vw, 13px);
+                      color: #5a6a7a;
+                      line-height: 1.5;
+                    "
+                  >
+                    Relógio, volume, rede Wi-Fi e notificações do sistema
                   </div>
                 </div>
               </div>
@@ -2883,40 +1192,1636 @@
                   border: 1px solid #e2e8f0;
                   border-radius: 8px;
                   padding: 3% 3.5%;
-                  text-align: center;
                   box-sizing: border-box;
-                  flex-shrink: 0;
                 "
               >
                 <div
                   style="
-                    font-size: clamp(18px, 2.1vw, 22px);
-                    font-weight: 700;
-                    margin-bottom: 8px;
-                    color: #003f7f;
-                  "
-                >
-                  ✅ Conclusão do Encontro 2
-                </div>
-                <div
-                  style="
                     color: #5a6a7a;
-                    font-size: clamp(15px, 1.7vw, 18px);
+                    font-size: clamp(14px, 1.6vw, 17px);
                     line-height: 1.7;
                   "
                 >
-                  Neste encontro, você aprendeu a navegar pelo sistema
-                  operacional Windows, operar janelas, gerenciar pastas e
-                  arquivos, e usar a Lixeira corretamente.
-                  <strong>No próximo encontro</strong>, vamos explorar o
-                  <strong>Google Chrome</strong> e como navegar com segurança na
-                  internet.
+                  <strong style="color: #003f7f">🧠 Dica:</strong> A área de
+                  trabalho é a <strong>tela inicial</strong> que aparece ao
+                  ligar o computador. É o ponto de partida para tudo.
                 </div>
               </div>
             </div>
+
+            <!-- Coluna direita: imagem -->
+            <div
+              style="
+                background: #fafbfc;
+                border: 2px dashed #d0dbe8;
+                border-radius: 8px;
+                padding: 4%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                box-sizing: border-box;
+              "
+            >
+              <img
+                src="../assets/sco_02_img_02.png"
+                style="width: 100%"
+                alt=""
+              />
+            </div>
           </div>
         </div>
-      </body>
-    </html>
+      </div>
+
+      <!-- ===== SLIDE 6 — JANELAS ===== -->
+      <div
+        style="
+          width: 100%;
+          aspect-ratio: 16/9;
+          background: #ffffff;
+          border-radius: 12px;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 20px;
+          box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        "
+      >
+        <div
+          style="
+            background: #003f7f;
+            padding: 14px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+            box-sizing: border-box;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.15);
+              border-radius: 4px;
+              padding: 5px 12px;
+              color: #ffffff;
+              font-weight: 700;
+              font-size: clamp(15px, 1.8vw, 19px);
+            "
+            >05</span
+          >
+          <span
+            style="
+              color: #ffffff;
+              font-size: clamp(18px, 2.1vw, 22px);
+              font-weight: 600;
+            "
+          >
+            TRABALHANDO COM JANELAS
+          </span>
+        </div>
+
+        <div
+          style="
+            flex: 1;
+            min-height: 0;
+            padding: 3% 4%;
+            display: flex;
+            flex-direction: column;
+            gap: 2.5%;
+            overflow-y: auto;
+            box-sizing: border-box;
+          "
+        >
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              gap: 2%;
+            "
+          >
+            <div
+              style="
+                background: #f0f6ff;
+                border: 1px solid #c8ddf5;
+                border-radius: 8px;
+                padding: 4% 5%;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+              "
+            >
+              <div
+                style="font-size: clamp(24px, 2.5vw, 30px); margin-bottom: 6px"
+              >
+                ➖
+              </div>
+              <div
+                style="
+                  font-size: clamp(14px, 1.5vw, 17px);
+                  font-weight: 700;
+                  color: #003f7f;
+                  margin-bottom: 4px;
+                "
+              >
+                Minimizar
+              </div>
+              <div
+                style="
+                  font-size: clamp(11px, 1.2vw, 13px);
+                  color: #5a6a7a;
+                  line-height: 1.5;
+                "
+              >
+                Esconde a janela, mas o programa continua aberto na barra de
+                tarefas. Clique para restaurar
+              </div>
+            </div>
+            <div
+              style="
+                background: #f0f6ff;
+                border: 1px solid #c8ddf5;
+                border-radius: 8px;
+                padding: 4% 5%;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+              "
+            >
+              <div
+                style="font-size: clamp(24px, 2.5vw, 30px); margin-bottom: 6px"
+              >
+                ⬜
+              </div>
+              <div
+                style="
+                  font-size: clamp(14px, 1.5vw, 17px);
+                  font-weight: 700;
+                  color: #003f7f;
+                  margin-bottom: 4px;
+                "
+              >
+                Maximizar / Restaurar
+              </div>
+              <div
+                style="
+                  font-size: clamp(11px, 1.2vw, 13px);
+                  color: #5a6a7a;
+                  line-height: 1.5;
+                "
+              >
+                Expande a janela para tela cheia. Clique novamente para
+                restaurar o tamanho anterior
+              </div>
+            </div>
+            <div
+              style="
+                background: #fff8f0;
+                border: 1px solid #ffd9b3;
+                border-radius: 8px;
+                padding: 4% 5%;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+              "
+            >
+              <div
+                style="font-size: clamp(24px, 2.5vw, 30px); margin-bottom: 6px"
+              >
+                ✖️
+              </div>
+              <div
+                style="
+                  font-size: clamp(14px, 1.5vw, 17px);
+                  font-weight: 700;
+                  color: #ff6600;
+                  margin-bottom: 4px;
+                "
+              >
+                Fechar
+              </div>
+              <div
+                style="
+                  font-size: clamp(11px, 1.2vw, 13px);
+                  color: #5a6a7a;
+                  line-height: 1.5;
+                "
+              >
+                Encerra o programa completamente. Salve antes de fechar para não
+                perder o trabalho
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #f8fafc;
+              border: 1px solid #e2e8f0;
+              border-radius: 8px;
+              padding: 3% 3.5%;
+              box-sizing: border-box;
+            "
+          >
+            <div
+              style="
+                color: #5a6a7a;
+                font-size: clamp(14px, 1.6vw, 17px);
+                margin-bottom: 8px;
+                text-align: center;
+              "
+            >
+              <strong
+                >Os 3 botões ficam no canto superior direito de toda
+                janela</strong
+              >
+            </div>
+            <div
+              style="
+                display: flex;
+                gap: 8px;
+                justify-content: center;
+                flex-wrap: wrap;
+              "
+            >
+              <span
+                style="
+                  background: #f0f6ff;
+                  color: #003f7f;
+                  border: 1px solid #c8ddf5;
+                  border-radius: 20px;
+                  padding: 5px 14px;
+                  font-size: clamp(11px, 1.2vw, 13px);
+                  font-weight: 600;
+                "
+              >
+                ➖ Minimizar
+              </span>
+              <span
+                style="
+                  background: #f0f6ff;
+                  color: #003f7f;
+                  border: 1px solid #c8ddf5;
+                  border-radius: 20px;
+                  padding: 5px 14px;
+                  font-size: clamp(11px, 1.2vw, 13px);
+                  font-weight: 600;
+                "
+              >
+                ⬜ Maximizar
+              </span>
+              <span
+                style="
+                  background: #fff8f0;
+                  color: #ff6600;
+                  border: 1px solid #ffd9b3;
+                  border-radius: 20px;
+                  padding: 5px 14px;
+                  font-size: clamp(11px, 1.2vw, 13px);
+                  font-weight: 600;
+                "
+              >
+                ✖️ Fechar
+              </span>
+            </div>
+          </div>
+
+          <!-- ESPAÇO PARA IMAGEM -->
+          <div
+            style="
+              background: #fafbfc;
+              border: 2px dashed #d0dbe8;
+              border-radius: 8px;
+              padding: 2.5%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 12px;
+              box-sizing: border-box;
+              flex-shrink: 0;
+            "
+          >
+            <img src="../assets/sco_02_img_03.png" style="width: 100%" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== SLIDE 7 — PASTAS E ARQUIVOS ===== -->
+      <div
+        style="
+          width: 100%;
+          aspect-ratio: 16/9;
+          background: #ffffff;
+          border-radius: 12px;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 20px;
+          box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        "
+      >
+        <div
+          style="
+            background: #003f7f;
+            padding: 14px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+            box-sizing: border-box;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.15);
+              border-radius: 4px;
+              padding: 5px 12px;
+              color: #ffffff;
+              font-weight: 700;
+              font-size: clamp(15px, 1.8vw, 19px);
+            "
+            >06</span
+          >
+          <span
+            style="
+              color: #ffffff;
+              font-size: clamp(18px, 2.1vw, 22px);
+              font-weight: 600;
+            "
+          >
+            PASTAS E ARQUIVOS
+          </span>
+        </div>
+
+        <div
+          style="
+            flex: 1;
+            min-height: 0;
+            padding: 3% 4%;
+            display: flex;
+            flex-direction: column;
+            gap: 2.5%;
+            overflow-y: auto;
+            box-sizing: border-box;
+          "
+        >
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5%">
+            <div
+              style="
+                background: #f0f6ff;
+                border: 1px solid #c8ddf5;
+                border-radius: 8px;
+                padding: 4% 5%;
+                box-sizing: border-box;
+              "
+            >
+              <div
+                style="
+                  color: #003f7f;
+                  font-size: clamp(17px, 2vw, 22px);
+                  font-weight: 700;
+                  margin-bottom: 10px;
+                "
+              >
+                📁 Pastas
+              </div>
+              <div
+                style="
+                  color: #334155;
+                  font-size: clamp(14px, 1.6vw, 17px);
+                  line-height: 1.6;
+                  margin-bottom: 10px;
+                "
+              >
+                São <strong>contêineres</strong> que organizam arquivos.
+                Funcionam como <strong>gavetas</strong> em um armário — cada
+                pasta pode conter arquivos e outras pastas (subpastas).
+              </div>
+              <div
+                style="
+                  background: #ffffff;
+                  border: 1px solid #c8ddf5;
+                  border-radius: 6px;
+                  padding: 3% 4%;
+                  font-size: clamp(12px, 1.3vw, 14px);
+                  color: #5a6a7a;
+                  box-sizing: border-box;
+                  line-height: 1.6;
+                "
+              >
+                <strong>Exemplo:</strong><br />
+                📁 Documentos<br />
+                &nbsp;&nbsp;├── 📁 Trabalho<br />
+                &nbsp;&nbsp;├── 📁 Pessoal<br />
+                &nbsp;&nbsp;└── 📁 Estudos
+              </div>
+            </div>
+            <div
+              style="
+                background: #fff8f0;
+                border: 1px solid #ffd9b3;
+                border-radius: 8px;
+                padding: 4% 5%;
+                box-sizing: border-box;
+              "
+            >
+              <div
+                style="
+                  color: #ff6600;
+                  font-size: clamp(17px, 2vw, 22px);
+                  font-weight: 700;
+                  margin-bottom: 10px;
+                "
+              >
+                📄 Arquivos
+              </div>
+              <div
+                style="
+                  color: #334155;
+                  font-size: clamp(14px, 1.6vw, 17px);
+                  line-height: 1.6;
+                  margin-bottom: 10px;
+                "
+              >
+                São <strong>unidades de informação</strong> que contêm dados:
+                textos, imagens, músicas, vídeos, planilhas. Cada arquivo tem um
+                <strong>nome</strong> e uma <strong>extensão</strong>.
+              </div>
+              <div
+                style="
+                  background: #ffffff;
+                  border: 1px solid #ffd9b3;
+                  border-radius: 6px;
+                  padding: 3% 4%;
+                  font-size: clamp(12px, 1.3vw, 14px);
+                  color: #5a6a7a;
+                  box-sizing: border-box;
+                  line-height: 1.6;
+                "
+              >
+                <strong>Exemplos:</strong><br />
+                📄 relatorio.docx (Word)<br />
+                📄 planilha.xlsx (Excel)<br />
+                📄 foto.jpg (Imagem)<br />
+                📄 musica.mp3 (Áudio)
+              </div>
+            </div>
+          </div>
+
+          <!-- ESPAÇO PARA IMAGEM -->
+          <div
+            style="
+              background: #fafbfc;
+              border: 2px dashed #d0dbe8;
+              border-radius: 8px;
+              padding: 2.5%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 12px;
+              box-sizing: border-box;
+              flex-shrink: 0;
+            "
+          >
+            <img src="../assets/sco_02_img_04.png" style="width: 100%" alt="" />
+          </div>
+
+          <div
+            style="
+              background: #fff8f0;
+              border: 1px solid #ffd9b3;
+              border-radius: 8px;
+              padding: 2.5% 3.5%;
+              box-sizing: border-box;
+            "
+          >
+            <div
+              style="
+                color: #664422;
+                font-size: clamp(14px, 1.6vw, 17px);
+                line-height: 1.6;
+              "
+            >
+              <strong style="color: #ff6600">🧠 Dica:</strong> Organize seus
+              arquivos em pastas com <strong>nomes claros e objetivos</strong>.
+              Isso facilita encontrar o que precisa rapidamente.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== SLIDE 8 — GERENCIANDO PASTAS E ARQUIVOS ===== -->
+      <div
+        style="
+          width: 100%;
+          aspect-ratio: 16/9;
+          background: #ffffff;
+          border-radius: 12px;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 20px;
+          box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        "
+      >
+        <div
+          style="
+            background: #003f7f;
+            padding: 14px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+            box-sizing: border-box;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.15);
+              border-radius: 4px;
+              padding: 5px 12px;
+              color: #ffffff;
+              font-weight: 700;
+              font-size: clamp(15px, 1.8vw, 19px);
+            "
+            >07</span
+          >
+          <span
+            style="
+              color: #ffffff;
+              font-size: clamp(18px, 2.1vw, 22px);
+              font-weight: 600;
+            "
+          >
+            GERENCIANDO PASTAS E ARQUIVOS
+          </span>
+        </div>
+
+        <div
+          style="
+            flex: 1;
+            min-height: 0;
+            padding: 3% 4%;
+            display: flex;
+            flex-direction: column;
+            gap: 2.5%;
+            overflow-y: auto;
+            box-sizing: border-box;
+          "
+        >
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(4, 1fr);
+              gap: 2%;
+            "
+          >
+            <div
+              style="
+                background: #f0f6ff;
+                border: 1px solid #c8ddf5;
+                border-radius: 8px;
+                padding: 4% 5%;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+              "
+            >
+              <div
+                style="
+                  background: #003f7f;
+                  color: #ffffff;
+                  border-radius: 50%;
+                  width: 36px;
+                  height: 36px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-weight: 700;
+                  font-size: clamp(14px, 1.5vw, 16px);
+                  margin-bottom: 10px;
+                "
+              >
+                1
+              </div>
+              <div
+                style="
+                  font-size: clamp(14px, 1.5vw, 16px);
+                  font-weight: 700;
+                  color: #003f7f;
+                  margin-bottom: 6px;
+                "
+              >
+                Criar
+              </div>
+              <div
+                style="
+                  font-size: clamp(11px, 1.2vw, 13px);
+                  color: #5a6a7a;
+                  line-height: 1.5;
+                "
+              >
+                Clique com botão direito → Novo → Pasta. Digite o nome e
+                pressione Enter
+              </div>
+            </div>
+            <div
+              style="
+                background: #f0f6ff;
+                border: 1px solid #c8ddf5;
+                border-radius: 8px;
+                padding: 4% 5%;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+              "
+            >
+              <div
+                style="
+                  background: #003f7f;
+                  color: #ffffff;
+                  border-radius: 50%;
+                  width: 36px;
+                  height: 36px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-weight: 700;
+                  font-size: clamp(14px, 1.5vw, 16px);
+                  margin-bottom: 10px;
+                "
+              >
+                2
+              </div>
+              <div
+                style="
+                  font-size: clamp(14px, 1.5vw, 16px);
+                  font-weight: 700;
+                  color: #003f7f;
+                  margin-bottom: 6px;
+                "
+              >
+                Renomear
+              </div>
+              <div
+                style="
+                  font-size: clamp(11px, 1.2vw, 13px);
+                  color: #5a6a7a;
+                  line-height: 1.5;
+                "
+              >
+                Clique com botão direito → Renomear. Digite o novo nome e
+                pressione Enter
+              </div>
+            </div>
+            <div
+              style="
+                background: #f0f6ff;
+                border: 1px solid #c8ddf5;
+                border-radius: 8px;
+                padding: 4% 5%;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+              "
+            >
+              <div
+                style="
+                  background: #003f7f;
+                  color: #ffffff;
+                  border-radius: 50%;
+                  width: 36px;
+                  height: 36px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-weight: 700;
+                  font-size: clamp(14px, 1.5vw, 16px);
+                  margin-bottom: 10px;
+                "
+              >
+                3
+              </div>
+              <div
+                style="
+                  font-size: clamp(14px, 1.5vw, 16px);
+                  font-weight: 700;
+                  color: #003f7f;
+                  margin-bottom: 6px;
+                "
+              >
+                Mover
+              </div>
+              <div
+                style="
+                  font-size: clamp(11px, 1.2vw, 13px);
+                  color: #5a6a7a;
+                  line-height: 1.5;
+                "
+              >
+                Arraste com o mouse ou use Ctrl+X (recortar) + Ctrl+V (colar) na
+                pasta de destino
+              </div>
+            </div>
+            <div
+              style="
+                background: #fff8f0;
+                border: 1px solid #ffd9b3;
+                border-radius: 8px;
+                padding: 4% 5%;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+              "
+            >
+              <div
+                style="
+                  background: #ff6600;
+                  color: #ffffff;
+                  border-radius: 50%;
+                  width: 36px;
+                  height: 36px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-weight: 700;
+                  font-size: clamp(14px, 1.5vw, 16px);
+                  margin-bottom: 10px;
+                "
+              >
+                4
+              </div>
+              <div
+                style="
+                  font-size: clamp(14px, 1.5vw, 16px);
+                  font-weight: 700;
+                  color: #ff6600;
+                  margin-bottom: 6px;
+                "
+              >
+                Excluir
+              </div>
+              <div
+                style="
+                  font-size: clamp(11px, 1.2vw, 13px);
+                  color: #5a6a7a;
+                  line-height: 1.5;
+                "
+              >
+                Clique com botão direito → Excluir ou pressione Delete. Vai para
+                a Lixeira
+              </div>
+            </div>
+          </div>
+
+          <!-- ESPAÇO PARA IMAGEM -->
+          <div
+            style="
+              background: #fafbfc;
+              border: 2px dashed #d0dbe8;
+              border-radius: 8px;
+              padding: 2.5%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 12px;
+              box-sizing: border-box;
+              flex-shrink: 0;
+            "
+          >
+            <img src="../assets/sco_02_img_05.png" style="width: 100%" alt="" />
+          </div>
+
+          <div
+            style="
+              background: #f8fafc;
+              border: 1px solid #e2e8f0;
+              border-radius: 8px;
+              padding: 2.5% 3.5%;
+              box-sizing: border-box;
+            "
+          >
+            <div
+              style="
+                color: #5a6a7a;
+                font-size: clamp(13px, 1.4vw, 15px);
+                line-height: 1.6;
+              "
+            >
+              <strong style="color: #003f7f">⌨️ Atalhos úteis:</strong>
+              <strong>F2</strong> = Renomear · <strong>Delete</strong> = Excluir
+              · <strong>Ctrl+C</strong> = Copiar · <strong>Ctrl+X</strong> =
+              Recortar · <strong>Ctrl+V</strong> = Colar
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== SLIDE 9 — LIXEIRA ===== -->
+      <div
+        style="
+          width: 100%;
+          aspect-ratio: 16/9;
+          background: #ffffff;
+          border-radius: 12px;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 20px;
+          box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        "
+      >
+        <div
+          style="
+            background: #003f7f;
+            padding: 14px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+            box-sizing: border-box;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.15);
+              border-radius: 4px;
+              padding: 5px 12px;
+              color: #ffffff;
+              font-weight: 700;
+              font-size: clamp(15px, 1.8vw, 19px);
+            "
+            >08</span
+          >
+          <span
+            style="
+              color: #ffffff;
+              font-size: clamp(18px, 2.1vw, 22px);
+              font-weight: 600;
+            "
+          >
+            LIXEIRA: APAGAR E RESTAURAR
+          </span>
+        </div>
+
+        <div
+          style="
+            flex: 1;
+            min-height: 0;
+            padding: 3% 4%;
+            display: flex;
+            flex-direction: column;
+            gap: 2.5%;
+            overflow-y: auto;
+            box-sizing: border-box;
+          "
+        >
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5%">
+            <div
+              style="
+                background: #fef5f5;
+                border: 1px solid #f0c8c8;
+                border-radius: 8px;
+                padding: 4% 5%;
+                box-sizing: border-box;
+              "
+            >
+              <div
+                style="
+                  color: #c0392b;
+                  font-size: clamp(17px, 2vw, 22px);
+                  font-weight: 700;
+                  margin-bottom: 10px;
+                "
+              >
+                🗑️ Apagar um Arquivo
+              </div>
+              <div
+                style="
+                  color: #334155;
+                  font-size: clamp(14px, 1.6vw, 17px);
+                  line-height: 1.8;
+                "
+              >
+                <strong>1.</strong> Selecione o arquivo ou pasta<br />
+                <strong>2.</strong> Clique com botão direito →
+                <strong>Excluir</strong><br />
+                <strong>3.</strong> Confirme a exclusão<br />
+                <strong>4.</strong> O item vai para a <strong>Lixeira</strong
+                ><br />
+                <strong>5.</strong> O arquivo
+                <strong>não foi apagado definitivamente</strong>
+              </div>
+            </div>
+            <div
+              style="
+                background: #f0f8f0;
+                border: 1px solid #b8d8b8;
+                border-radius: 8px;
+                padding: 4% 5%;
+                box-sizing: border-box;
+              "
+            >
+              <div
+                style="
+                  color: #27ae60;
+                  font-size: clamp(17px, 2vw, 22px);
+                  font-weight: 700;
+                  margin-bottom: 10px;
+                "
+              >
+                ♻️ Restaurar da Lixeira
+              </div>
+              <div
+                style="
+                  color: #334155;
+                  font-size: clamp(14px, 1.6vw, 17px);
+                  line-height: 1.8;
+                "
+              >
+                <strong>1.</strong> Abra a Lixeira (ícone na área de
+                trabalho)<br />
+                <strong>2.</strong> Selecione o arquivo<br />
+                <strong>3.</strong> Clique com botão direito →
+                <strong>Restaurar</strong><br />
+                <strong>4.</strong> O arquivo volta para a
+                <strong>pasta original</strong><br />
+                <strong>5.</strong> Pronto! Arquivo recuperado
+              </div>
+            </div>
+          </div>
+
+          <!-- ESPAÇO PARA IMAGEM -->
+          <div
+            style="
+              background: #fafbfc;
+              border: 2px dashed #d0dbe8;
+              border-radius: 8px;
+              padding: 2.5%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 12px;
+              box-sizing: border-box;
+              flex-shrink: 0;
+            "
+          >
+            <img src="../assets/sco_02_img_06.png" style="width: 100%" alt="" />
+          </div>
+
+          <div
+            style="
+              background: #fff8f0;
+              border: 1px solid #ffd9b3;
+              border-radius: 8px;
+              padding: 2.5% 3.5%;
+              box-sizing: border-box;
+            "
+          >
+            <div
+              style="
+                color: #664422;
+                font-size: clamp(14px, 1.6vw, 17px);
+                line-height: 1.6;
+              "
+            >
+              <strong style="color: #ff6600">⚠️ Atenção:</strong> Para apagar
+              definitivamente, abra a Lixeira e use
+              <strong>Esvaziar Lixeira</strong>. Depois disso, o arquivo
+              <strong>não poderá mais ser recuperado</strong>
+              pelos métodos comuns.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== SLIDE 10 — ATIVIDADES PRÁTICAS ===== -->
+      <div
+        style="
+          width: 100%;
+          aspect-ratio: 16/9;
+          background: #ffffff;
+          border-radius: 12px;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 20px;
+          box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        "
+      >
+        <div
+          style="
+            background: #003f7f;
+            padding: 14px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+            box-sizing: border-box;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.15);
+              border-radius: 4px;
+              padding: 5px 12px;
+              color: #ffffff;
+              font-weight: 700;
+              font-size: clamp(15px, 1.8vw, 19px);
+            "
+            >09</span
+          >
+          <span
+            style="
+              color: #ffffff;
+              font-size: clamp(18px, 2.1vw, 22px);
+              font-weight: 600;
+            "
+          >
+            ATIVIDADES PRÁTICAS
+          </span>
+        </div>
+
+        <div
+          style="
+            flex: 1;
+            min-height: 0;
+            padding: 3% 4%;
+            display: flex;
+            flex-direction: column;
+            gap: 2.5%;
+            overflow-y: auto;
+            box-sizing: border-box;
+          "
+        >
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              gap: 2%;
+            "
+          >
+            <div
+              style="
+                background: #f0f6ff;
+                border: 1px solid #c8ddf5;
+                border-radius: 8px;
+                padding: 5% 6%;
+                display: flex;
+                flex-direction: column;
+                box-sizing: border-box;
+              "
+            >
+              <div
+                style="
+                  background: #003f7f;
+                  color: #ffffff;
+                  border-radius: 50%;
+                  width: 40px;
+                  height: 40px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-weight: 700;
+                  font-size: clamp(16px, 1.8vw, 19px);
+                  margin-bottom: 12px;
+                "
+              >
+                1
+              </div>
+              <div
+                style="
+                  font-size: clamp(15px, 1.7vw, 18px);
+                  font-weight: 700;
+                  color: #003f7f;
+                  margin-bottom: 8px;
+                "
+              >
+                Criar Estrutura de Pastas
+              </div>
+              <div
+                style="
+                  font-size: clamp(12px, 1.3vw, 14px);
+                  color: #5a6a7a;
+                  line-height: 1.7;
+                "
+              >
+                Crie a seguinte estrutura:<br /><br />
+                📁 <strong>Meus Documentos</strong><br />
+                &nbsp;&nbsp;├── 📁 Trabalho<br />
+                &nbsp;&nbsp;├── 📁 Pessoal<br />
+                &nbsp;&nbsp;└── 📁 Estudos
+              </div>
+              <div
+                style="
+                  margin-top: auto;
+                  padding-top: 10px;
+                  font-size: clamp(11px, 1.2vw, 13px);
+                  color: #003f7f;
+                  font-weight: 600;
+                "
+              >
+                ⏱️ Tempo: 40 min
+              </div>
+            </div>
+            <div
+              style="
+                background: #f0f8f0;
+                border: 1px solid #b8d8b8;
+                border-radius: 8px;
+                padding: 5% 6%;
+                display: flex;
+                flex-direction: column;
+                box-sizing: border-box;
+              "
+            >
+              <div
+                style="
+                  background: #27ae60;
+                  color: #ffffff;
+                  border-radius: 50%;
+                  width: 40px;
+                  height: 40px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-weight: 700;
+                  font-size: clamp(16px, 1.8vw, 19px);
+                  margin-bottom: 12px;
+                "
+              >
+                2
+              </div>
+              <div
+                style="
+                  font-size: clamp(15px, 1.7vw, 18px);
+                  font-weight: 700;
+                  color: #27ae60;
+                  margin-bottom: 8px;
+                "
+              >
+                Renomear e Organizar
+              </div>
+              <div
+                style="
+                  font-size: clamp(12px, 1.3vw, 14px);
+                  color: #5a6a7a;
+                  line-height: 1.7;
+                "
+              >
+                Crie 3 arquivos de texto em "Trabalho". Renomeie para:
+                relatorio.txt, planilha.txt, apresentacao.txt. Mova um deles
+                para a pasta "Pessoal".
+              </div>
+              <div
+                style="
+                  margin-top: auto;
+                  padding-top: 10px;
+                  font-size: clamp(11px, 1.2vw, 13px);
+                  color: #27ae60;
+                  font-weight: 600;
+                "
+              >
+                ⏱️ Tempo: 40 min
+              </div>
+            </div>
+            <div
+              style="
+                background: #fff8f0;
+                border: 1px solid #ffd9b3;
+                border-radius: 8px;
+                padding: 5% 6%;
+                display: flex;
+                flex-direction: column;
+                box-sizing: border-box;
+              "
+            >
+              <div
+                style="
+                  background: #ff6600;
+                  color: #ffffff;
+                  border-radius: 50%;
+                  width: 40px;
+                  height: 40px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-weight: 700;
+                  font-size: clamp(16px, 1.8vw, 19px);
+                  margin-bottom: 12px;
+                "
+              >
+                3
+              </div>
+              <div
+                style="
+                  font-size: clamp(15px, 1.7vw, 18px);
+                  font-weight: 700;
+                  color: #ff6600;
+                  margin-bottom: 8px;
+                "
+              >
+                Excluir e Restaurar
+              </div>
+              <div
+                style="
+                  font-size: clamp(12px, 1.3vw, 14px);
+                  color: #5a6a7a;
+                  line-height: 1.7;
+                "
+              >
+                Exclua o arquivo "apresentacao.txt". Abra a Lixeira e verifique
+                que ele está lá. Restaure o arquivo e confirme que voltou para a
+                pasta "Trabalho".
+              </div>
+              <div
+                style="
+                  margin-top: auto;
+                  padding-top: 10px;
+                  font-size: clamp(11px, 1.2vw, 13px);
+                  color: #ff6600;
+                  font-weight: 600;
+                "
+              >
+                ⏱️ Tempo: 40 min
+              </div>
+            </div>
+          </div>
+
+          <!-- ESPAÇO PARA IMAGEM -->
+          <div
+            style="
+              background: #fafbfc;
+              border: 2px dashed #d0dbe8;
+              border-radius: 8px;
+              padding: 2.5%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 12px;
+              box-sizing: border-box;
+              flex-shrink: 0;
+            "
+          >
+            <img src="../assets/sco_02_img_07.png" style="width: 100%" alt="" />
+          </div>
+
+          <div
+            style="
+              background: #f8fafc;
+              border: 1px solid #e2e8f0;
+              border-radius: 8px;
+              padding: 2.5% 3.5%;
+              box-sizing: border-box;
+              flex-shrink: 0;
+            "
+          >
+            <div
+              style="
+                color: #5a6a7a;
+                font-size: clamp(13px, 1.4vw, 15px);
+                line-height: 1.7;
+              "
+            >
+              <strong style="color: #003f7f"
+                >📌 Orientação ao professor:</strong
+              >
+              Verifique se os alunos compreenderam a hierarquia de pastas.
+              Reforce que a Lixeira é uma área temporária e que "Esvaziar
+              Lixeira" é uma ação definitiva. Auxilie individualmente quem tiver
+              dificuldade com o mouse ou teclado.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== SLIDE 11 — RESUMO E ENCERRAMENTO ===== -->
+      <div
+        style="
+          width: 100%;
+          aspect-ratio: 16/9;
+          background: #ffffff;
+          border-radius: 12px;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 20px;
+          box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        "
+      >
+        <div
+          style="
+            background: #003f7f;
+            padding: 14px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+            box-sizing: border-box;
+          "
+        >
+          <span
+            style="
+              background: rgba(255, 255, 255, 0.15);
+              border-radius: 4px;
+              padding: 5px 12px;
+              color: #ffffff;
+              font-weight: 700;
+              font-size: clamp(15px, 1.8vw, 19px);
+            "
+            >10</span
+          >
+          <span
+            style="
+              color: #ffffff;
+              font-size: clamp(18px, 2.1vw, 22px);
+              font-weight: 600;
+            "
+          >
+            RESUMO DO ENCONTRO
+          </span>
+        </div>
+
+        <div
+          style="
+            flex: 1;
+            min-height: 0;
+            padding: 3% 4%;
+            display: flex;
+            flex-direction: column;
+            gap: 2.5%;
+            overflow-y: auto;
+            box-sizing: border-box;
+          "
+        >
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              gap: 2%;
+            "
+          >
+            <div
+              style="
+                background: #f0f6ff;
+                border: 1px solid #c8ddf5;
+                border-radius: 8px;
+                padding: 4% 5%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                box-sizing: border-box;
+              "
+            >
+              <div
+                style="font-size: clamp(22px, 2.5vw, 28px); margin-bottom: 8px"
+              >
+                🪟
+              </div>
+              <div
+                style="
+                  font-size: clamp(14px, 1.5vw, 16px);
+                  font-weight: 700;
+                  color: #003f7f;
+                  margin-bottom: 6px;
+                "
+              >
+                Sistema Operacional
+              </div>
+              <div
+                style="
+                  font-size: clamp(12px, 1.3vw, 14px);
+                  color: #5a6a7a;
+                  line-height: 1.6;
+                "
+              >
+                Gerencia hardware e software
+              </div>
+            </div>
+            <div
+              style="
+                background: #f0f6ff;
+                border: 1px solid #c8ddf5;
+                border-radius: 8px;
+                padding: 4% 5%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                box-sizing: border-box;
+              "
+            >
+              <div
+                style="font-size: clamp(22px, 2.5vw, 28px); margin-bottom: 8px"
+              >
+                🖼️
+              </div>
+              <div
+                style="
+                  font-size: clamp(14px, 1.5vw, 16px);
+                  font-weight: 700;
+                  color: #003f7f;
+                  margin-bottom: 6px;
+                "
+              >
+                Área de Trabalho
+              </div>
+              <div
+                style="
+                  font-size: clamp(12px, 1.3vw, 14px);
+                  color: #5a6a7a;
+                  line-height: 1.6;
+                "
+              >
+                Ícones, barra de tarefas, menu Iniciar
+              </div>
+            </div>
+            <div
+              style="
+                background: #f0f6ff;
+                border: 1px solid #c8ddf5;
+                border-radius: 8px;
+                padding: 4% 5%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                box-sizing: border-box;
+              "
+            >
+              <div
+                style="font-size: clamp(22px, 2.5vw, 28px); margin-bottom: 8px"
+              >
+                🪟
+              </div>
+              <div
+                style="
+                  font-size: clamp(14px, 1.5vw, 16px);
+                  font-weight: 700;
+                  color: #003f7f;
+                  margin-bottom: 6px;
+                "
+              >
+                Janelas
+              </div>
+              <div
+                style="
+                  font-size: clamp(12px, 1.3vw, 14px);
+                  color: #5a6a7a;
+                  line-height: 1.6;
+                "
+              >
+                Minimizar, maximizar, fechar
+              </div>
+            </div>
+            <div
+              style="
+                background: #f0f6ff;
+                border: 1px solid #c8ddf5;
+                border-radius: 8px;
+                padding: 4% 5%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                box-sizing: border-box;
+              "
+            >
+              <div
+                style="font-size: clamp(22px, 2.5vw, 28px); margin-bottom: 8px"
+              >
+                📁
+              </div>
+              <div
+                style="
+                  font-size: clamp(14px, 1.5vw, 16px);
+                  font-weight: 700;
+                  color: #003f7f;
+                  margin-bottom: 6px;
+                "
+              >
+                Pastas e Arquivos
+              </div>
+              <div
+                style="
+                  font-size: clamp(12px, 1.3vw, 14px);
+                  color: #5a6a7a;
+                  line-height: 1.6;
+                "
+              >
+                Organização hierárquica
+              </div>
+            </div>
+            <div
+              style="
+                background: #f0f6ff;
+                border: 1px solid #c8ddf5;
+                border-radius: 8px;
+                padding: 4% 5%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                box-sizing: border-box;
+              "
+            >
+              <div
+                style="font-size: clamp(22px, 2.5vw, 28px); margin-bottom: 8px"
+              >
+                🗑️
+              </div>
+              <div
+                style="
+                  font-size: clamp(14px, 1.5vw, 16px);
+                  font-weight: 700;
+                  color: #003f7f;
+                  margin-bottom: 6px;
+                "
+              >
+                Lixeira
+              </div>
+              <div
+                style="
+                  font-size: clamp(12px, 1.3vw, 14px);
+                  color: #5a6a7a;
+                  line-height: 1.6;
+                "
+              >
+                Apagar e restaurar arquivos
+              </div>
+            </div>
+            <div
+              style="
+                background: #fff8f0;
+                border: 1px solid #ffd9b3;
+                border-radius: 8px;
+                padding: 4% 5%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                box-sizing: border-box;
+              "
+            >
+              <div
+                style="font-size: clamp(22px, 2.5vw, 28px); margin-bottom: 8px"
+              >
+                🔬
+              </div>
+              <div
+                style="
+                  font-size: clamp(14px, 1.5vw, 16px);
+                  font-weight: 700;
+                  color: #ff6600;
+                  margin-bottom: 6px;
+                "
+              >
+                Atividades Práticas
+              </div>
+              <div
+                style="
+                  font-size: clamp(12px, 1.3vw, 14px);
+                  color: #5a6a7a;
+                  line-height: 1.6;
+                "
+              >
+                Criar, renomear, mover, excluir
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: #f8fafc;
+              border: 1px solid #e2e8f0;
+              border-radius: 8px;
+              padding: 3% 3.5%;
+              text-align: center;
+              box-sizing: border-box;
+              flex-shrink: 0;
+            "
+          >
+            <div
+              style="
+                font-size: clamp(18px, 2.1vw, 22px);
+                font-weight: 700;
+                margin-bottom: 8px;
+                color: #003f7f;
+              "
+            >
+              ✅ Conclusão do Encontro 2
+            </div>
+            <div
+              style="
+                color: #5a6a7a;
+                font-size: clamp(15px, 1.7vw, 18px);
+                line-height: 1.7;
+              "
+            >
+              Neste encontro, você aprendeu a navegar pelo sistema operacional
+              Windows, operar janelas, gerenciar pastas e arquivos, e usar a
+              Lixeira corretamente.
+              <strong>No próximo encontro</strong>, vamos explorar o
+              <strong>Google Chrome</strong> e como navegar com segurança na
+              internet.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
