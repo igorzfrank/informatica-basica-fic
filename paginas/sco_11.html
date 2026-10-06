@@ -1,0 +1,1335 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encontro 11 - Configurações Essenciais do Windows</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        background: #f5f7fa;
+        color: #2c3e50;
+        font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+        font-size: 19px;
+      }
+
+      .course {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 24px;
+      }
+
+      .slide {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        margin-bottom: 20px;
+        border-radius: 12px;
+        background: #ffffff;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+      }
+
+      .cover {
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        padding: 4%;
+        text-align: center;
+      }
+
+      .cover::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 6px;
+        background: linear-gradient(90deg, #003f7f 0%, #ff6600 100%);
+      }
+
+      .cover-content {
+        max-width: 90%;
+      }
+
+      .badge {
+        display: inline-block;
+        margin-bottom: 24px;
+        padding: 8px 24px;
+        border-radius: 24px;
+        background: #e8f0fe;
+        color: #003f7f;
+        font-size: clamp(15px, 1.8vw, 19px);
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+
+      .cover h1 {
+        margin: 0 0 14px;
+        color: #1a202c;
+        font-size: clamp(35px, 4.4vw, 52px);
+        line-height: 1.2;
+      }
+
+      .blue {
+        color: #003f7f;
+      }
+
+      .orange {
+        color: #ff6600;
+      }
+
+      .subtitle {
+        margin-bottom: 28px;
+        color: #5a6a7a;
+        font-size: clamp(16px, 1.9vw, 20px);
+        line-height: 1.5;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+      }
+
+      .tag {
+        padding: 8px 20px;
+        border: 1px solid #d0dbe8;
+        border-radius: 24px;
+        background: #f0f4f8;
+        color: #003f7f;
+        font-size: clamp(14px, 1.5vw, 16px);
+        font-weight: 600;
+      }
+
+      .slide-header {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        gap: 12px;
+        padding: 14px 28px;
+        background: #003f7f;
+      }
+
+      .slide-number {
+        padding: 5px 12px;
+        border-radius: 4px;
+        background: rgba(255, 255, 255, 0.15);
+        color: #ffffff;
+        font-size: clamp(15px, 1.8vw, 19px);
+        font-weight: 700;
+      }
+
+      .slide-title {
+        color: #ffffff;
+        font-size: clamp(18px, 2.1vw, 22px);
+        font-weight: 600;
+      }
+
+      .slide-body {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        min-height: 0;
+        gap: 2.5%;
+        overflow-y: auto;
+        padding: 3% 4%;
+      }
+
+      .intro {
+        padding: 2.5% 3.5%;
+        border: 1px solid #e2e8f0;
+        border-left: 4px solid #003f7f;
+        border-radius: 6px;
+        background: #f8fafc;
+        color: #334155;
+        line-height: 1.6;
+      }
+
+      .intro strong {
+        color: #003f7f;
+      }
+
+      .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5%;
+      }
+
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2%;
+      }
+
+      .panel {
+        padding: 3.5% 4%;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        color: #334155;
+        line-height: 1.6;
+      }
+
+      .panel-blue {
+        border-color: #c8ddf5;
+        background: #f0f6ff;
+      }
+
+      .panel-green {
+        border-color: #b8d8b8;
+        background: #f0f8f0;
+      }
+
+      .panel-orange {
+        border-color: #ffd9b3;
+        background: #fff8f0;
+      }
+
+      .panel h3 {
+        margin: 0 0 10px;
+        color: #003f7f;
+        font-size: clamp(17px, 1.9vw, 21px);
+      }
+
+      .panel-green h3 {
+        color: #27ae60;
+      }
+
+      .panel-orange h3 {
+        color: #ff6600;
+      }
+
+      .panel p {
+        margin: 0;
+        font-size: clamp(14px, 1.6vw, 17px);
+      }
+
+      .numbered {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .number {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background: #003f7f;
+        color: #ffffff;
+        font-weight: 700;
+      }
+
+      .number.green {
+        background: #27ae60;
+      }
+
+      .number.orange {
+        background: #ff6600;
+      }
+
+      .numbered div:last-child {
+        color: #334155;
+        font-size: clamp(14px, 1.5vw, 17px);
+        line-height: 1.55;
+      }
+
+      .steps {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .step {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        color: #334155;
+        font-size: clamp(14px, 1.5vw, 17px);
+        line-height: 1.55;
+      }
+
+      .step-number {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: #003f7f;
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .shortcut {
+        display: inline-block;
+        padding: 2px 7px;
+        border: 1px solid #cbd5e1;
+        border-bottom-width: 2px;
+        border-radius: 5px;
+        background: #ffffff;
+        color: #003f7f;
+        font-family: Consolas, "Courier New", monospace;
+        font-size: 0.9em;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+
+      .callout {
+        padding: 2% 3%;
+        border-radius: 6px;
+        color: #664422;
+        font-size: clamp(13px, 1.4vw, 16px);
+        line-height: 1.6;
+      }
+
+      .callout-orange {
+        border: 1px solid #ffd9b3;
+        background: #fff8f0;
+      }
+
+      .callout-blue {
+        border: 1px solid #c8ddf5;
+        background: #f0f6ff;
+        color: #334155;
+      }
+
+      .callout strong {
+        color: #ff6600;
+      }
+
+      .checklist {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px 24px;
+        margin: 0;
+        padding-left: 28px;
+        color: #334155;
+        font-size: clamp(14px, 1.5vw, 17px);
+        line-height: 1.6;
+      }
+
+      .checklist li::marker {
+        color: #003f7f;
+      }
+
+      .route {
+        display: inline-block;
+        padding: 6px 10px;
+        border-radius: 5px;
+        background: #ffffff;
+        color: #003f7f;
+        font-size: clamp(12px, 1.3vw, 15px);
+        font-weight: 700;
+      }
+
+      .specs {
+        width: 100%;
+        border-collapse: collapse;
+        color: #334155;
+        font-size: clamp(13px, 1.4vw, 16px);
+      }
+
+      .specs td {
+        padding: 8px 10px;
+        border-bottom: 1px solid #dbe5f0;
+        vertical-align: top;
+      }
+
+      .specs td:first-child {
+        width: 38%;
+        color: #003f7f;
+        font-weight: 700;
+      }
+
+      .activity {
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+        padding: 5% 6%;
+        border-radius: 8px;
+      }
+
+      .activity-number {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        margin-bottom: 12px;
+        border-radius: 50%;
+        background: #003f7f;
+        color: #ffffff;
+        font-weight: 700;
+      }
+
+      .activity h3 {
+        margin: 0 0 8px;
+        font-size: clamp(15px, 1.7vw, 18px);
+      }
+
+      .activity p {
+        margin: 0;
+        color: #5a6a7a;
+        font-size: clamp(12px, 1.3vw, 14px);
+        line-height: 1.7;
+      }
+
+      .activity-time {
+        margin-top: auto;
+        padding-top: 12px;
+        color: #003f7f;
+        font-size: clamp(11px, 1.2vw, 13px);
+        font-weight: 600;
+      }
+
+      .closing {
+        padding: 3% 3.5%;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        background: #f8fafc;
+        text-align: center;
+      }
+
+      .closing h3 {
+        margin: 0 0 8px;
+        color: #003f7f;
+        font-size: clamp(18px, 2.1vw, 22px);
+      }
+
+      .closing p {
+        margin: 0;
+        color: #5a6a7a;
+        font-size: clamp(15px, 1.7vw, 18px);
+        line-height: 1.7;
+      }
+
+      @media (max-width: 700px) {
+        body {
+          font-size: 16px;
+        }
+
+        .course {
+          padding: 12px;
+        }
+
+        .slide {
+          min-height: 560px;
+          aspect-ratio: auto;
+        }
+
+        .slide-header {
+          padding: 10px 16px;
+        }
+
+        .slide-body {
+          padding: 20px 16px;
+        }
+
+        .grid-2,
+        .grid-3,
+        .checklist {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="course">
+      <!-- ===== SLIDE 1 — CAPA ===== -->
+      <section class="slide cover">
+        <div class="cover-content">
+          <div class="badge">Informática Básica · SENAI São José/SC</div>
+          <h1>
+            Encontro Extra<br />
+            <span class="blue">Configurações Essenciais</span><br />
+            <span class="orange">do Windows</span>
+          </h1>
+          <div class="subtitle">
+            Carga horária: 4 horas · Nível: Iniciante<br />
+            Painel de Controle, equipamento, mouse, firewall e personalização
+          </div>
+          <div class="tags">
+            <span class="tag">Painel de Controle</span>
+            <span class="tag">Hardware</span>
+            <span class="tag">Mouse</span>
+            <span class="tag">Firewall</span>
+            <span class="tag">Papel de Parede</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SLIDE 2 — OBJETIVOS ===== -->
+      <section class="slide">
+        <div class="slide-header">
+          <span class="slide-number">01</span>
+          <span class="slide-title">OBJETIVOS DE APRENDIZAGEM</span>
+        </div>
+        <div class="slide-body">
+          <div class="intro">
+            <strong>🎯 Ao final desta aula, você será capaz de:</strong>
+          </div>
+          <div class="grid-2">
+            <div class="panel panel-blue">
+              <div class="numbered">
+                <span class="number">1</span>
+                <div>
+                  Abrir o <strong>Painel de Controle</strong> e identificar seus
+                  modos de exibição e categorias.
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-green">
+              <div class="numbered">
+                <span class="number green">2</span>
+                <div>
+                  Ler as <strong>propriedades do equipamento</strong> sem
+                  alterar configurações indevidamente.
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-blue">
+              <div class="numbered">
+                <span class="number">3</span>
+                <div>
+                  Ajustar as principais opções das
+                  <strong>propriedades do mouse</strong>.
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-orange">
+              <div class="numbered">
+                <span class="number orange">4</span>
+                <div>
+                  Explicar o que o <strong>Firewall do Windows</strong> protege
+                  e consultar seu estado com segurança.
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-blue">
+              <div class="numbered">
+                <span class="number">5</span>
+                <div>
+                  Trocar o <strong>papel de parede</strong> e escolher um ajuste
+                  adequado à tela.
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-orange">
+              <div class="numbered">
+                <span class="number orange">6</span>
+                <div>
+                  Seguir um roteiro de configuração, testar o resultado e
+                  desfazer uma alteração simples.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="callout callout-orange">
+            <strong>📌 Metodologia:</strong> explicação dialogada (40 min) +
+            demonstração projetada (1h) + prática individual guiada (1h40) +
+            desafio e revisão (40 min).
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SLIDE 3 — PAINEL DE CONTROLE ===== -->
+      <section class="slide">
+        <div class="slide-header">
+          <span class="slide-number">02</span>
+          <span class="slide-title"
+            >PAINEL DE CONTROLE: PRINCÍPIOS BÁSICOS</span
+          >
+        </div>
+        <div class="slide-body">
+          <div class="grid-2">
+            <div>
+              <div class="intro">
+                O <strong>Painel de Controle</strong> reúne ferramentas
+                clássicas para consultar e ajustar partes do Windows. Ele não é
+                um programa único: é um conjunto de áreas de configuração.
+              </div>
+              <div class="steps" style="margin-top: 14px">
+                <div class="step">
+                  <span class="step-number">1</span>
+                  <div>
+                    Abra o menu Iniciar e pesquise
+                    <strong>Painel de Controle</strong>.
+                  </div>
+                </div>
+                <div class="step">
+                  <span class="step-number">2</span>
+                  <div>
+                    Ou pressione <span class="shortcut">Win</span> +
+                    <span class="shortcut">R</span>, digite
+                    <span class="shortcut">control</span> e confirme.
+                  </div>
+                </div>
+                <div class="step">
+                  <span class="step-number">3</span>
+                  <div>
+                    Observe o campo <strong>Exibir por</strong>: Categoria,
+                    Ícones grandes ou Ícones pequenos.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- PROMPT DA IMAGEM 01:
+              "Infográfico educativo realista mostrando a janela principal do Painel de Controle clássico do Windows, modo Exibir por Categoria, com categorias Sistema e Segurança, Hardware e Sons, Rede e Internet e Aparência e Personalização destacadas, interface limpa, sem marcas d'água, proporção 16:9."
+            -->
+            <div
+              style="
+                background: #fafbfc;
+                border: 2px dashed #d0dbe8;
+                border-radius: 8px;
+                padding: 4%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                box-sizing: border-box;
+              "
+            >
+              <img
+                src="../assets/sco_11_img_01.jpg"
+                style="width: 100%"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="grid-3">
+            <div class="panel panel-blue">
+              <h3>Categoria</h3>
+              <p>Ajuda quem ainda não sabe o nome exato da ferramenta.</p>
+            </div>
+            <div class="panel panel-green">
+              <h3>Ícones</h3>
+              <p>Mostra todos os itens e facilita o acesso direto.</p>
+            </div>
+            <div class="panel panel-orange">
+              <h3>Configurações</h3>
+              <p>
+                No Windows 10/11, algumas opções também aparecem no aplicativo
+                Configurações.
+              </p>
+            </div>
+          </div>
+          <div class="callout callout-orange">
+            <strong>⚠️ Regra:</strong> primeiro identifique o que deseja
+            resolver; depois escolha a ferramenta. Não altere uma opção apenas
+            porque ela está disponível.
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SLIDE 4 — PAINEL NA PRÁTICA ===== -->
+      <section class="slide">
+        <div class="slide-header">
+          <span class="slide-number">03</span>
+          <span class="slide-title"
+            >PAINEL DE CONTROLE: LOCALIZAR E APLICAR</span
+          >
+        </div>
+        <div class="slide-body">
+          <div class="intro">
+            O objetivo não é decorar todos os ícones. É aprender a localizar uma
+            área, ler suas opções, aplicar uma alteração e verificar o
+            resultado.
+          </div>
+          <div class="grid-2">
+            <div class="panel panel-blue">
+              <h3>🔎 Caminho de investigação</h3>
+              <div class="steps">
+                <div class="step">
+                  <span class="step-number">1</span>
+                  <div>
+                    Descreva o problema: mouse, rede, aparência ou equipamento?
+                  </div>
+                </div>
+                <div class="step">
+                  <span class="step-number">2</span>
+                  <div>Escolha a categoria correspondente.</div>
+                </div>
+                <div class="step">
+                  <span class="step-number">3</span>
+                  <div>Leia o título e as instruções antes de clicar.</div>
+                </div>
+                <div class="step">
+                  <span class="step-number">4</span>
+                  <div>Use Aplicar/OK e teste o resultado.</div>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-green">
+              <h3>🧭 Três caminhos desta aula</h3>
+              <p class="route">Hardware e Sons &gt; Mouse</p>
+              <p class="route" style="margin-top: 8px">
+                Sistema e Segurança &gt; Firewall
+              </p>
+              <p class="route" style="margin-top: 8px">
+                Sistema e Segurança &gt; Sistema
+              </p>
+              <p style="margin-top: 14px">
+                A mesma ferramenta pode aparecer por categoria ou diretamente na
+                lista de ícones.
+              </p>
+            </div>
+          </div>
+          <!-- PROMPT DA IMAGEM 02:
+            "Captura conceitual de um Painel de Controle do Windows em modo Ícones pequenos, com setas numeradas apontando para Mouse, Sistema e Firewall do Windows Defender, estilo material didático de informática, textos legíveis em português, proporção 16:9."
+          -->
+          <div
+            style="
+              background: #fafbfc;
+              border: 2px dashed #d0dbe8;
+              border-radius: 8px;
+              padding: 2.5%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 12px;
+              box-sizing: border-box;
+              flex-shrink: 0;
+            "
+          >
+            <img
+              src="../assets/sco_11_img_02.jpg"
+              style="width: 100%"
+              alt=""
+            />
+          </div>
+          <div class="callout callout-blue">
+            <strong>💡 Prática rápida:</strong> sem alterar nada, localize
+            Mouse, Sistema e Firewall. Diga ao professor qual caminho você usou
+            para chegar a cada item.
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SLIDE 5 — PROPRIEDADES ===== -->
+      <section class="slide">
+        <div class="slide-header">
+          <span class="slide-number">04</span>
+          <span class="slide-title"
+            >PROPRIEDADES: CONFIGURAÇÕES DO EQUIPAMENTO</span
+          >
+        </div>
+        <div class="slide-body">
+          <div class="grid-2">
+            <div>
+              <div class="intro">
+                As propriedades do equipamento mostram informações úteis para
+                identificar o computador e pedir suporte. Consulte primeiro;
+                altere somente quando souber exatamente o efeito.
+              </div>
+              <div class="steps" style="margin-top: 14px">
+                <div class="step">
+                  <span class="step-number">1</span>
+                  <div>Abra o Explorador de Arquivos.</div>
+                </div>
+                <div class="step">
+                  <span class="step-number">2</span>
+                  <div>
+                    Clique com o botão direito em
+                    <strong>Este Computador</strong>.
+                  </div>
+                </div>
+                <div class="step">
+                  <span class="step-number">3</span>
+                  <div>
+                    Escolha <strong>Propriedades</strong> ou
+                    <strong>Sobre</strong>, conforme a versão do Windows.
+                  </div>
+                </div>
+                <div class="step">
+                  <span class="step-number">4</span>
+                  <div>
+                    Registre os dados solicitados pelo professor, sem modificar
+                    drivers ou configurações avançadas.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-blue">
+              <h3>🧾 O que observar</h3>
+              <table class="specs">
+                <tr>
+                  <td>Windows</td>
+                  <td>Edição e versão do sistema.</td>
+                </tr>
+                <tr>
+                  <td>Processador</td>
+                  <td>Modelo do processador instalado.</td>
+                </tr>
+                <tr>
+                  <td>Memória RAM</td>
+                  <td>Quantidade disponível no equipamento.</td>
+                </tr>
+                <tr>
+                  <td>Tipo do sistema</td>
+                  <td>Arquitetura de 64 ou 32 bits.</td>
+                </tr>
+                <tr>
+                  <td>Nome do dispositivo</td>
+                  <td>Identificação do computador na rede.</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <!-- PROMPT DA IMAGEM 03:
+            "Infográfico didático mostrando a tela Propriedades do Sistema do Windows com campos destacados: edição do Windows, processador, memória RAM, tipo do sistema e nome do dispositivo; dados fictícios, sem informações pessoais, interface em português, proporção 16:9."
+          -->
+          <div
+            style="
+              background: #fafbfc;
+              border: 2px dashed #d0dbe8;
+              border-radius: 8px;
+              padding: 2.5%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 12px;
+              box-sizing: border-box;
+              flex-shrink: 0;
+            "
+          >
+            <img
+              src="../assets/sco_11_img_03.jpg"
+              style="width: 100%"
+              alt=""
+            />
+          </div>
+          <div class="callout callout-orange">
+            <strong>⚠️ Atenção:</strong> não use “Gerenciador de Dispositivos”,
+            “Configurações avançadas” ou “Alterar configurações” sem orientação
+            do professor. Essas áreas podem afetar o funcionamento do
+            computador.
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SLIDE 6 — MOUSE ===== -->
+      <section class="slide">
+        <div class="slide-header">
+          <span class="slide-number">05</span>
+          <span class="slide-title">CONFIGURAÇÕES DO MOUSE</span>
+        </div>
+        <div class="slide-body">
+          <div class="grid-2">
+            <div class="panel panel-blue">
+              <h3>🖱️ Abrir as propriedades</h3>
+              <p>
+                No Painel de Controle, escolha
+                <strong>Hardware e Sons &gt; Mouse</strong>. Também é possível
+                pesquisar “mouse” no menu Iniciar.
+              </p>
+              <p style="margin-top: 12px">
+                Explore as abas <strong>Botões</strong>,
+                <strong>Ponteiros</strong> e
+                <strong>Opções do Ponteiro</strong>.
+              </p>
+            </div>
+            <div class="panel panel-green">
+              <h3>🎯 Ajustes mais úteis</h3>
+              <p>
+                <strong>Botões:</strong> trocar o botão principal e ajustar a
+                velocidade do clique duplo.
+              </p>
+              <p style="margin-top: 8px">
+                <strong>Ponteiros:</strong> escolher tamanho e contraste.
+              </p>
+              <p style="margin-top: 8px">
+                <strong>Opções:</strong> velocidade, precisão e rastro do
+                ponteiro.
+              </p>
+            </div>
+          </div>
+          <div class="grid-2">
+            <div class="steps panel panel-blue">
+              <div class="step">
+                <span class="step-number">1</span>
+                <div>Altere apenas uma opção por vez.</div>
+              </div>
+              <div class="step">
+                <span class="step-number">2</span>
+                <div>Clique em Aplicar e teste em uma área vazia.</div>
+              </div>
+              <div class="step">
+                <span class="step-number">3</span>
+                <div>
+                  Se o clique duplo não for reconhecido, reduza a velocidade.
+                </div>
+              </div>
+              <div class="step">
+                <span class="step-number">4</span>
+                <div>
+                  Se perder o controle, volte ao valor anterior ou peça ajuda.
+                </div>
+              </div>
+            </div>
+            <!-- PROMPT DA IMAGEM 04:
+              "Infográfico educativo com a janela Propriedades do Mouse do Windows, abas Botões, Ponteiros e Opções do Ponteiro, controles de velocidade do clique duplo e velocidade do ponteiro destacados, interface em português, proporção 16:9."
+            -->
+            <div
+              style="
+                background: #fafbfc;
+                border: 2px dashed #d0dbe8;
+                border-radius: 8px;
+                padding: 4%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                box-sizing: border-box;
+              "
+            >
+              <img
+                src="../assets/sco_11_img_04.jpg"
+                style="width: 100%"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="callout callout-blue">
+            <strong>✅ Exercício:</strong> aumente o tamanho do ponteiro, teste
+            a velocidade do clique duplo e depois retorne às configurações
+            originais.
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SLIDE 7 — FIREWALL ===== -->
+      <section class="slide">
+        <div class="slide-header">
+          <span class="slide-number">06</span>
+          <span class="slide-title">FIREWALL DO WINDOWS: PROTEÇÃO DE REDE</span>
+        </div>
+        <div class="slide-body">
+          <div class="grid-2">
+            <div class="panel panel-blue">
+              <h3>🧱 O que é?</h3>
+              <p>
+                O firewall controla conexões de rede que entram e saem do
+                computador. Ele ajuda a bloquear acessos não autorizados e
+                permite comunicações conhecidas.
+              </p>
+            </div>
+            <div class="panel panel-green">
+              <h3>🌐 Perfis de rede</h3>
+              <p>
+                Uma rede <strong>privada</strong> costuma ser confiável, como a
+                de casa. Uma rede <strong>pública</strong> exige mais cuidado,
+                como Wi-Fi de aeroporto ou escola.
+              </p>
+            </div>
+          </div>
+          <div class="grid-2">
+            <div class="panel panel-orange">
+              <h3>🔍 O que consultar</h3>
+              <p>
+                Abra
+                <strong
+                  >Sistema e Segurança &gt; Firewall do Windows Defender</strong
+                >
+                e verifique se ele está ativado para os perfis apresentados.
+              </p>
+              <p style="margin-top: 10px">
+                Aprenda a reconhecer o link
+                <strong>Permitir um aplicativo pelo Firewall</strong>, mas não
+                autorize nada sem orientação.
+              </p>
+            </div>
+            <div class="panel panel-blue">
+              <h3>🚫 O que não fazer</h3>
+              <p>
+                Não desligue o firewall para “testar”, não permita qualquer
+                aplicativo e não aceite avisos de segurança sem ler o nome do
+                programa.
+              </p>
+            </div>
+          </div>
+          <!-- PROMPT DA IMAGEM 05:
+            "Infográfico de segurança digital mostrando a tela Firewall do Windows Defender com os perfis Domínio, Particular e Público, escudo verde indicando proteção ativa e um alerta vermelho proibindo desligar o firewall, estilo material didático, interface em português, proporção 16:9."
+          -->
+          <div
+            style="
+              background: #fafbfc;
+              border: 2px dashed #d0dbe8;
+              border-radius: 8px;
+              padding: 2.5%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 12px;
+              box-sizing: border-box;
+              flex-shrink: 0;
+            "
+          >
+            <img
+              src="../assets/sco_11_img_05.jpg"
+              style="width: 100%"
+              alt=""
+            />
+          </div>
+          <div class="callout callout-orange">
+            <strong>⚠️ Regra de segurança:</strong> se um programa desconhecido
+            pedir permissão de rede, pare e pergunte ao professor. Firewall não
+            substitui antivírus, atualizações e cuidado do usuário.
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SLIDE 8 — PAPEL DE PAREDE ===== -->
+      <section class="slide">
+        <div class="slide-header">
+          <span class="slide-number">07</span>
+          <span class="slide-title">TROCA DE PAPEL DE PAREDE</span>
+        </div>
+        <div class="slide-body">
+          <div class="grid-2">
+            <div>
+              <div class="intro">
+                O papel de parede é uma personalização visual da Área de
+                Trabalho. Ele não muda o desempenho do computador nem substitui
+                um atalho ou arquivo.
+              </div>
+              <div class="steps" style="margin-top: 14px">
+                <div class="step">
+                  <span class="step-number">1</span>
+                  <div>
+                    Clique com o botão direito em uma área vazia da Área de
+                    Trabalho.
+                  </div>
+                </div>
+                <div class="step">
+                  <span class="step-number">2</span>
+                  <div>
+                    Escolha <strong>Personalizar</strong> e abra
+                    <strong>Plano de fundo</strong>.
+                  </div>
+                </div>
+                <div class="step">
+                  <span class="step-number">3</span>
+                  <div>
+                    Escolha Imagem, Cor sólida ou Apresentação de slides.
+                  </div>
+                </div>
+                <div class="step">
+                  <span class="step-number">4</span>
+                  <div>
+                    Selecione o ajuste: Preencher, Ajustar, Estender, Lado a
+                    lado ou Centralizar.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- PROMPT DA IMAGEM 06:
+              "Infográfico passo a passo mostrando a troca de papel de parede no Windows: clique direito na Área de Trabalho, Personalizar, Plano de fundo, escolha de imagem e opções Preencher, Ajustar e Centralizar; interface em português, estilo material didático, proporção 16:9."
+            -->
+            <div
+              style="
+                background: #fafbfc;
+                border: 2px dashed #d0dbe8;
+                border-radius: 8px;
+                padding: 4%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                box-sizing: border-box;
+              "
+            >
+              <img
+                src="../assets/sco_11_img_06.jpg"
+                style="width: 100%"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="grid-3">
+            <div class="panel panel-blue">
+              <h3>Preencher</h3>
+              <p>Ocupa a tela, podendo cortar parte da imagem.</p>
+            </div>
+            <div class="panel panel-green">
+              <h3>Ajustar</h3>
+              <p>Mostra a imagem inteira, podendo deixar faixas laterais.</p>
+            </div>
+            <div class="panel panel-orange">
+              <h3>Centralizar</h3>
+              <p>Mantém o tamanho original no centro da tela.</p>
+            </div>
+          </div>
+          <div class="callout callout-blue">
+            <strong>💡 Dica:</strong> escolha uma imagem com boa resolução e
+            contraste. O texto dos ícones deve continuar fácil de ler.
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SLIDE 9 — PRÁTICA GUIADA ===== -->
+      <section class="slide">
+        <div class="slide-header">
+          <span class="slide-number">08</span>
+          <span class="slide-title"
+            >ATIVIDADE PRÁTICA: ESTAÇÃO DE CONFIGURAÇÃO</span
+          >
+        </div>
+        <div class="slide-body">
+          <div class="intro">
+            Execute as cinco tarefas na ordem. Registre o caminho usado e o
+            resultado observado. O professor deve conferir antes de qualquer
+            alteração de segurança.
+          </div>
+          <div class="grid-3">
+            <div class="activity panel-blue">
+              <div class="activity-number">1</div>
+              <h3 class="blue">Painel de Controle</h3>
+              <p>
+                Abra o Painel de Controle, alterne entre Categoria e Ícones
+                pequenos e localize Mouse, Sistema e Firewall.
+              </p>
+              <div class="activity-time">⏱️ 20 min</div>
+            </div>
+            <div class="activity panel-green">
+              <div class="activity-number" style="background: #27ae60">2</div>
+              <h3 style="color: #27ae60">Equipamento</h3>
+              <p>
+                Abra Propriedades e anote edição do Windows, memória RAM,
+                processador e tipo do sistema.
+              </p>
+              <div class="activity-time" style="color: #27ae60">⏱️ 20 min</div>
+            </div>
+            <div class="activity panel-blue">
+              <div class="activity-number">3</div>
+              <h3 class="blue">Mouse</h3>
+              <p>
+                Ajuste o ponteiro, teste o clique duplo e retorne ao valor
+                definido pelo professor.
+              </p>
+              <div class="activity-time">⏱️ 25 min</div>
+            </div>
+            <div class="activity panel-orange">
+              <div class="activity-number" style="background: #ff6600">4</div>
+              <h3 class="orange">Firewall</h3>
+              <p>
+                Consulte os perfis ativos e explique por que não se deve
+                desligar o firewall. Não permita aplicativos.
+              </p>
+              <div class="activity-time" style="color: #ff6600">⏱️ 20 min</div>
+            </div>
+            <div class="activity panel-green">
+              <div class="activity-number" style="background: #27ae60">5</div>
+              <h3 style="color: #27ae60">Papel de parede</h3>
+              <p>
+                Escolha uma imagem fornecida pelo professor, aplique o ajuste
+                adequado e depois restaure a imagem original.
+              </p>
+              <div class="activity-time" style="color: #27ae60">⏱️ 25 min</div>
+            </div>
+            <div class="activity panel-blue">
+              <div class="activity-number">✓</div>
+              <h3 class="blue">Registro</h3>
+              <p>
+                Complete uma ficha com caminho, alteração feita, resultado e
+                como desfazer cada configuração.
+              </p>
+              <div class="activity-time">⏱️ 20 min</div>
+            </div>
+          </div>
+          <div class="callout callout-orange">
+            <strong>📌 Critério de conclusão:</strong> o aluno encontra cada
+            ferramenta, explica sua finalidade e consegue voltar à configuração
+            inicial sem ajuda.
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SLIDE 10 — DESAFIO ===== -->
+      <section class="slide">
+        <div class="slide-header">
+          <span class="slide-number">09</span>
+          <span class="slide-title">DESAFIO: QUAL CONFIGURAÇÃO DEVO USAR?</span>
+        </div>
+        <div class="slide-body">
+          <div class="intro">
+            Leia cada situação, escolha a ferramenta correta e explique o
+            caminho. Não abra telas aleatórias: comece pelo problema
+            apresentado.
+          </div>
+          <div class="grid-2">
+            <div class="panel panel-blue">
+              <div class="numbered">
+                <span class="number">1</span>
+                <div>
+                  <strong
+                    >“Preciso descobrir quanta memória RAM este computador
+                    tem.”</strong
+                  ><br />Resposta esperada: Propriedades/Sobre do equipamento.
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-green">
+              <div class="numbered">
+                <span class="number green">2</span>
+                <div>
+                  <strong>“O mouse está lento e o clique duplo falha.”</strong
+                  ><br />Resposta esperada: Propriedades do Mouse, abas Botões e
+                  Opções do Ponteiro.
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-orange">
+              <div class="numbered">
+                <span class="number orange">3</span>
+                <div>
+                  <strong>“Um programa desconhecido pede acesso à rede.”</strong
+                  ><br />Resposta esperada: não permitir sem confirmar a origem;
+                  consultar o professor.
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-blue">
+              <div class="numbered">
+                <span class="number">4</span>
+                <div>
+                  <strong>“A foto ficou cortada na Área de Trabalho.”</strong
+                  ><br />Resposta esperada: Personalização &gt; Plano de fundo
+                  &gt; Ajustar ou Centralizar.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="callout callout-blue">
+            <strong>🗣️ Discussão:</strong> cada dupla deve justificar por que a
+            ferramenta escolhida é mais adequada do que simplesmente pesquisar
+            uma solução na internet.
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SLIDE 11 — CHECKLIST ===== -->
+      <section class="slide">
+        <div class="slide-header">
+          <span class="slide-number">10</span>
+          <span class="slide-title">CHECKLIST DO USUÁRIO</span>
+        </div>
+        <div class="slide-body">
+          <div class="intro">
+            Use este checklist para revisar os procedimentos antes de encerrar a
+            aula.
+          </div>
+          <div class="panel panel-blue">
+            <ul class="checklist">
+              <li>
+                Consigo abrir o Painel de Controle por pesquisa e por
+                <span class="shortcut">Win</span> +
+                <span class="shortcut">R</span>.
+              </li>
+              <li>Sei alternar entre Categorias e Ícones.</li>
+              <li>Consigo encontrar as propriedades do equipamento.</li>
+              <li>
+                Sei explicar o que são RAM, processador e tipo do sistema.
+              </li>
+              <li>Consigo ajustar velocidade e aparência do mouse.</li>
+              <li>Sei verificar se o Firewall está ativo.</li>
+              <li>Sei quando não devo permitir um aplicativo no Firewall.</li>
+              <li>Consigo trocar o papel de parede e ajustar seu encaixe.</li>
+            </ul>
+          </div>
+          <div class="grid-2">
+            <div class="panel panel-green">
+              <h3>🔁 Antes de confirmar</h3>
+              <p>
+                Leia a tela, observe o que será alterado e anote a configuração
+                original quando necessário.
+              </p>
+            </div>
+            <div class="panel panel-orange">
+              <h3>🆘 Quando pedir ajuda</h3>
+              <p>
+                Ao aparecer uma senha de administrador, alerta de segurança,
+                driver, erro desconhecido ou opção que você não consegue
+                explicar.
+              </p>
+            </div>
+          </div>
+          <div class="closing">
+            <h3>✅ Competência desenvolvida</h3>
+            <p>
+              Usar o Windows com mais autonomia, identificando a ferramenta
+              correta para cada configuração e mantendo o cuidado com segurança.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SLIDE 12 — ENCERRAMENTO ===== -->
+      <section class="slide">
+        <div class="slide-header">
+          <span class="slide-number">11</span>
+          <span class="slide-title">RESUMO E ORIENTAÇÃO AO PROFESSOR</span>
+        </div>
+        <div class="slide-body">
+          <div class="grid-3">
+            <div class="panel panel-blue">
+              <h3>🧭 Painel de Controle</h3>
+              <p>Localizar, ler e aplicar configurações.</p>
+            </div>
+            <div class="panel panel-green">
+              <h3>🖥️ Equipamento</h3>
+              <p>Consultar propriedades e identificar o computador.</p>
+            </div>
+            <div class="panel panel-blue">
+              <h3>🖱️ Mouse</h3>
+              <p>Ajustar clique, ponteiro e velocidade.</p>
+            </div>
+            <div class="panel panel-orange">
+              <h3>🧱 Firewall</h3>
+              <p>Entender proteção e evitar permissões indevidas.</p>
+            </div>
+            <div class="panel panel-green">
+              <h3>🖼️ Papel de parede</h3>
+              <p>Personalizar a Área de Trabalho com legibilidade.</p>
+            </div>
+            <div class="panel panel-orange">
+              <h3>🧪 Prática</h3>
+              <p>Alterar, testar, registrar e restaurar.</p>
+            </div>
+          </div>
+          <div class="closing">
+            <h3>📌 Orientação ao professor</h3>
+            <p>
+              Use os espaços reservados para capturas ou ilustrações das telas
+              disponíveis no laboratório. Se a versão do Windows apresentar
+              nomes diferentes, mostre o caminho equivalente e destaque a
+              finalidade da ferramenta, não apenas o texto do botão.
+            </p>
+          </div>
+          <div class="callout callout-orange">
+            <strong>⚠️ Lembrete:</strong> Painel de Controle e Configurações
+            podem variar entre Windows 10 e Windows 11. O princípio permanece:
+            identificar a necessidade, localizar a ferramenta, alterar com
+            cuidado e verificar o resultado.
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
